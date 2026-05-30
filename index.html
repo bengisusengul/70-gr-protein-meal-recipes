@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 70 g Protein Cookbook · High-Protein, Low-Sugar Recipes</title>
+  <meta name="description" content="An interactive cookbook of 30+ recipes, each with 70 g of protein and very low sugar. Plan your week, auto-build a grocery list, and track what you've cooked." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="logo">The <span class="accent">70&nbsp;g</span> Protein Cookbook</h1>
+      <p class="tagline">30+ recipes &middot; 70&nbsp;g protein each &middot; very low sugar &amp; carbs</p>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <div class="wrap tabs-inner">
+      <button class="tab-btn active" data-tab="recipes">Recipes</button>
+      <button class="tab-btn" data-tab="planner">
+        Plan &amp; Shop <span id="plan-badge" class="badge" style="display:none">0</span>
+      </button>
+      <button class="tab-btn" data-tab="tracker">Tracker</button>
+      <button class="tab-btn" data-tab="science">Why It Works</button>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <p id="storage-warning" class="warning" style="display:none">
+      Heads up: your browser is blocking local storage, so your plan and progress
+      won't be saved between visits. Try a normal (non-private) window.
+    </p>
+
+    <!-- ===================== RECIPES ===================== -->
+    <section id="tab-recipes" class="tab-panel active">
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search recipes or ingredients…" aria-label="Search recipes" />
+        <div id="category-filters" class="chips"></div>
+        <label class="switch"><input id="veg-toggle" type="checkbox" /> Vegetarian only</label>
+        <label class="switch"><input id="untried-toggle" type="checkbox" /> Not tried yet</label>
+      </div>
+      <p id="recipe-count" class="count"></p>
+      <div id="recipe-grid" class="grid"></div>
+    </section>
+
+    <!-- ===================== PLANNER ===================== -->
+    <section id="tab-planner" class="tab-panel">
+      <h2>This Week's Plan</h2>
+      <p class="muted">Pick meals on the Recipes tab. Set how many servings of each you want to cook — the shopping list adds everything up for you.</p>
+      <p id="plan-summary" class="plan-summary"></p>
+      <div id="plan-list" class="plan-list"></div>
+
+      <div class="shopping-head">
+        <h2>Grocery Shopping List</h2>
+        <div class="shopping-actions no-print">
+          <button id="uncheck-all" class="btn btn-light">Uncheck all</button>
+          <button id="print-list" class="btn btn-light">🖨 Print</button>
+          <button id="clear-plan" class="btn btn-danger">Clear plan</button>
+        </div>
+      </div>
+      <p class="muted no-print">Quantities are summed across every meal &times; its servings, grouped by aisle. Check items off as you shop.</p>
+      <div id="shopping-list" class="shopping-list"></div>
+    </section>
+
+    <!-- ===================== TRACKER ===================== -->
+    <section id="tab-tracker" class="tab-panel">
+      <h2>Recipe Tracker</h2>
+      <p class="muted">Tick off each recipe as you make it and watch your progress through the whole book.</p>
+      <div class="progress">
+        <div class="progress-track"><div id="tracker-progress-bar" class="progress-bar"></div></div>
+        <p id="tracker-progress-label" class="progress-label"></p>
+      </div>
+      <div id="tracker-list" class="tracker-list"></div>
+    </section>
+
+    <!-- ===================== SCIENCE ===================== -->
+    <section id="tab-science" class="tab-panel">
+      <h2>Why This Works — the nutrition &amp; longevity science</h2>
+      <div id="science-content" class="science"></div>
+      <p class="disclaimer">
+        This material is educational and not medical advice. If you have kidney disease,
+        are pregnant, or have any medical condition, consult a doctor or registered
+        dietitian before starting a high-protein diet.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Built as an open, offline-friendly cookbook. Your plan &amp; progress are saved only in your browser.</p>
+    </div>
+  </footer>
+
+  <script src="js/recipes-data.js"></script>
+  <script src="js/science-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
