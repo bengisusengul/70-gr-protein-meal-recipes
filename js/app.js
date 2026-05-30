@@ -521,20 +521,20 @@
       table.appendChild(el("tr", {}, headCols));
 
       plan.days.forEach(function (d) {
-        var cells = [el("td", { class: "day-name" }, [d.day])];
+        var cells = [el("td", { class: "day-name", "data-label": "Day" }, [d.day])];
         var dayProtein = 0;
-        d.meals.forEach(function (id) {
+        d.meals.forEach(function (id, mi) {
           var r = byId[id];
-          if (!r) { cells.push(el("td", {}, ["—"])); return; }
+          if (!r) { cells.push(el("td", { "data-label": slots[mi] }, ["—"])); return; }
           dayProtein += r.macros.protein;
-          cells.push(mealCell(r, false));
+          cells.push(mealCell(r, false, slots[mi]));
         });
         if (withSnack) {
           var sr = byId[d.snack];
-          if (sr) { dayProtein += sr.macros.protein; cells.push(mealCell(sr, true)); }
-          else cells.push(el("td", { class: "col-snack" }, ["—"]));
+          if (sr) { dayProtein += sr.macros.protein; cells.push(mealCell(sr, true, "Snack")); }
+          else cells.push(el("td", { class: "col-snack", "data-label": "Snack" }, ["—"]));
         }
-        cells.push(el("td", { class: "col-total" }, [dayProtein + "g"]));
+        cells.push(el("td", { class: "col-total", "data-label": "Day total" }, [dayProtein + "g"]));
         table.appendChild(el("tr", {}, cells));
       });
 
@@ -543,8 +543,8 @@
     });
   }
 
-  function mealCell(r, isSnack) {
-    return el("td", { class: isSnack ? "col-snack" : "" }, [
+  function mealCell(r, isSnack, label) {
+    return el("td", { class: isSnack ? "col-snack" : "", "data-label": label || "" }, [
       el("span", { class: "meal-name" }, [r.name]),
       el("span", { class: "meal-macro" }, [r.macros.protein + "g · " + r.macros.netCarbs + "g carb"])
     ]);
