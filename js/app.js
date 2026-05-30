@@ -17,6 +17,8 @@
 
   var RECIPES = window.RECIPES || [];
   var SCIENCE = window.SCIENCE || { sections: [], references: [] };
+  var PLANS = window.MEAL_PLANS || [];
+  var ART = window.ART || { hero: function () { return ""; }, categoryIcon: function () { return ""; }, aisleIcon: function () { return ""; } };
   var Store = window.Store;
   var K = Store.KEYS;
 
@@ -121,8 +123,10 @@
 
     var card = el("article", { class: "card" + (tried ? " is-tried" : ""), "data-id": r.id });
 
+    var hero = el("div", { class: "card-hero", "data-art": ART.pickArtKey ? ART.pickArtKey(r) : "", html: ART.hero(r) });
+
     var head = el("div", { class: "card-head" }, [
-      el("div", { class: "card-cat" }, [r.category + (r.vegetarian ? " · veg" : "")]),
+      el("div", { class: "card-cat", html: ART.categoryIcon(r.category) + "<span>" + r.category + (r.vegetarian ? " · veg" : "") + "</span>" }),
       el("button", {
         class: "fav-btn" + (fav ? " on" : ""), title: "Favorite",
         onclick: function () {
@@ -188,6 +192,7 @@
 
     var actions = el("div", { class: "card-actions" }, [planBtn, triedBtn, toggleBtn]);
 
+    card.appendChild(hero);
     card.appendChild(head);
     card.appendChild(title);
     card.appendChild(macroBadges(r.macros));
@@ -335,7 +340,7 @@
     var checked = Store.read(K.SHOPPING_CHECKED, []);
     names.forEach(function (aisle) {
       var section = el("div", { class: "aisle" }, [
-        el("h4", { class: "aisle-name" }, [aisle])
+        el("h4", { class: "aisle-name", html: ART.aisleIcon(aisle) + "<span>" + aisle + "</span>" })
       ]);
       var ul = el("ul", { class: "shop-items" });
       aisles[aisle].forEach(function (c) {
@@ -434,6 +439,94 @@
   }
 
   // ============================================================
+  //  7-DAY PLANS TAB
+  // ============================================================
+  function planTotals(plan) {
+    var t = { meals: 0, protein: 0, carbs: 0, cals: 0 };
+    plan.days.forEach(function (d) {
+      d.meals.forEach(function (id) {
+        var r = byId[id]; if (!r) return;
+        t.meals += 1;
+        t.protein += r.macros.protein;
+        t.carbs += r.macros.netCarbs;
+        t.cals += r.macros.calories;
+      });
+    });
+    return t;
+  }
+
+  function renderPlans() {
+    var wrap = $("#plans-list");
+    if (wrap.dataset.rendered) return;
+    var slots = ["Breakfast", "Lunch", "Dinner"];
+
+    PLANS.forEach(function (plan) {
+      var t = planTotals(plan);
+      var card = el("div", { class: "plan-card" });
+
+      card.appendChild(el("div", { class: "plan-card-head" }, [
+        el("h3", {}, [plan.name]),
+        el("p", { class: "plan-sub" }, [plan.subtitle])
+      ]));
+      card.appendChild(el("p", { class: "plan-desc" }, [plan.description]));
+      card.appendChild(el("p", { class: "plan-week-summary" }, [
+        Math.round(t.protein / 7) + "g protein/day avg · " +
+        Math.round(t.carbs / 7) + "g net carbs/day avg · " +
+        Math.round(t.cals / 7) + " kcal/day avg"
+      ]));
+
+      var loadBtn = el("button", { class: "btn btn-plan on plan-load-btn" }, ["⬇ Load this week into the Planner"]);
+      loadBtn.addEventListener("click", function () { loadPlanIntoPlanner(plan); });
+      card.appendChild(loadBtn);
+
+      var table = el("table", { class: "plan-table" });
+      var thead = el("tr", {}, [el("th", {}, ["Day"])].concat(slots.map(function (s) { return el("th", {}, [s]); })).concat([el("th", { class: "col-total" }, ["Day total"])]));
+      table.appendChild(thead);
+
+      plan.days.forEach(function (d) {
+        var cells = [el("td", { class: "day-name" }, [d.day])];
+        var dayProtein = 0;
+        d.meals.forEach(function (id) {
+          var r = byId[id];
+          if (!r) { cells.push(el("td", {}, ["—"])); return; }
+          dayProtein += r.macros.protein;
+          cells.push(el("td", {}, [
+            el("span", { class: "meal-name" }, [r.name]),
+            el("span", { class: "meal-macro" }, [r.macros.protein + "g · " + r.macros.netCarbs + "g carb"])
+          ]));
+        });
+        cells.push(el("td", { class: "col-total" }, [dayProtein + "g"]));
+        table.appendChild(el("tr", {}, cells));
+      });
+
+      card.appendChild(el("div", { class: "plan-table-wrap" }, [table]));
+      wrap.appendChild(card);
+    });
+    wrap.dataset.rendered = "1";
+  }
+
+  function loadPlanIntoPlanner(plan) {
+    var existing = Store.read(K.PLAN, []);
+    if (existing.length && !confirm("Replace your current plan with “" + plan.name + "”? This rebuilds your shopping list for the whole week.")) {
+      return;
+    }
+    // flatten the week into deduped {id, servings}
+    var counts = {};
+    plan.days.forEach(function (d) {
+      d.meals.forEach(function (id) {
+        if (!byId[id]) return;
+        counts[id] = (counts[id] || 0) + 1;
+      });
+    });
+    var newPlan = Object.keys(counts).map(function (id) { return { id: id, servings: counts[id] }; });
+    Store.write(K.PLAN, newPlan);
+    Store.write(K.SHOPPING_CHECKED, []); // fresh shopping list
+    updatePlanBadge();
+    renderRecipes();
+    showTab("planner");
+  }
+
+  // ============================================================
   //  SCIENCE TAB
   // ============================================================
   function renderScience() {
@@ -477,6 +570,7 @@
     if (name === "planner") renderPlanner();
     if (name === "tracker") renderTracker();
     if (name === "science") renderScience();
+    if (name === "plans") renderPlans();
     if (name === "recipes") renderRecipes();
     window.scrollTo(0, 0);
   }
@@ -495,6 +589,8 @@
       var warn = $("#storage-warning");
       if (warn) warn.style.display = "block";
     }
+    var headerMount = $("#header-art-mount");
+    if (headerMount && ART.headerArt) headerMount.innerHTML = ART.headerArt();
     buildTabs();
     buildRecipeControls();
     buildPlannerControls();
