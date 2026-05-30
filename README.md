@@ -20,7 +20,7 @@ No build step, no server, no account, no tracking. Just open it.
 | --- | --- |
 | **Recipes** | All 32 recipes as cards — each with its own **illustrated dish header**, full macros (protein / net carbs / fat / fiber / calories), ingredients, and method. Search by name or ingredient, filter by meal type, "vegetarian only", or "not tried yet". Favorite ⭐ and "Mark as made" ✓ any recipe. |
 | **Plan & Shop** | Add the meals you want to cook, set **servings** for each (e.g. batch a dinner ×3), and get an **auto-generated grocery list**. Identical ingredients are **summed across every meal**, **grouped by store aisle** (each with its own icon), with **check-off boxes** and a **Print** button. |
-| **7-Day Plans** | Three ready-made **balanced weeks** (Classic, Mediterranean-leaning, Lean & Light). Each day pairs a breakfast + lunch + dinner for ~210 g protein. One click **loads a whole week into the Planner** and builds the week's shopping list for you. |
+| **7-Day Plans** | Three ready-made **balanced weeks** (Classic, Mediterranean-leaning, Lean & Light). Each day pairs a breakfast + lunch + dinner for ~210 g protein, plus an **optional snack** you can toggle on to reach ~280 g/day. One click **loads a whole week into the Planner** and builds the week's shopping list for you. |
 | **Tracker** | A checklist of every recipe with a progress bar — see at a glance which you've made and which are still to try. |
 | **Why It Works** | A plain-language, **cited** tour of the nutrition & longevity science behind the 70 g / low-sugar rule (protein needs, muscle & aging, sugar & metabolic health, fiber, satiety, and a responsible-use note). |
 

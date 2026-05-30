@@ -231,7 +231,11 @@ h2 { font-size: 1.4rem; margin: .2em 0 .3em; }
 .plan-sub { margin: 2px 0 0; color: var(--muted); font-size: .85rem; font-style: italic; }
 .plan-desc { font-size: .92rem; margin: 10px 0; }
 .plan-week-summary { font-weight: 700; color: var(--brand-dark); font-size: .85rem; margin: 0 0 12px; }
+.snack-toggle { display: flex; align-items: center; gap: 8px; font-size: .85rem; color: var(--ink); background: #f3f6f3; border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; margin-bottom: 12px; cursor: pointer; }
+.snack-toggle input { width: 17px; height: 17px; accent-color: var(--brand); }
 .plan-load-btn { margin-bottom: 14px; }
+.plan-table .col-snack { background: #fafbf7; }
+.plan-table th.col-snack { background: #eef3ec; color: var(--carb); }
 .plan-table-wrap { overflow-x: auto; }
 .plan-table { width: 100%; border-collapse: collapse; font-size: .82rem; min-width: 560px; }
 .plan-table th, .plan-table td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }

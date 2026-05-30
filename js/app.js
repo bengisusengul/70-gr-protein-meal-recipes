@@ -441,27 +441,47 @@
   // ============================================================
   //  7-DAY PLANS TAB
   // ============================================================
-  function planTotals(plan) {
-    var t = { meals: 0, protein: 0, carbs: 0, cals: 0 };
+  // remembers, per plan, whether the optional snack is folded in
+  function snackOn(planId) {
+    var map = Store.read("planSnacks", {});
+    return !!map[planId];
+  }
+  function setSnackOn(planId, on) {
+    var map = Store.read("planSnacks", {});
+    map[planId] = on;
+    Store.write("planSnacks", map);
+  }
+
+  // all recipe ids in a plan, optionally including the daily snacks
+  function planMealIds(plan, withSnack) {
+    var ids = [];
     plan.days.forEach(function (d) {
-      d.meals.forEach(function (id) {
-        var r = byId[id]; if (!r) return;
-        t.meals += 1;
-        t.protein += r.macros.protein;
-        t.carbs += r.macros.netCarbs;
-        t.cals += r.macros.calories;
-      });
+      d.meals.forEach(function (id) { if (byId[id]) ids.push(id); });
+      if (withSnack && d.snack && byId[d.snack]) ids.push(d.snack);
+    });
+    return ids;
+  }
+
+  function planTotals(plan, withSnack) {
+    var t = { meals: 0, protein: 0, carbs: 0, cals: 0 };
+    planMealIds(plan, withSnack).forEach(function (id) {
+      var r = byId[id];
+      t.meals += 1;
+      t.protein += r.macros.protein;
+      t.carbs += r.macros.netCarbs;
+      t.cals += r.macros.calories;
     });
     return t;
   }
 
   function renderPlans() {
     var wrap = $("#plans-list");
-    if (wrap.dataset.rendered) return;
+    clear(wrap);
     var slots = ["Breakfast", "Lunch", "Dinner"];
 
     PLANS.forEach(function (plan) {
-      var t = planTotals(plan);
+      var withSnack = snackOn(plan.id);
+      var t = planTotals(plan, withSnack);
       var card = el("div", { class: "plan-card" });
 
       card.appendChild(el("div", { class: "plan-card-head" }, [
@@ -475,13 +495,30 @@
         Math.round(t.cals / 7) + " kcal/day avg"
       ]));
 
-      var loadBtn = el("button", { class: "btn btn-plan on plan-load-btn" }, ["⬇ Load this week into the Planner"]);
-      loadBtn.addEventListener("click", function () { loadPlanIntoPlanner(plan); });
+      // optional-snack toggle
+      var snackChk = el("input", { type: "checkbox", id: "snack_" + plan.id });
+      snackChk.checked = withSnack;
+      snackChk.addEventListener("change", function () {
+        setSnackOn(plan.id, this.checked);
+        renderPlans();
+      });
+      var snackToggle = el("label", { class: "snack-toggle" }, [
+        snackChk,
+        el("span", {}, ["Include the optional daily snack (≈ +70 g protein/day)"])
+      ]);
+      card.appendChild(snackToggle);
+
+      var loadBtn = el("button", { class: "btn btn-plan on plan-load-btn" }, [
+        withSnack ? "⬇ Load this week (with snacks) into the Planner" : "⬇ Load this week into the Planner"
+      ]);
+      loadBtn.addEventListener("click", function () { loadPlanIntoPlanner(plan, withSnack); });
       card.appendChild(loadBtn);
 
+      var headCols = [el("th", {}, ["Day"])].concat(slots.map(function (s) { return el("th", {}, [s]); }));
+      if (withSnack) headCols.push(el("th", { class: "col-snack" }, ["Snack"]));
+      headCols.push(el("th", { class: "col-total" }, ["Day total"]));
       var table = el("table", { class: "plan-table" });
-      var thead = el("tr", {}, [el("th", {}, ["Day"])].concat(slots.map(function (s) { return el("th", {}, [s]); })).concat([el("th", { class: "col-total" }, ["Day total"])]));
-      table.appendChild(thead);
+      table.appendChild(el("tr", {}, headCols));
 
       plan.days.forEach(function (d) {
         var cells = [el("td", { class: "day-name" }, [d.day])];
@@ -490,11 +527,13 @@
           var r = byId[id];
           if (!r) { cells.push(el("td", {}, ["—"])); return; }
           dayProtein += r.macros.protein;
-          cells.push(el("td", {}, [
-            el("span", { class: "meal-name" }, [r.name]),
-            el("span", { class: "meal-macro" }, [r.macros.protein + "g · " + r.macros.netCarbs + "g carb"])
-          ]));
+          cells.push(mealCell(r, false));
         });
+        if (withSnack) {
+          var sr = byId[d.snack];
+          if (sr) { dayProtein += sr.macros.protein; cells.push(mealCell(sr, true)); }
+          else cells.push(el("td", { class: "col-snack" }, ["—"]));
+        }
         cells.push(el("td", { class: "col-total" }, [dayProtein + "g"]));
         table.appendChild(el("tr", {}, cells));
       });
@@ -502,21 +541,25 @@
       card.appendChild(el("div", { class: "plan-table-wrap" }, [table]));
       wrap.appendChild(card);
     });
-    wrap.dataset.rendered = "1";
   }
 
-  function loadPlanIntoPlanner(plan) {
+  function mealCell(r, isSnack) {
+    return el("td", { class: isSnack ? "col-snack" : "" }, [
+      el("span", { class: "meal-name" }, [r.name]),
+      el("span", { class: "meal-macro" }, [r.macros.protein + "g · " + r.macros.netCarbs + "g carb"])
+    ]);
+  }
+
+  function loadPlanIntoPlanner(plan, withSnack) {
     var existing = Store.read(K.PLAN, []);
-    if (existing.length && !confirm("Replace your current plan with “" + plan.name + "”? This rebuilds your shopping list for the whole week.")) {
+    var label = plan.name + (withSnack ? " (with snacks)" : "");
+    if (existing.length && !confirm("Replace your current plan with “" + label + "”? This rebuilds your shopping list for the whole week.")) {
       return;
     }
     // flatten the week into deduped {id, servings}
     var counts = {};
-    plan.days.forEach(function (d) {
-      d.meals.forEach(function (id) {
-        if (!byId[id]) return;
-        counts[id] = (counts[id] || 0) + 1;
-      });
+    planMealIds(plan, withSnack).forEach(function (id) {
+      counts[id] = (counts[id] || 0) + 1;
     });
     var newPlan = Object.keys(counts).map(function (id) { return { id: id, servings: counts[id] }; });
     Store.write(K.PLAN, newPlan);
