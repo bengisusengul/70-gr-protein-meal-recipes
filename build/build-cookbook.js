@@ -59,6 +59,8 @@ async function main() {
     displayHeaderFooter: true,
     headerTemplate: header,
     footerTemplate: footer,
+    tagged: true,        // accessible, tagged PDF
+    outline: true,       // generates a clickable bookmarks panel from headings
     margin: { top: "14mm", bottom: "14mm", left: "0mm", right: "0mm" }
   });
 

@@ -67,10 +67,14 @@ html, body { margin: 0; padding: 0; background: #d9ddd7; color: var(--ink); font
 /* ---------- contents ---------- */
 .section-title { font-size: 24pt; color: var(--brand-dark); border-bottom: 3px solid var(--brand); padding-bottom: 3mm; margin: 0 0 8mm; }
 .toc-list { list-style: none; margin: 0; padding: 0; font-family: var(--sans); }
+.toc-hint { font-family: var(--sans); font-size: 9.5pt; color: var(--muted); margin: -4mm 0 5mm; font-style: italic; }
 .toc-entry a { color: var(--ink); text-decoration: none; }
 .toc-entry { padding: 1.6mm 0; border-bottom: 1px dotted var(--line); }
 .toc-section { margin-top: 5mm; font-weight: 700; color: var(--brand-dark); font-size: 12.5pt; }
-.toc-recipe { padding-left: 8mm; font-size: 11pt; color: var(--ink); }
+.toc-section a { color: var(--brand-dark); }
+.toc-recipe { padding-left: 8mm; font-size: 11pt; }
+.toc-recipe a { color: var(--brand-dark); }
+.toc-recipe a::after { content: " ›"; color: var(--brand); }
 
 /* ---------- how to use ---------- */
 .howto-lead { font-size: 12.5pt; line-height: 1.5; margin-bottom: 5mm; }
@@ -110,8 +114,9 @@ html, body { margin: 0; padding: 0; background: #d9ddd7; color: var(--ink); font
 .divider-count { font-family: var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-size: 11pt; }
 
 /* ---------- recipe page ---------- */
-.rcp-hero { width: 100%; height: 70mm; background: var(--cream); border-radius: 10px; overflow: hidden; margin-bottom: 6mm; }
+.rcp-hero { position: relative; width: 100%; height: 70mm; background: var(--cream); border-radius: 10px; overflow: hidden; margin-bottom: 6mm; }
 .rcp-hero svg { width: 100%; height: 100%; }
+.rcp-hero .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .rcp-cat { font-family: var(--sans); text-transform: uppercase; letter-spacing: .1em; font-size: 9.5pt; font-weight: 700; color: var(--brand); }
 .rcp-name { font-size: 22pt; line-height: 1.12; margin: 1mm 0 1mm; color: var(--brand-dark); }
 .rcp-time { font-family: var(--sans); font-size: 10pt; color: var(--muted); margin: 0 0 4mm; }

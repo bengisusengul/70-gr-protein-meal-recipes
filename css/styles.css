@@ -188,7 +188,9 @@ h2 { font-size: 1.4rem; margin: .2em 0 .3em; }
   height: 132px; background: #eef1ee;
   border-bottom: 1px solid var(--line);
 }
+.card-hero { position: relative; }
 .card-hero svg { width: 100%; height: 100%; display: block; }
+.card-hero .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .card.is-tried .card-hero { filter: saturate(.85); }
 .card-head { display: flex; justify-content: space-between; align-items: center; }
 .card-cat { display: inline-flex; align-items: center; gap: 5px; font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--brand); font-weight: 700; }

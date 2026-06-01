@@ -20,6 +20,7 @@
   var PLANS = window.MEAL_PLANS || [];
   var ART = window.ART || { hero: function () { return ""; }, categoryIcon: function () { return ""; }, aisleIcon: function () { return ""; } };
   var SWAPS = window.SWAPS || { forRecipe: function () { return []; } };
+  var RECIPE_IMAGES = window.RECIPE_IMAGES || [];
   var Store = window.Store;
   var K = Store.KEYS;
 
@@ -229,6 +230,10 @@
     var card = el("article", { class: "card" + (tried ? " is-tried" : ""), "data-id": r.id });
 
     var hero = el("div", { class: "card-hero", "data-art": ART.pickArtKey ? ART.pickArtKey(r) : "", html: ART.hero(r) });
+    if (RECIPE_IMAGES.indexOf(r.id) !== -1) {
+      // real photo on top of the SVG; if it fails to load, it removes itself and the illustration shows
+      hero.appendChild(el("img", { class: "hero-img", src: "img/recipes/" + r.id + ".jpg", alt: r.name, loading: "lazy", onerror: "this.remove()" }));
+    }
 
     var head = el("div", { class: "card-head" }, [
       el("div", { class: "card-cat", html: ART.categoryIcon(r.category) + "<span>" + r.category + (r.vegetarian ? " · veg" : "") + "</span>" }),

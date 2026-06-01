@@ -27,6 +27,15 @@
   var PLANS = window.MEAL_PLANS || [];
   var ART = window.ART || { hero: function () { return ""; } };
   var SWAPS = window.SWAPS || { forRecipe: function () { return []; } };
+  var RECIPE_IMAGES = window.RECIPE_IMAGES || [];
+
+  function heroNode(r, cls) {
+    var node = el("div", { class: cls, html: ART.hero(r) });
+    if (RECIPE_IMAGES.indexOf(r.id) !== -1) {
+      node.appendChild(el("img", { class: "hero-img", src: "img/recipes/" + r.id + ".jpg", alt: r.name, onerror: "this.remove()" }));
+    }
+    return node;
+  }
 
   var CATEGORY_ORDER = ["Breakfast", "Lunch", "Dinner", "Snack"];
 
@@ -142,6 +151,7 @@
 
     return el("section", { class: "page page-contents" }, [
       el("h2", { class: "section-title" }, ["Contents"]),
+      el("p", { class: "toc-hint" }, ["Tip: in the digital edition, tap any recipe below to jump straight to it — or use your reader's bookmarks panel."]),
       list
     ]);
   }
@@ -307,7 +317,7 @@
     }
 
     return el("section", { class: "page page-recipe", id: recipeAnchor(r) }, [
-      el("div", { class: "rcp-hero", html: ART.hero(r) }),
+      heroNode(r, "rcp-hero"),
       el("div", { class: "rcp-cat" }, [r.category + (r.vegetarian ? "  ·  Vegetarian" : "")]),
       el("h2", { class: "rcp-name" }, [r.name]),
       el("p", { class: "rcp-time" }, ["Prep " + r.time.prep + " min · Cook " + r.time.cook + " min"]),
