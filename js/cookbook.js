@@ -101,6 +101,7 @@
 
   function pageContents() {
     var list = el("ol", { class: "toc-list" });
+    list.appendChild(tocEntry("How to use this book", "#sec-howto"));
     list.appendChild(tocEntry("The science: why this works", "#sec-intro"));
     CATEGORY_ORDER.forEach(function (cat) {
       var inCat = RECIPES.filter(function (r) { return r.category === cat; });
@@ -111,6 +112,7 @@
       });
     });
     list.appendChild(tocEntry("7-Day meal plans", "#sec-plans", "toc-section"));
+    list.appendChild(tocEntry("Kitchen conversions & protein chart", "#sec-appendix", "toc-section"));
     list.appendChild(tocEntry("Recipe index (A–Z)", "#sec-index", "toc-section"));
 
     return el("section", { class: "page page-contents" }, [
@@ -121,6 +123,83 @@
   function tocEntry(label, href, cls) {
     return el("li", { class: "toc-entry " + (cls || "") }, [
       el("a", { href: href }, [label])
+    ]);
+  }
+
+  function pageHowToUse() {
+    return el("section", { class: "page page-howto", id: "sec-howto" }, [
+      el("h2", { class: "section-title" }, ["How to Use This Book"]),
+      el("p", { class: "howto-lead" }, [
+        "Welcome. Every recipe here is engineered around one simple promise — about " +
+        "70 g of protein per serving with very low sugar — so you can hit serious " +
+        "protein goals without counting all day. Here's how to get the most from it."
+      ]),
+      howtoItem("The 70 g rule", "Each recipe makes one serving delivering roughly 70 g of protein (target 68–72 g) while keeping net carbs low — usually under 20 g. The portions are sized to get you there, so you don't have to do the math."),
+      howtoItem("Reading a recipe", "Under each title you'll see the time and a macro strip: protein, net carbs, fat, fiber and calories. Net carbs = total carbs minus fiber — the number that actually affects blood sugar."),
+      howtoItem("Scaling to you", "70 g per meal is a high, per-main-meal target. If you're smaller or less active, eat a portion of a serving; if you're bigger or training hard, add a snack. The companion web app can scale every recipe to your bodyweight automatically."),
+      howtoItem("Make it yours", "Most recipes include a “Make it…” line with dairy-free, nut-free or soy-free swaps so you can adapt them to your needs without losing the protein."),
+      howtoItem("Plan your week", "Use the ready-made 7-Day Meal Plans near the back, or mix and match. Aim to spread protein across the day rather than loading it all into one meal."),
+      howtoItem("About the numbers", "Macros are realistic estimates based on standard food-composition values; they'll vary a little with brand, cut and cooking method. Treat them as a close guide, not a lab assay."),
+      el("p", { class: "howto-safety" }, [
+        "This book is educational, not medical advice. If you have a medical condition " +
+        "(including kidney disease), are pregnant, or take medication, talk to your doctor " +
+        "or a registered dietitian before starting a high-protein diet."
+      ])
+    ]);
+  }
+  function howtoItem(h, body) {
+    return el("div", { class: "howto-item" }, [
+      el("h4", {}, [h]),
+      el("p", {}, [body])
+    ]);
+  }
+
+  function chartTable(headers, rows, cls) {
+    var t = el("table", { class: "chart-table " + (cls || "") });
+    t.appendChild(el("tr", {}, headers.map(function (h) { return el("th", {}, [h]); })));
+    rows.forEach(function (row) {
+      t.appendChild(el("tr", {}, row.map(function (c) { return el("td", {}, [String(c)]); })));
+    });
+    return t;
+  }
+  function pageConversions() {
+    var weight = chartTable(["Metric", "Imperial"], [
+      ["25 g", "≈ 1 oz"], ["50 g", "≈ 1¾ oz"], ["100 g", "≈ 3½ oz"], ["150 g", "≈ 5¼ oz"],
+      ["200 g", "≈ 7 oz"], ["250 g", "≈ 8¾ oz"], ["500 g", "≈ 1 lb 1½ oz"],
+      ["1 oz", "= 28 g"], ["1 lb", "= 454 g"]
+    ]);
+    var volume = chartTable(["Measure", "Metric"], [
+      ["1 tsp", "5 ml"], ["1 tbsp", "15 ml"], ["¼ cup", "60 ml"], ["⅓ cup", "80 ml"],
+      ["½ cup", "120 ml"], ["1 cup", "240 ml"], ["1 fl oz", "30 ml"]
+    ]);
+    var oven = chartTable(["°C", "°F", "Gas"], [
+      ["150", "300", "2"], ["160", "325", "3"], ["180", "350", "4"],
+      ["190", "375", "5"], ["200", "400", "6"], ["220", "425", "7"], ["230", "450", "8"]
+    ]);
+    var protein = chartTable(["Food (per 100 g cooked)", "Protein"], [
+      ["Chicken / turkey breast", "≈ 30 g"], ["Lean beef, pork tenderloin", "≈ 26 g"],
+      ["Salmon, tuna", "≈ 25 g"], ["White fish (cod), shrimp", "≈ 23 g"],
+      ["Eggs (≈ 6 g each)", "≈ 13 g"], ["Egg whites", "≈ 11 g"],
+      ["0% Greek yogurt", "≈ 10 g"], ["Low-fat cottage cheese", "≈ 11 g"],
+      ["Feta", "≈ 14 g"], ["Parmesan", "≈ 36 g"], ["Paneer", "≈ 18 g"],
+      ["Firm tofu", "≈ 12 g"], ["Tempeh", "≈ 19 g"], ["Edamame (shelled)", "≈ 11 g"],
+      ["Whey protein (per 30 g scoop)", "≈ 24 g"]
+    ]);
+
+    return el("section", { class: "page page-appendix", id: "sec-appendix" }, [
+      el("h2", { class: "section-title" }, ["Kitchen Conversions & Protein Chart"]),
+      el("p", { class: "appendix-lead" }, ["Quick references for cooking the recipes and for building your own 70 g meals."]),
+      el("div", { class: "chart-grid" }, [
+        el("div", { class: "chart-card" }, [el("h4", {}, ["Weight"]), weight]),
+        el("div", { class: "chart-card" }, [el("h4", {}, ["Volume"]), volume]),
+        el("div", { class: "chart-card" }, [el("h4", {}, ["Oven temperatures"]), oven])
+      ]),
+      el("div", { class: "chart-rules" }, [
+        el("p", {}, [el("strong", {}, ["Handy rules: "]), "1 tbsp = 3 tsp · 1 cup = 16 tbsp · 1 oz ≈ 28 g · a palm of meat ≈ 100 g ≈ 30 g protein."])
+      ]),
+      el("h3", { class: "appendix-h" }, ["Protein cheat sheet"]),
+      el("p", { class: "appendix-note" }, ["Use this to hit ~70 g protein from whatever you have on hand."]),
+      protein
     ]);
   }
 
@@ -273,6 +352,7 @@
     root.appendChild(pageCover());
     root.appendChild(pageTitle());
     root.appendChild(pageContents());
+    root.appendChild(pageHowToUse());
     root.appendChild(pageIntro());
 
     CATEGORY_ORDER.forEach(function (cat) {
@@ -283,6 +363,7 @@
     });
 
     root.appendChild(pagePlans());
+    root.appendChild(pageConversions());
     root.appendChild(pageIndex());
 
     document.body.setAttribute("data-rendered", "1"); // signal for the PDF builder
