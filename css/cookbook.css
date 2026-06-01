@@ -1,0 +1,157 @@
+/* ==================================================================
+   The 70 g Protein Cookbook — print / PDF edition
+   A4, full color, one recipe per page. Brand palette mirrors the app.
+   ================================================================== */
+
+:root {
+  --ink: #1f2722;
+  --muted: #6b7770;
+  --line: #e3e7e2;
+  --brand: #2f7d52;
+  --brand-dark: #245f3f;
+  --carb: #c2691f;
+  --gold: #d8a72a;
+  --cream: #f7f6f1;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #d9ddd7; color: var(--ink); font-family: var(--serif); }
+
+/* on-screen helper banner */
+.screen-banner {
+  position: sticky; top: 0; z-index: 5;
+  background: #fff7e6; border-bottom: 1px solid #f0d99a; color: #6b531a;
+  font-family: var(--sans); font-size: 14px; padding: 10px 16px; text-align: center;
+}
+.screen-banner code { background: #fbeecb; padding: 1px 6px; border-radius: 4px; }
+
+/* ---------- the page model ---------- */
+.page {
+  position: relative;
+  width: 210mm; min-height: 297mm;
+  padding: 24mm 20mm;
+  margin: 10px auto;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,.18);
+  overflow: hidden;
+}
+.page + .page { page-break-before: always; }
+
+/* ---------- cover ---------- */
+.page-cover { padding: 0; background: linear-gradient(155deg, var(--brand) 0%, var(--brand-dark) 100%); color: #fff; }
+.cover-frame {
+  height: 297mm; border: 3px solid rgba(255,255,255,.35); margin: 12mm;
+  padding: 18mm 14mm; display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.cover-kicker { font-family: var(--sans); letter-spacing: .12em; text-transform: uppercase; font-size: 11pt; opacity: .9; margin-top: 8mm; }
+.cover-title { font-size: 40pt; line-height: 1.06; margin: 14mm 0 6mm; font-weight: 800; }
+.cover-subtitle { font-size: 15pt; font-style: italic; opacity: .95; max-width: 150mm; }
+.cover-art { width: 120mm; height: 78mm; margin: auto 0; background: rgba(255,255,255,.1); border-radius: 12px; padding: 6mm; }
+.cover-art svg { width: 100%; height: 100%; }
+.cover-author { font-family: var(--sans); font-size: 16pt; font-weight: 600; margin-bottom: 8mm; }
+
+/* ---------- title / copyright ---------- */
+.page-title { display: flex; flex-direction: column; justify-content: space-between; }
+.title-block { text-align: center; margin-top: 30mm; }
+.title-block h1 { font-size: 30pt; margin: 0 0 4mm; color: var(--brand-dark); }
+.title-sub { font-style: italic; font-size: 13pt; color: var(--muted); max-width: 140mm; margin: 0 auto; }
+.title-author { font-family: var(--sans); font-weight: 600; margin-top: 8mm; }
+.title-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 6mm; margin-top: 12mm; font-family: var(--sans); font-size: 10.5pt; color: var(--brand-dark); }
+.title-stats span { background: var(--cream); border: 1px solid var(--line); border-radius: 999px; padding: 3mm 6mm; }
+.copyright { font-family: var(--sans); font-size: 9pt; color: var(--muted); border-top: 1px solid var(--line); padding-top: 6mm; }
+.copyright p { margin: 0 0 3mm; }
+.copyright .disclaimer { font-style: italic; }
+
+/* ---------- contents ---------- */
+.section-title { font-size: 24pt; color: var(--brand-dark); border-bottom: 3px solid var(--brand); padding-bottom: 3mm; margin: 0 0 8mm; }
+.toc-list { list-style: none; margin: 0; padding: 0; font-family: var(--sans); }
+.toc-entry a { color: var(--ink); text-decoration: none; }
+.toc-entry { padding: 1.6mm 0; border-bottom: 1px dotted var(--line); }
+.toc-section { margin-top: 5mm; font-weight: 700; color: var(--brand-dark); font-size: 12.5pt; }
+.toc-recipe { padding-left: 8mm; font-size: 11pt; color: var(--ink); }
+
+/* ---------- intro / science ---------- */
+.intro-lead { font-size: 13.5pt; line-height: 1.5; color: var(--ink); }
+.intro-h { font-family: var(--sans); color: var(--brand-dark); font-size: 14pt; margin: 7mm 0 2mm; }
+.intro-p { font-size: 11.5pt; line-height: 1.55; margin: 0 0 3mm; }
+.cite { color: var(--brand); font-size: .7em; font-weight: 700; }
+.ref-list { font-size: 9pt; color: var(--muted); line-height: 1.4; padding-left: 6mm; }
+.ref-list li { margin-bottom: 1.5mm; word-break: break-word; }
+
+/* ---------- section dividers ---------- */
+.page-divider { background: var(--cream); }
+.divider-inner { height: 249mm; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.divider-art { width: 130mm; height: 84mm; margin-bottom: 8mm; }
+.divider-art svg { width: 100%; height: 100%; }
+.divider-title { font-size: 34pt; color: var(--brand-dark); margin: 0; }
+.divider-count { font-family: var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-size: 11pt; }
+
+/* ---------- recipe page ---------- */
+.rcp-hero { width: 100%; height: 70mm; background: var(--cream); border-radius: 10px; overflow: hidden; margin-bottom: 6mm; }
+.rcp-hero svg { width: 100%; height: 100%; }
+.rcp-cat { font-family: var(--sans); text-transform: uppercase; letter-spacing: .1em; font-size: 9.5pt; font-weight: 700; color: var(--brand); }
+.rcp-name { font-size: 22pt; line-height: 1.12; margin: 1mm 0 1mm; color: var(--brand-dark); }
+.rcp-time { font-family: var(--sans); font-size: 10pt; color: var(--muted); margin: 0 0 4mm; }
+
+.rcp-macros { display: flex; gap: 3mm; margin-bottom: 6mm; }
+.rcp-macro { flex: 1; text-align: center; background: var(--cream); border: 1px solid var(--line); border-radius: 8px; padding: 3mm 1mm; }
+.rcp-macro-val { display: block; font-family: var(--sans); font-weight: 800; font-size: 13pt; color: var(--ink); }
+.rcp-macro-lbl { display: block; font-family: var(--sans); font-size: 8pt; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.rcp-protein { background: #e2f1e8; border-color: #bfe0cc; }
+.rcp-protein .rcp-macro-val { color: var(--brand); }
+.rcp-carb { background: #fbeede; border-color: #f0d6b6; }
+.rcp-carb .rcp-macro-val { color: var(--carb); }
+
+.rcp-cols { display: flex; gap: 8mm; }
+.rcp-col-ings { flex: 0 0 64mm; }
+.rcp-col-method { flex: 1; }
+.rcp-cols h4 { font-family: var(--sans); text-transform: uppercase; letter-spacing: .05em; font-size: 10pt; color: var(--brand-dark); margin: 0 0 2mm; border-bottom: 1px solid var(--line); padding-bottom: 1.5mm; }
+.rcp-serv { font-family: var(--sans); font-size: 8.5pt; color: var(--muted); margin: 0 0 2mm; }
+.rcp-ings { list-style: none; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.45; }
+.rcp-ings li { padding: 1mm 0; border-bottom: 1px dotted var(--line); }
+.rcp-qty { font-weight: 700; }
+.rcp-steps { margin: 0; padding-left: 5mm; font-size: 11pt; line-height: 1.5; }
+.rcp-steps li { margin-bottom: 2.5mm; }
+
+.rcp-extras { margin-top: 5mm; }
+.rcp-notes { background: var(--cream); border-left: 3px solid var(--gold); padding: 3mm 4mm; font-size: 10pt; font-style: italic; border-radius: 0 6px 6px 0; }
+.rcp-swaps { margin-top: 4mm; }
+.rcp-swaps h4 { font-family: var(--sans); font-size: 10pt; color: var(--brand-dark); margin: 0 0 1.5mm; }
+.swap-line { font-family: var(--sans); font-size: 9pt; color: var(--ink); margin: 0 0 1mm; line-height: 1.4; }
+.swap-diet { font-weight: 700; color: var(--brand); }
+
+/* ---------- meal plans ---------- */
+.plans-lead { font-size: 11.5pt; color: var(--muted); margin-bottom: 6mm; }
+.plan-block { margin-bottom: 8mm; break-inside: avoid; }
+.plan-block h3 { color: var(--brand-dark); margin: 0 0 1mm; font-size: 14pt; }
+.plan-sub { font-style: italic; color: var(--muted); font-size: 10pt; margin: 0 0 2mm; }
+.plan-table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 8.8pt; }
+.plan-table th { background: var(--brand); color: #fff; text-align: left; padding: 2mm 2.5mm; }
+.plan-table td { border: 1px solid var(--line); padding: 2mm 2.5mm; vertical-align: top; }
+.plan-table .pl-day { font-weight: 700; background: var(--cream); white-space: nowrap; }
+
+/* ---------- index ---------- */
+.index-list { columns: 2; column-gap: 10mm; list-style: none; margin: 0; padding: 0; font-family: var(--sans); font-size: 10.5pt; }
+.index-list li { break-inside: avoid; padding: 1.4mm 0; border-bottom: 1px dotted var(--line); }
+.index-list a { color: var(--ink); text-decoration: none; }
+.index-cat { color: var(--muted); font-size: 9pt; }
+
+/* avoid awkward breaks */
+.rcp-cols, .rcp-macros, .rcp-extras, .rcp-notes, .rcp-swaps, .plan-table { break-inside: avoid; }
+
+/* ==================================================================
+   PRINT / PDF
+   ================================================================== */
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { background: #fff; }
+  .no-print { display: none !important; }
+  .page {
+    width: auto; min-height: auto; height: 100vh;
+    margin: 0; box-shadow: none; page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+  .page-cover, .page-divider { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

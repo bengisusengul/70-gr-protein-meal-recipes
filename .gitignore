@@ -1,4 +1,6 @@
-# Local dev / test tooling only — the site itself needs no build
+# Dependencies & build tooling (the web app itself needs no build)
 node_modules/
 package-lock.json
-package.json
+
+# Generated, sellable PDF output
+dist/

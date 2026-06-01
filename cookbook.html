@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 70 g Protein Cookbook — Print Edition</title>
+  <link rel="stylesheet" href="css/cookbook.css" />
+</head>
+<body>
+  <!-- on-screen only; hidden when printing / building the PDF -->
+  <div class="screen-banner no-print">
+    📖 This is the <strong>print / PDF edition</strong> of the cookbook (separate from the web app).
+    To produce the sellable PDF, run <code>npm install</code> then <code>npm run build:pdf</code>,
+    or use your browser's <strong>Print → Save as PDF</strong>.
+  </div>
+
+  <main id="book"></main>
+
+  <script src="js/recipes-data.js"></script>
+  <script src="js/science-data.js"></script>
+  <script src="js/plans-data.js"></script>
+  <script src="js/illustrations.js"></script>
+  <script src="js/swaps.js"></script>
+  <script src="js/cookbook.js"></script>
+</body>
+</html>

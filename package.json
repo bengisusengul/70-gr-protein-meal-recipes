@@ -1,0 +1,13 @@
+{
+  "name": "70g-protein-cookbook",
+  "version": "1.0.0",
+  "description": "The 70 g Protein Cookbook — interactive web app + sellable PDF edition.",
+  "private": true,
+  "scripts": {
+    "build:pdf": "node build/build-cookbook.js",
+    "serve": "python3 -m http.server 8000"
+  },
+  "devDependencies": {
+    "puppeteer": "^23.11.1"
+  }
+}

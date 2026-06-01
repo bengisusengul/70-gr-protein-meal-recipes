@@ -74,6 +74,37 @@ come back. (It stays on your device; nothing is uploaded.)
 
 ---
 
+## 📕 Produce the sellable cookbook (PDF)
+
+The repo also generates a **standalone, print-quality PDF cookbook** from the
+*same* recipe data — so it's a separate product you can sell (Gumroad, Etsy,
+your own site), and it auto-updates whenever you add recipes. The interactive
+web app is untouched.
+
+What's in the book: a designed **cover**, title/copyright page, a clickable
+**table of contents**, the cited **science intro**, **every recipe** on its own
+page (illustration, macros, ingredients, method, tips & dietary swaps), the
+**3 weekly meal plans**, and an A–Z **recipe index** — with page numbers.
+
+**Build it:**
+
+```bash
+npm install          # one time — downloads a headless browser
+npm run build:pdf    # → dist/the-70g-protein-cookbook.pdf
+```
+
+- Preview/edit the layout by opening `cookbook.html` in a browser (or
+  **Print → Save as PDF** straight from there).
+- **Brand it** by editing the `BOOK` config at the top of `js/cookbook.js`
+  (title, subtitle, author, year, website).
+- For a **US-Letter** edition, set `PAGE_SIZE = "Letter"` in
+  `build/build-cookbook.js`.
+
+Files: `cookbook.html` · `js/cookbook.js` · `css/cookbook.css` ·
+`build/build-cookbook.js`. The generated PDF lands in `dist/` (git-ignored).
+
+---
+
 ## 🚀 How to use it
 
 **Option A — just open it.** Download/clone the repo and double-click
