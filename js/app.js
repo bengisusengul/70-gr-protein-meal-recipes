@@ -19,8 +19,11 @@
   var SCIENCE = window.SCIENCE || { sections: [], references: [] };
   var PLANS = window.MEAL_PLANS || [];
   var ART = window.ART || { hero: function () { return ""; }, categoryIcon: function () { return ""; }, aisleIcon: function () { return ""; } };
+  var SWAPS = window.SWAPS || { forRecipe: function () { return []; } };
   var Store = window.Store;
   var K = Store.KEYS;
+
+  var AISLE_ORDER = ["Produce", "Meat & Poultry", "Seafood", "Eggs & Dairy", "Frozen", "Pantry", "Condiments & Spices", "Supplements", "Other"];
 
   var byId = {};
   RECIPES.forEach(function (r) { byId[r.id] = r; });
@@ -51,9 +54,98 @@
   // ---------- formatting ----------
   function fmtQty(qty, unit) {
     if (qty == null) return unit || "to taste"; // e.g. "to taste"
-    // round to at most 2 decimals, drop trailing zeros
-    var n = Math.round(qty * 100) / 100;
+    // round sensibly so scaled portions stay tidy:
+    // grams/ml -> whole numbers; bare counts -> nearest 0.5; else 2 decimals
+    var n;
+    if (unit === "g" || unit === "ml") n = Math.round(qty);
+    else if (unit === "") n = Math.round(qty * 2) / 2;
+    else n = Math.round(qty * 100) / 100;
     return unit ? n + " " + unit : String(n);
+  }
+
+  // ============================================================
+  //  PORTION SCALING  (from the user's bodyweight/protein target)
+  //  Base recipe = 70 g protein. If the user sets a target we scale
+  //  every quantity & macro by (their per-meal target / 70), clamped
+  //  to a sane 0.5x–2x so portions never get silly.
+  // ============================================================
+  function getTarget() { return Store.read("target", null); }
+  function targetDaily() {
+    var t = getTarget();
+    if (!t || !t.weight) return null;
+    var kg = t.unit === "lb" ? t.weight * 0.453592 : t.weight;
+    return kg * (t.gPerKg || 1.6);
+  }
+  function targetPerMeal() {
+    var daily = targetDaily();
+    var t = getTarget();
+    if (daily == null) return 70;
+    return daily / ((t && t.meals) || 3);
+  }
+  function scaleFactor() {
+    var f = targetPerMeal() / 70;
+    if (!isFinite(f) || f <= 0) return 1;
+    return Math.max(0.5, Math.min(2, f));
+  }
+  function scaleQty(qty) {
+    if (qty == null) return null;
+    return Math.round(qty * scaleFactor() * 100) / 100;
+  }
+  function scaleMacros(m) {
+    var f = scaleFactor();
+    return {
+      protein: Math.round(m.protein * f),
+      netCarbs: Math.round(m.netCarbs * f),
+      fat: Math.round(m.fat * f),
+      fiber: Math.round(m.fiber * f),
+      calories: Math.round(m.calories * f)
+    };
+  }
+
+  // ============================================================
+  //  "WHAT CAN I MAKE NOW?"  — match recipes to ingredients on hand
+  //  Pantry staples are assumed in the cupboard and ignored.
+  // ============================================================
+  var PANTRY_WORDS = [
+    "salt", "pepper", "olive oil", " oil", "cooking spray", "water", "garlic",
+    "onion powder", "garlic powder", "paprika", "cumin", "chili", "chilli",
+    "oregano", "basil", "thyme", "dill", "parsley", "cilantro", "coriander",
+    "mint", "lemon", "lime", "vinegar", "mustard", "hot sauce", "sriracha",
+    "soy sauce", "tamari", "stock", "broth", "stevia", "erythritol", "sweetener",
+    "monk fruit", "cinnamon", "vanilla", "baking powder", "baking soda",
+    "everything bagel", "sesame", "capers", "herbs", "seasoning", "spice",
+    "nutmeg", "turmeric", "ginger", "bay leaf", "red pepper", "cocoa", "cacao"
+  ];
+  function isPantry(name) {
+    name = (" " + name).toLowerCase();
+    for (var i = 0; i < PANTRY_WORDS.length; i++) {
+      if (name.indexOf(PANTRY_WORDS[i]) !== -1) return true;
+    }
+    return false;
+  }
+  function coreIngredients(r) {
+    return r.ingredients.filter(function (ing) {
+      return ing.qty != null && !isPantry(ing.item);
+    });
+  }
+  function matchInfo(r) {
+    var have = recipeFilters.have;
+    var core = coreIngredients(r);
+    var missing = [];
+    core.forEach(function (ing) {
+      var name = ing.item.toLowerCase();
+      var got = have.some(function (tok) {
+        return tok && (name.indexOf(tok) !== -1 || tok.indexOf(name) !== -1);
+      });
+      if (!got) missing.push(ing.item);
+    });
+    var total = core.length;
+    return {
+      total: total,
+      have: total - missing.length,
+      missing: missing,
+      coverage: total ? (total - missing.length) / total : 0
+    };
   }
 
   // ============================================================
@@ -63,6 +155,7 @@
   // ============================================================
   function buildShoppingList(plan) {
     var combined = {}; // key -> { item, unit, qty (or null), aisle }
+    var f = scaleFactor();
     plan.forEach(function (entry) {
       var recipe = byId[entry.id];
       if (!recipe) return;
@@ -80,7 +173,7 @@
         }
         if (ing.qty != null) {
           if (combined[key].qty == null) combined[key].qty = 0;
-          combined[key].qty += ing.qty * mult;
+          combined[key].qty += ing.qty * mult * f;
         } else {
           combined[key].toTaste = true;
         }
@@ -101,10 +194,22 @@
     return aisles;
   }
 
+  function sortedAisleNames(aisles) {
+    return Object.keys(aisles).sort(function (a, b) {
+      var ia = AISLE_ORDER.indexOf(a), ib = AISLE_ORDER.indexOf(b);
+      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+    });
+  }
+  function itemQtyText(c) {
+    return c.toTaste && (c.qty == null || c.qty === 0)
+      ? "to taste"
+      : fmtQty(c.qty, c.unit) + (c.toTaste ? " (+ to taste)" : "");
+  }
+
   // ============================================================
   //  RECIPES TAB
   // ============================================================
-  var recipeFilters = { q: "", category: "All", veg: false, untried: false };
+  var recipeFilters = { q: "", category: "All", veg: false, untried: false, have: [], cookNowOnly: false };
 
   function macroBadges(m) {
     return el("div", { class: "macros" }, [
@@ -142,9 +247,13 @@
     ]);
 
     // collapsible details
+    var sm = scaleMacros(r.macros);
+    var ingHeading = scaleFactor() === 1
+      ? "Ingredients (1 serving)"
+      : "Ingredients (scaled to ≈" + sm.protein + " g protein)";
     var ingList = el("ul", { class: "ing-list" }, r.ingredients.map(function (ing) {
       return el("li", {}, [
-        el("span", { class: "ing-qty" }, [fmtQty(ing.qty, ing.unit)]),
+        el("span", { class: "ing-qty" }, [fmtQty(scaleQty(ing.qty), ing.unit)]),
         el("span", { class: "ing-name" }, [" " + ing.item])
       ]);
     }));
@@ -153,10 +262,32 @@
     }));
     var notes = r.notes ? el("p", { class: "card-notes" }, ["💡 " + r.notes]) : null;
 
+    // dietary swap suggestions (auto-derived from the ingredients)
+    var swapGroups = SWAPS.forRecipe(r);
+    var swapEl = null;
+    if (swapGroups.length) {
+      swapEl = el("div", { class: "swaps" }, [el("h4", {}, ["Make it… (swaps)"])]);
+      swapGroups.forEach(function (g) {
+        var ul = el("ul", { class: "swap-list" }, g.items.map(function (it) {
+          return el("li", {}, [
+            el("span", { class: "swap-from" }, [it.from]),
+            el("span", { class: "swap-arrow" }, [" → "]),
+            el("span", { class: "swap-to" }, [it.to])
+          ]);
+        }));
+        swapEl.appendChild(el("div", { class: "swap-group" }, [
+          el("span", { class: "swap-diet" }, [g.label]),
+          el("span", { class: "swap-note" }, [" " + g.note]),
+          ul
+        ]));
+      });
+    }
+
     var details = el("div", { class: "card-details" }, [
-      el("h4", {}, ["Ingredients (1 serving)"]), ingList,
+      el("h4", {}, [ingHeading]), ingList,
       el("h4", {}, ["Method"]), steps,
-      notes
+      notes,
+      swapEl
     ]);
     details.style.display = "none";
 
@@ -195,8 +326,20 @@
     card.appendChild(hero);
     card.appendChild(head);
     card.appendChild(title);
-    card.appendChild(macroBadges(r.macros));
+    card.appendChild(macroBadges(sm));
     card.appendChild(time);
+
+    // "what can I make now?" coverage line (only when ingredients are entered)
+    if (recipeFilters.have.length) {
+      var mi = matchInfo(r);
+      if (mi.total > 0) {
+        var ml = mi.missing.length === 0
+          ? el("p", { class: "match-line have-all" }, ["✓ You have all " + mi.total + " key ingredients"])
+          : el("p", { class: "match-line" }, ["You have " + mi.have + "/" + mi.total + " — need: " + mi.missing.join(", ")]);
+        card.appendChild(ml);
+      }
+    }
+
     card.appendChild(actions);
     card.appendChild(details);
     return card;
@@ -207,6 +350,10 @@
     if (f.category !== "All" && r.category !== f.category) return false;
     if (f.veg && !r.vegetarian) return false;
     if (f.untried && Store.has(K.TRIED, r.id)) return false;
+    if (f.cookNowOnly) {
+      var mi = matchInfo(r);
+      if (!(mi.total > 0 && mi.missing.length === 0)) return false;
+    }
     if (f.q) {
       var hay = (r.name + " " + r.tags.join(" ") + " " +
         r.ingredients.map(function (i) { return i.item; }).join(" ")).toLowerCase();
@@ -219,12 +366,36 @@
     var grid = $("#recipe-grid");
     clear(grid);
     var shown = RECIPES.filter(recipeMatches);
+    // when ingredients are on hand, surface the closest matches first
+    if (recipeFilters.have.length) {
+      shown = shown.slice().sort(function (a, b) {
+        return matchInfo(b).coverage - matchInfo(a).coverage;
+      });
+    }
     $("#recipe-count").textContent = shown.length + " of " + RECIPES.length + " recipes";
+    updateScaleNote();
     if (!shown.length) {
-      grid.appendChild(el("p", { class: "empty" }, ["No recipes match those filters."]));
+      var msg;
+      if (recipeFilters.cookNowOnly && !recipeFilters.have.length)
+        msg = "Add a few ingredients you have (above), then I'll show what you can make right now.";
+      else if (recipeFilters.cookNowOnly)
+        msg = "No recipe uses only what you listed. Untick “Only what I can make now” to see your closest matches and exactly what's missing.";
+      else
+        msg = "No recipes match those filters.";
+      grid.appendChild(el("p", { class: "empty" }, [msg]));
       return;
     }
     shown.forEach(function (r) { grid.appendChild(recipeCard(r)); });
+  }
+
+  function updateScaleNote() {
+    var note = $("#scale-note");
+    if (!note) return;
+    var f = scaleFactor();
+    if (f === 1) { note.style.display = "none"; return; }
+    note.style.display = "block";
+    note.textContent = "⚖️ Portions scaled ×" + f.toFixed(2) + " to about " +
+      Math.round(70 * f) + " g protein per meal (your target).";
   }
 
   function buildRecipeControls() {
@@ -255,6 +426,123 @@
       recipeFilters.untried = this.checked;
       renderRecipes();
     });
+  }
+
+  // ---------- protein-target calculator (scales portions) ----------
+  function updateTargetResult() {
+    var res = $("#tg-result");
+    if (!res) return;
+    var daily = targetDaily();
+    if (daily == null) {
+      res.innerHTML = "Enter your bodyweight to scale every recipe to you. Right now portions use the book's default <b>70 g protein per meal</b>.";
+      return;
+    }
+    var t = getTarget();
+    var perMeal = Math.round(targetPerMeal());
+    var f = scaleFactor();
+    var capped = Math.abs((targetPerMeal() / 70) - f) > 0.001;
+    res.innerHTML = "Daily target ≈ <b>" + Math.round(daily) + " g protein</b> → about <b>" +
+      perMeal + " g per meal</b> across " + ((t && t.meals) || 3) + " meals. " +
+      "Recipes now scale to ≈" + Math.round(70 * f) + " g each (×" + f.toFixed(2) + ")." +
+      (capped ? " <span class='tg-cap'>(capped to a sensible 0.5–2× range)</span>" : "");
+  }
+
+  function buildTargetControls() {
+    var weightEl = $("#tg-weight"), goalEl = $("#tg-goal"), mealsEl = $("#tg-meals");
+    var kgBtn = $("#tg-unit-kg"), lbBtn = $("#tg-unit-lb"), resetBtn = $("#tg-reset");
+    if (!weightEl) return;
+
+    var t = getTarget();
+    var uiUnit = (t && t.unit) || "kg";
+
+    function paintUnit() {
+      kgBtn.classList.toggle("active", uiUnit === "kg");
+      lbBtn.classList.toggle("active", uiUnit === "lb");
+    }
+    function save() {
+      var w = parseFloat(weightEl.value);
+      Store.write("target", {
+        weight: (isFinite(w) && w > 0) ? w : null,
+        unit: uiUnit,
+        gPerKg: parseFloat(goalEl.value) || 1.6,
+        meals: parseInt(mealsEl.value, 10) || 3
+      });
+      updateTargetResult();
+      renderRecipes();
+      renderPlanner();
+    }
+
+    if (t) {
+      if (t.weight) weightEl.value = t.weight;
+      if (t.gPerKg) goalEl.value = String(t.gPerKg);
+      if (t.meals) mealsEl.value = String(t.meals);
+    }
+    paintUnit();
+    updateTargetResult();
+
+    weightEl.addEventListener("input", save);
+    goalEl.addEventListener("change", save);
+    mealsEl.addEventListener("change", save);
+
+    kgBtn.addEventListener("click", function () {
+      if (uiUnit === "kg") return;
+      var v = parseFloat(weightEl.value);
+      if (isFinite(v)) weightEl.value = Math.round(v * 0.453592);
+      uiUnit = "kg"; paintUnit(); save();
+    });
+    lbBtn.addEventListener("click", function () {
+      if (uiUnit === "lb") return;
+      var v = parseFloat(weightEl.value);
+      if (isFinite(v)) weightEl.value = Math.round(v / 0.453592);
+      uiUnit = "lb"; paintUnit(); save();
+    });
+    resetBtn.addEventListener("click", function () {
+      Store.write("target", null);
+      weightEl.value = ""; goalEl.value = "1.6"; mealsEl.value = "3";
+      uiUnit = "kg"; paintUnit();
+      updateTargetResult();
+      renderRecipes();
+      renderPlanner();
+    });
+  }
+
+  // ---------- "what can I make now?" ingredient filter ----------
+  function buildCookNowControls() {
+    var input = $("#have-input"), toggle = $("#cooknow-toggle"), quick = $("#have-quick");
+    if (!input) return;
+
+    function parseHave() {
+      recipeFilters.have = input.value.split(",").map(function (s) { return s.trim().toLowerCase(); }).filter(Boolean);
+      Store.write("have", input.value);
+    }
+
+    var saved = Store.read("have", "");
+    if (saved) input.value = saved;
+    parseHave();
+
+    input.addEventListener("input", function () { parseHave(); renderRecipes(); });
+    toggle.addEventListener("change", function () {
+      recipeFilters.cookNowOnly = this.checked;
+      renderRecipes();
+    });
+
+    if (quick) {
+      ["chicken", "eggs", "greek yogurt", "salmon", "beef", "tuna", "tofu", "cottage cheese", "shrimp", "spinach"].forEach(function (w) {
+        var b = el("button", {
+          type: "button", class: "chip have-chip",
+          onclick: function () {
+            var tokens = input.value.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+            if (tokens.map(function (x) { return x.toLowerCase(); }).indexOf(w) === -1) {
+              tokens.push(w);
+              input.value = tokens.join(", ");
+              parseHave();
+              renderRecipes();
+            }
+          }
+        }, ["+ " + w]);
+        quick.appendChild(b);
+      });
+    }
   }
 
   // ============================================================
@@ -297,6 +585,7 @@
   }
 
   function updatePlanSummary(plan) {
+    var f = scaleFactor();
     var meals = 0, protein = 0, carbs = 0, cals = 0;
     plan.forEach(function (e) {
       var r = byId[e.id]; if (!r) return;
@@ -307,7 +596,8 @@
       cals += r.macros.calories * m;
     });
     $("#plan-summary").textContent = plan.length
-      ? meals + " meals · " + protein + "g protein · " + carbs + "g net carbs · " + cals + " kcal total"
+      ? meals + " meals · " + Math.round(protein * f) + "g protein · " +
+        Math.round(carbs * f) + "g net carbs · " + Math.round(cals * f) + " kcal total"
       : "";
   }
 
@@ -331,11 +621,7 @@
     var wrap = $("#shopping-list");
     clear(wrap);
     var aisles = buildShoppingList(plan);
-    var aisleOrder = ["Produce", "Meat & Poultry", "Seafood", "Eggs & Dairy", "Frozen", "Pantry", "Condiments & Spices", "Supplements", "Other"];
-    var names = Object.keys(aisles).sort(function (a, b) {
-      var ia = aisleOrder.indexOf(a), ib = aisleOrder.indexOf(b);
-      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
-    });
+    var names = sortedAisleNames(aisles);
 
     var checked = Store.read(K.SHOPPING_CHECKED, []);
     names.forEach(function (aisle) {
@@ -345,9 +631,7 @@
       var ul = el("ul", { class: "shop-items" });
       aisles[aisle].forEach(function (c) {
         var isChecked = checked.indexOf(c.key) !== -1;
-        var qtyText = c.toTaste && (c.qty == null || c.qty === 0)
-          ? "to taste"
-          : fmtQty(c.qty, c.unit) + (c.toTaste ? " (+ to taste)" : "");
+        var qtyText = itemQtyText(c);
         var id = "chk_" + c.key.replace(/[^a-z0-9]/gi, "_");
         var box = el("input", { type: "checkbox", id: id });
         box.checked = isChecked;
@@ -369,8 +653,51 @@
     });
   }
 
+  // ---- export the shopping list as plain text (iOS share sheet / clipboard) ----
+  function shoppingListText() {
+    var plan = Store.read(K.PLAN, []);
+    if (!plan.length) return "";
+    var aisles = buildShoppingList(plan);
+    var names = sortedAisleNames(aisles);
+    var f = scaleFactor();
+    var meals = 0, protein = 0;
+    plan.forEach(function (e) {
+      var r = byId[e.id]; if (!r) return;
+      var m = e.servings || 1;
+      meals += m; protein += r.macros.protein * m;
+    });
+    var lines = ["🛒 Shopping List — The 70 g Protein Cookbook"];
+    lines.push(meals + " meals · " + Math.round(protein * f) + " g protein total");
+    lines.push("");
+    names.forEach(function (a) {
+      lines.push(a.toUpperCase());
+      aisles[a].forEach(function (c) {
+        lines.push("• " + itemQtyText(c) + "  " + c.item);
+      });
+      lines.push("");
+    });
+    return lines.join("\n").replace(/\n+$/, "\n");
+  }
+
+  function shareShoppingList() {
+    var text = shoppingListText();
+    if (!text) { alert("Your shopping list is empty — add some meals to your plan first."); return; }
+    if (navigator.share) {
+      navigator.share({ title: "Shopping List", text: text }).catch(function () { /* user cancelled */ });
+    } else if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        function () { alert("Shopping list copied! Paste it into Notes, Messages, or anywhere."); },
+        function () { window.prompt("Copy your shopping list:", text); }
+      );
+    } else {
+      window.prompt("Copy your shopping list:", text);
+    }
+  }
+
   function buildPlannerControls() {
     $("#print-list").addEventListener("click", function () { window.print(); });
+    var shareBtn = $("#share-list");
+    if (shareBtn) shareBtn.addEventListener("click", shareShoppingList);
     $("#clear-plan").addEventListener("click", function () {
       if (!confirm("Clear your whole meal plan and shopping list?")) return;
       Store.write(K.PLAN, []);
@@ -636,6 +963,8 @@
     if (headerMount && ART.headerArt) headerMount.innerHTML = ART.headerArt();
     buildTabs();
     buildRecipeControls();
+    buildTargetControls();
+    buildCookNowControls();
     buildPlannerControls();
     renderRecipes();
     updatePlanBadge();

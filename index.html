@@ -41,13 +41,62 @@
 
     <!-- ===================== RECIPES ===================== -->
     <section id="tab-recipes" class="tab-panel active">
+
+      <!-- protein-target calculator: scales every portion to the user -->
+      <details id="target-panel" class="target-panel">
+        <summary>
+          <span class="tp-title">🎯 Set your protein target</span>
+          <span class="tp-hint">scales every portion to you</span>
+        </summary>
+        <div class="target-body">
+          <div class="target-grid">
+            <label class="tg-field">Bodyweight
+              <span class="weight-row">
+                <input id="tg-weight" type="number" min="30" max="350" step="1" inputmode="decimal" placeholder="e.g. 75" />
+                <span class="unit-toggle">
+                  <button type="button" id="tg-unit-kg" class="chip active">kg</button>
+                  <button type="button" id="tg-unit-lb" class="chip">lb</button>
+                </span>
+              </span>
+            </label>
+            <label class="tg-field">Goal
+              <select id="tg-goal">
+                <option value="1.2">Maintain / general health (1.2 g/kg)</option>
+                <option value="1.6" selected>Active / fat loss (1.6 g/kg)</option>
+                <option value="2.0">Build muscle (2.0 g/kg)</option>
+                <option value="2.2">Athlete / very active (2.2 g/kg)</option>
+              </select>
+            </label>
+            <label class="tg-field">Meals per day
+              <select id="tg-meals">
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </label>
+          </div>
+          <p id="tg-result" class="target-result"></p>
+          <button type="button" id="tg-reset" class="btn btn-light">Reset to default (70 g/meal)</button>
+        </div>
+      </details>
+
       <div class="controls">
         <input id="search" type="search" placeholder="Search recipes or ingredients…" aria-label="Search recipes" />
         <div id="category-filters" class="chips"></div>
         <label class="switch"><input id="veg-toggle" type="checkbox" /> Vegetarian only</label>
         <label class="switch"><input id="untried-toggle" type="checkbox" /> Not tried yet</label>
       </div>
+
+      <!-- "what can I make now?" — filter by ingredients on hand -->
+      <div class="controls cooknow-controls">
+        <input id="have-input" type="text" placeholder="Ingredients you have, comma-separated (e.g. chicken, eggs, spinach)…" aria-label="Ingredients you have" />
+        <label class="switch"><input id="cooknow-toggle" type="checkbox" /> Only what I can make now</label>
+      </div>
+      <div id="have-quick" class="have-quick" aria-label="Quick-add common ingredients"></div>
+
       <p id="recipe-count" class="count"></p>
+      <p id="scale-note" class="scale-note" style="display:none"></p>
       <div id="recipe-grid" class="grid"></div>
     </section>
 
@@ -61,6 +110,7 @@
       <div class="shopping-head">
         <h2>Grocery Shopping List</h2>
         <div class="shopping-actions no-print">
+          <button id="share-list" class="btn btn-light">📤 Share / Export</button>
           <button id="uncheck-all" class="btn btn-light">Uncheck all</button>
           <button id="print-list" class="btn btn-light">🖨 Print</button>
           <button id="clear-plan" class="btn btn-danger">Clear plan</button>
@@ -110,6 +160,7 @@
   <script src="js/science-data.js"></script>
   <script src="js/plans-data.js"></script>
   <script src="js/illustrations.js"></script>
+  <script src="js/swaps.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/app.js"></script>
 </body>

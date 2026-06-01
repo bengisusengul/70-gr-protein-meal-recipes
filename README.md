@@ -44,11 +44,25 @@ That's it — the workflow runs on every push and updates the live link in ~1 mi
 
 | Tab | What you get |
 | --- | --- |
-| **Recipes** | All 32 recipes as cards — each with its own **illustrated dish header**, full macros (protein / net carbs / fat / fiber / calories), ingredients, and method. Search by name or ingredient, filter by meal type, "vegetarian only", or "not tried yet". Favorite ⭐ and "Mark as made" ✓ any recipe. |
-| **Plan & Shop** | Add the meals you want to cook, set **servings** for each (e.g. batch a dinner ×3), and get an **auto-generated grocery list**. Identical ingredients are **summed across every meal**, **grouped by store aisle** (each with its own icon), with **check-off boxes** and a **Print** button. |
+| **Recipes** | All 32 recipes as cards — each with its own **illustrated dish header**, full macros (protein / net carbs / fat / fiber / calories), ingredients, and method. Search by name or ingredient, filter by meal type, "vegetarian only", or "not tried yet". Favorite ⭐ and "Mark as made" ✓ any recipe. Plus a **🎯 protein-target calculator**, a **"what can I make now?"** ingredient filter, and **dietary swaps** (see below). |
+| **Plan & Shop** | Add the meals you want to cook, set **servings** for each (e.g. batch a dinner ×3), and get an **auto-generated grocery list**. Identical ingredients are **summed across every meal**, **grouped by store aisle** (each with its own icon), with **check-off boxes**, a **Print** button, and **📤 Share / Export** (sends the list to the iOS share sheet → Notes, Messages, etc., or copies it to the clipboard). |
 | **7-Day Plans** | Three ready-made **balanced weeks** (Classic, Mediterranean-leaning, Lean & Light). Each day pairs a breakfast + lunch + dinner for ~210 g protein, plus an **optional snack** you can toggle on to reach ~280 g/day. One click **loads a whole week into the Planner** and builds the week's shopping list for you. |
 | **Tracker** | A checklist of every recipe with a progress bar — see at a glance which you've made and which are still to try. |
 | **Why It Works** | A plain-language, **cited** tour of the nutrition & longevity science behind the 70 g / low-sugar rule (protein needs, muscle & aging, sugar & metabolic health, fiber, satiety, and a responsible-use note). |
+
+### Personalisation features (Recipes tab)
+
+- **🎯 Protein-target calculator** — enter your bodyweight (kg/lb), a goal
+  (1.2–2.2 g/kg), and meals per day. Every recipe's portions and macros, and
+  the whole shopping list, **scale to your per-meal target** (clamped to a sane
+  0.5–2× of the 70 g baseline). Reset anytime to the default 70 g/meal.
+- **🧊 "What can I make now?"** — type the ingredients you have on hand. Recipes
+  re-sort by best match and each card shows **what you have vs. what's missing**
+  (pantry staples like salt/oil/spices are assumed). Tick **"only what I can
+  make now"** to hide anything you can't cook right this minute.
+- **🔄 Dietary swaps** — every recipe auto-suggests **dairy-free, nut-free and
+  soy-free substitutions** based on its ingredients (e.g. *feta → vegan feta*,
+  *almond milk → oat milk*, *tofu → paneer or extra chicken/egg*).
 
 All artwork is **hand-crafted SVG generated in the browser** — no photos are
 fetched from the internet, so the site looks the same offline and nothing can
