@@ -24,19 +24,18 @@ On your iPhone, open that link in Safari, then **Share → Add to Home Screen**
 for an app-like icon. All your plans, shopping checkmarks, and "made it" marks
 are saved on your phone.
 
-### Enable hosting (one-time, ~15 seconds)
-
-A deploy workflow (`.github/workflows/deploy-pages.yml`) publishes the site
-automatically. You just need to turn the source on once:
+### Enable hosting (one-time, ~20 seconds)
 
 1. Go to the repo on GitHub → **Settings → Pages**.
-2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+2. Under **Build and deployment → Source**, choose **Deploy from a branch**.
+3. Set **Branch** to `claude/high-protein-cookbook-3Av3B` and folder to
+   **`/ (root)`**, then **Save**.
 
-That's it — the workflow runs on every push and updates the live link in ~1 min.
+Wait about a minute and refresh. The site is then live at the URL above:
+- **`/`** → the interactive app (`index.html`)
+- **`/cookbook.html`** → the print/PDF edition of the book in your browser
 
-> **No-workflow alternative:** Settings → Pages → Source → **Deploy from a
-> branch** → branch `claude/high-protein-cookbook-3Av3B`, folder `/ (root)` →
-> Save. Same URL, no Actions needed.
+No build step or workflow is needed — it's a plain static site.
 
 ---
 
