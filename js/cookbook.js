@@ -54,6 +54,31 @@
     else n = Math.round(qty * 100) / 100;
     return unit ? n + " " + unit : String(n);
   }
+  // metric→imperial (and vice-versa) so each ingredient shows both systems
+  function fmtFrac(value) {
+    var whole = Math.floor(value);
+    var q = Math.round((value - whole) * 4) / 4;
+    if (q === 1) { whole += 1; q = 0; }
+    var map = { 0: "", 0.25: "¼", 0.5: "½", 0.75: "¾" };
+    var f = map[q] || "";
+    if (whole === 0) return f || "0";
+    return whole + f;
+  }
+  function altMeasure(qty, unit) {
+    if (qty == null) return null;
+    if (unit === "g") { var oz = fmtFrac(qty / 28.3495); return oz === "0" ? null : oz + " oz"; }
+    if (unit === "ml") {
+      if (qty < 15) return fmtFrac(qty / 5) + " tsp";
+      if (qty < 60) return fmtFrac(qty / 15) + " tbsp";
+      var c = qty / 240; return fmtFrac(c) + (c >= 2 ? " cups" : " cup");
+    }
+    if (unit === "tsp") return Math.round(qty * 5) + " ml";
+    if (unit === "tbsp") return Math.round(qty * 15) + " ml";
+    if (unit === "cup") return Math.round(qty * 240) + " ml";
+    if (unit === "oz") return Math.round(qty * 28.35) + " g";
+    return null; // counts (eggs), "to taste", etc.
+  }
+
   function recipeAnchor(r) { return "r-" + r.id; }
   function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-"); }
 
@@ -251,8 +276,10 @@
     ]);
 
     var ings = el("ul", { class: "rcp-ings" }, r.ingredients.map(function (ing) {
+      var alt = altMeasure(ing.qty, ing.unit);
       return el("li", {}, [
         el("span", { class: "rcp-qty" }, [fmtQty(ing.qty, ing.unit)]),
+        alt ? el("span", { class: "rcp-alt" }, [" (" + alt + ")"]) : null,
         el("span", { class: "rcp-item" }, [" " + ing.item])
       ]);
     }));

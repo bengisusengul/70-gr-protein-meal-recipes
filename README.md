@@ -1,6 +1,6 @@
 # The 70 g Protein Cookbook 🥩🥚🐟
 
-An interactive, offline-friendly cookbook website. **32 recipes**, and every
+An interactive, offline-friendly cookbook website. **50 recipes (growing toward 100+)**, and every
 single one follows one unbreakable rule:
 
 > **~70 g of protein** and **very low sugar / carbs** (target **< 20 g net carbs**) per serving.
@@ -44,7 +44,7 @@ That's it — the workflow runs on every push and updates the live link in ~1 mi
 
 | Tab | What you get |
 | --- | --- |
-| **Recipes** | All 32 recipes as cards — each with its own **illustrated dish header**, full macros (protein / net carbs / fat / fiber / calories), ingredients, and method. Search by name or ingredient, filter by meal type, "vegetarian only", or "not tried yet". Favorite ⭐ and "Mark as made" ✓ any recipe. Plus a **🎯 protein-target calculator**, a **"what can I make now?"** ingredient filter, and **dietary swaps** (see below). |
+| **Recipes** | All recipes as cards — each with its own **illustrated dish header**, full macros (protein / net carbs / fat / fiber / calories), ingredients, and method. Search by name or ingredient, filter by meal type, "vegetarian only", or "not tried yet". Favorite ⭐ and "Mark as made" ✓ any recipe. Plus a **🎯 protein-target calculator**, a **"what can I make now?"** ingredient filter, and **dietary swaps** (see below). |
 | **Plan & Shop** | Add the meals you want to cook, set **servings** for each (e.g. batch a dinner ×3), and get an **auto-generated grocery list**. Identical ingredients are **summed across every meal**, **grouped by store aisle** (each with its own icon), with **check-off boxes**, a **Print** button, and **📤 Share / Export** (sends the list to the iOS share sheet → Notes, Messages, etc., or copies it to the clipboard). |
 | **7-Day Plans** | Three ready-made **balanced weeks** (Classic, Mediterranean-leaning, Lean & Light). Each day pairs a breakfast + lunch + dinner for ~210 g protein, plus an **optional snack** you can toggle on to reach ~280 g/day. One click **loads a whole week into the Planner** and builds the week's shopping list for you. |
 | **Tracker** | A checklist of every recipe with a progress bar — see at a glance which you've made and which are still to try. |
@@ -163,7 +163,7 @@ longevity debate and a responsible-use disclaimer.
 ```
 index.html            # single-page app shell (5 tabs)
 css/styles.css        # styling + print styles for the shopping list
-js/recipes-data.js    # the 32 recipes (data)
+js/recipes-data.js    # the recipes (data)
 js/science-data.js    # cited nutrition rationale (data)
 js/plans-data.js      # the three 7-day balanced plans (data)
 js/illustrations.js   # hand-crafted SVG dish art, category & aisle icons
