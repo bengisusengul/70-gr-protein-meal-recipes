@@ -1208,5 +1208,1128 @@ window.RECIPES = [
       "Top with the berries and seeds. Keeps overnight for a grab-and-go snack."
     ],
     notes: "Whipping the cottage cheese transforms the texture into something mousse-like. A satisfying high-protein sweet-savory pot."
+  },
+
+  /* ===================== EXPANSION BATCH 2 ===================== */
+
+  /* ---- Breakfast ---- */
+  {
+    id: "chorizo-egg-breakfast-bowl",
+    name: "Spanish Chorizo & Egg Breakfast Bowl",
+    category: "Breakfast",
+    tags: ["eggs", "chorizo", "spanish", "one-pan"],
+    vegetarian: false,
+    time: { prep: 8, cook: 12 },
+    macros: { protein: 70, netCarbs: 5, fat: 35, fiber: 2, calories: 615 },
+    ingredients: [
+      { item: "Large eggs", qty: 4, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Liquid egg whites", qty: 150, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Lean cooking chorizo", qty: 90, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Manchego or cheddar", qty: 30, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Red pepper & onion", qty: 80, unit: "g", aisle: "Produce" },
+      { item: "Smoked paprika & parsley", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Crisp the sliced chorizo in a dry pan, then add diced pepper and onion and soften.",
+      "Pour in the whisked eggs and egg whites; stir gently to soft scramble.",
+      "Fold through the cheese, scatter with parsley and serve in a bowl."
+    ],
+    notes: "Chorizo brings smoky flavour and fat, so this one is richer; pair with a light lunch."
+  },
+  {
+    id: "smoked-salmon-cream-cheese-omelette",
+    name: "Smoked Salmon & Cream Cheese Omelette",
+    category: "Breakfast",
+    tags: ["eggs", "salmon", "high-omega3", "quick"],
+    vegetarian: false,
+    time: { prep: 5, cook: 8 },
+    macros: { protein: 70, netCarbs: 4, fat: 30, fiber: 1, calories: 566 },
+    ingredients: [
+      { item: "Large eggs", qty: 4, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Liquid egg whites", qty: 150, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Smoked salmon", qty: 120, unit: "g", aisle: "Seafood" },
+      { item: "Light cream cheese", qty: 40, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Chives & black pepper", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Whisk the eggs and egg whites; pour into a hot non-stick pan.",
+      "As it sets, dot with cream cheese and lay the smoked salmon over half.",
+      "Fold and slide onto a plate; finish with chives and pepper."
+    ],
+    notes: "An elegant, low-carb breakfast that eats like brunch. Great with a squeeze of lemon."
+  },
+  {
+    id: "chocolate-protein-chia-pudding",
+    name: "Chocolate Protein Chia Pudding",
+    category: "Breakfast",
+    tags: ["chia", "whey", "yogurt", "make-ahead"],
+    vegetarian: true,
+    time: { prep: 5, cook: 0 },
+    macros: { protein: 70, netCarbs: 12, fat: 14, fiber: 8, calories: 454 },
+    ingredients: [
+      { item: "0% Greek yogurt", qty: 250, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Chocolate whey protein powder", qty: 45, unit: "g", aisle: "Supplements" },
+      { item: "Chia seeds", qty: 20, unit: "g", aisle: "Pantry" },
+      { item: "Unsweetened almond milk", qty: 120, unit: "ml", aisle: "Eggs & Dairy" },
+      { item: "Cocoa powder & sweetener", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Stir the yogurt, whey, cocoa and almond milk until smooth.",
+      "Mix in the chia seeds, then refrigerate at least 2 hours (or overnight).",
+      "Stir again before eating; thin with a splash of milk if needed."
+    ],
+    notes: "Make a few jars on Sunday for grab-and-go breakfasts. Chia adds fiber and omega-3s."
+  },
+  {
+    id: "greek-yogurt-granola-parfait",
+    name: "Greek Yogurt Protein Parfait with Low-Carb Granola",
+    category: "Breakfast",
+    tags: ["yogurt", "whey", "no-cook", "quick"],
+    vegetarian: true,
+    time: { prep: 5, cook: 0 },
+    macros: { protein: 70, netCarbs: 14, fat: 16, fiber: 5, calories: 480 },
+    ingredients: [
+      { item: "0% Greek yogurt", qty: 300, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Vanilla whey protein powder", qty: 35, unit: "g", aisle: "Supplements" },
+      { item: "Low-carb granola (nut & seed)", qty: 30, unit: "g", aisle: "Pantry" },
+      { item: "Mixed berries", qty: 60, unit: "g", aisle: "Produce" }
+    ],
+    steps: [
+      "Stir the whey through the yogurt until smooth.",
+      "Layer the protein yogurt, berries and granola in a glass.",
+      "Repeat the layers and serve."
+    ],
+    notes: "Choose a nut-and-seed granola with no added sugar to keep carbs down. Quick and satisfying."
+  },
+  {
+    id: "turkey-bacon-egg-white-wrap",
+    name: "Turkey Bacon & Egg-White Breakfast Wrap",
+    category: "Breakfast",
+    tags: ["turkey", "eggs", "quick", "low-carb"],
+    vegetarian: false,
+    time: { prep: 5, cook: 10 },
+    macros: { protein: 70, netCarbs: 6, fat: 22, fiber: 3, calories: 502 },
+    ingredients: [
+      { item: "Liquid egg whites", qty: 250, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Large eggs", qty: 2, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Turkey bacon", qty: 60, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Cheddar cheese", qty: 30, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Low-carb tortilla", qty: 1, unit: "", aisle: "Pantry" },
+      { item: "Spinach, salt & pepper", qty: null, unit: "to taste", aisle: "Produce" }
+    ],
+    steps: [
+      "Crisp the turkey bacon, then scramble the eggs and egg whites in the same pan.",
+      "Warm the low-carb tortilla and add the eggs, bacon, cheese and spinach.",
+      "Roll up tightly and toast seam-side down for a minute to seal."
+    ],
+    notes: "Use a high-fiber low-carb tortilla. Wrap in foil for a portable breakfast."
+  },
+  {
+    id: "turkey-shakshuka-feta",
+    name: "Turkey Shakshuka with Feta",
+    category: "Breakfast",
+    tags: ["turkey", "eggs", "middle-eastern", "one-pan"],
+    vegetarian: false,
+    time: { prep: 8, cook: 18 },
+    macros: { protein: 70, netCarbs: 12, fat: 30, fiber: 4, calories: 598 },
+    ingredients: [
+      { item: "Lean ground turkey (93%)", qty: 150, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Large eggs", qty: 4, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Feta cheese", qty: 40, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Chopped tomatoes", qty: 150, unit: "g", aisle: "Pantry" },
+      { item: "Pepper, onion & garlic", qty: 80, unit: "g", aisle: "Produce" },
+      { item: "Cumin, paprika & chili", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Brown the turkey with onion, pepper, garlic and spices.",
+      "Add the tomatoes and simmer into a thick sauce, 8-10 min.",
+      "Make wells, crack in the eggs, cover and cook until the whites set.",
+      "Crumble feta over the top and serve from the pan."
+    ],
+    notes: "A protein-boosted shakshuka — the ground turkey turns brunch into a serious 70 g meal."
+  },
+  {
+    id: "protein-french-toast",
+    name: "Protein French Toast",
+    category: "Breakfast",
+    tags: ["eggs", "whey", "kid-friendly"],
+    vegetarian: true,
+    time: { prep: 6, cook: 8 },
+    macros: { protein: 70, netCarbs: 15, fat: 14, fiber: 4, calories: 466 },
+    ingredients: [
+      { item: "High-protein / low-carb bread", qty: 2, unit: "slices", aisle: "Pantry" },
+      { item: "Large eggs", qty: 2, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Vanilla whey protein powder", qty: 30, unit: "g", aisle: "Supplements" },
+      { item: "0% Greek yogurt", qty: 120, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Unsweetened almond milk", qty: 60, unit: "ml", aisle: "Eggs & Dairy" },
+      { item: "Cinnamon & sweetener", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Whisk the eggs, half the whey, milk and cinnamon into a custard.",
+      "Soak the bread, then cook in a greased non-stick pan until golden both sides.",
+      "Stir the remaining whey into the yogurt and dollop on top as a protein cream."
+    ],
+    notes: "Use a dense high-protein bread so it soaks without falling apart. Tastes indulgent, eats clean."
+  },
+  {
+    id: "cottage-eggs-smoked-salmon",
+    name: "Cottage-Scrambled Eggs with Smoked Salmon",
+    category: "Breakfast",
+    tags: ["eggs", "salmon", "cottage", "quick"],
+    vegetarian: false,
+    time: { prep: 4, cook: 8 },
+    macros: { protein: 70, netCarbs: 4, fat: 26, fiber: 1, calories: 530 },
+    ingredients: [
+      { item: "Large eggs", qty: 3, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Liquid egg whites", qty: 100, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Low-fat cottage cheese", qty: 150, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Smoked salmon", qty: 120, unit: "g", aisle: "Seafood" },
+      { item: "Butter, chives & pepper", qty: 1, unit: "tsp", aisle: "Eggs & Dairy" }
+    ],
+    steps: [
+      "Whisk the eggs and egg whites; scramble gently in butter over low heat.",
+      "When almost set, stir through the cottage cheese for an extra-creamy curd.",
+      "Top with the smoked salmon, chives and black pepper."
+    ],
+    notes: "Folding cottage cheese into scrambled eggs is a classic protein hack — creamy and rich without cream."
+  },
+  {
+    id: "kimchi-egg-tofu-scramble",
+    name: "Korean Kimchi, Egg & Tofu Scramble",
+    category: "Breakfast",
+    tags: ["tofu", "eggs", "korean", "kimchi"],
+    vegetarian: true,
+    time: { prep: 6, cook: 10 },
+    macros: { protein: 70, netCarbs: 8, fat: 26, fiber: 4, calories: 546 },
+    ingredients: [
+      { item: "Extra-firm tofu", qty: 250, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Large eggs", qty: 3, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Liquid egg whites", qty: 150, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Kimchi", qty: 80, unit: "g", aisle: "Produce" },
+      { item: "Sesame oil & spring onion", qty: 1, unit: "tsp", aisle: "Pantry" },
+      { item: "Soy sauce or tamari", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Crumble and fry the tofu in sesame oil until lightly golden.",
+      "Add chopped kimchi and warm through, then pour in the whisked eggs and whites.",
+      "Scramble until just set; finish with spring onion and a dash of soy."
+    ],
+    notes: "Spicy, savory and gut-friendly thanks to the kimchi. Vegetarian and very high protein."
+  },
+
+  /* ---- Lunch ---- */
+  {
+    id: "carnitas-pork-cauli-bowl",
+    name: "Pork Carnitas Cauliflower-Rice Bowl",
+    category: "Lunch",
+    tags: ["pork", "mexican", "meal-prep", "low-carb"],
+    vegetarian: false,
+    time: { prep: 10, cook: 15 },
+    macros: { protein: 70, netCarbs: 12, fat: 28, fiber: 5, calories: 580 },
+    ingredients: [
+      { item: "Cooked pulled pork (lean)", qty: 230, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Cauliflower rice", qty: 150, unit: "g", aisle: "Frozen" },
+      { item: "Cheddar cheese", qty: 30, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Avocado", qty: 50, unit: "g", aisle: "Produce" },
+      { item: "Salsa & lime", qty: 40, unit: "g", aisle: "Produce" },
+      { item: "Cumin, oregano & chili", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Crisp the pulled pork in a hot pan with the spices until the edges char.",
+      "Warm the cauliflower rice and build a bowl.",
+      "Top with pork, cheese, avocado, salsa and a squeeze of lime."
+    ],
+    notes: "Use leftover slow-cooked pork shoulder trimmed of fat, or a lean shop-bought pulled pork."
+  },
+  {
+    id: "teriyaki-salmon-poke-bowl",
+    name: "Teriyaki Salmon Poke Bowl",
+    category: "Lunch",
+    tags: ["salmon", "japanese", "poke", "high-omega3"],
+    vegetarian: false,
+    time: { prep: 12, cook: 8 },
+    macros: { protein: 70, netCarbs: 14, fat: 26, fiber: 5, calories: 570 },
+    ingredients: [
+      { item: "Salmon fillet", qty: 280, unit: "g", aisle: "Seafood" },
+      { item: "Cauliflower rice", qty: 150, unit: "g", aisle: "Frozen" },
+      { item: "Shelled edamame", qty: 80, unit: "g", aisle: "Frozen" },
+      { item: "Cucumber & spring onion", qty: 80, unit: "g", aisle: "Produce" },
+      { item: "Sugar-free teriyaki & sesame", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Cube and sear the salmon (or bake), glazing with the teriyaki.",
+      "Warm the cauliflower rice and edamame and add to a bowl.",
+      "Top with salmon, cucumber, spring onion and a sprinkle of sesame."
+    ],
+    notes: "A poke-style bowl over cauliflower rice keeps it low-carb while staying fresh and bright."
+  },
+  {
+    id: "thai-beef-larb-lettuce-cups",
+    name: "Thai Beef Larb Lettuce Cups",
+    category: "Lunch",
+    tags: ["beef", "thai", "low-carb", "quick"],
+    vegetarian: false,
+    time: { prep: 10, cook: 10 },
+    macros: { protein: 70, netCarbs: 8, fat: 30, fiber: 3, calories: 582 },
+    ingredients: [
+      { item: "Lean ground beef (90%)", qty: 270, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Little gem lettuce", qty: 100, unit: "g", aisle: "Produce" },
+      { item: "Lime, fish sauce & chili", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" },
+      { item: "Mint, coriander & shallot", qty: 40, unit: "g", aisle: "Produce" },
+      { item: "Toasted sesame or rice-free seeds", qty: 10, unit: "g", aisle: "Pantry" }
+    ],
+    steps: [
+      "Brown the beef over high heat until well caramelised.",
+      "Off the heat, toss with lime, fish sauce, chili and the herbs.",
+      "Spoon into lettuce cups and finish with seeds."
+    ],
+    notes: "Bright, herby and punchy. Swap beef for ground chicken or turkey if you like."
+  },
+  {
+    id: "chicken-tikka-salad-bowl",
+    name: "Chicken Tikka Salad Bowl",
+    category: "Lunch",
+    tags: ["chicken", "indian", "meal-prep", "lean"],
+    vegetarian: false,
+    time: { prep: 12, cook: 12 },
+    macros: { protein: 70, netCarbs: 10, fat: 18, fiber: 4, calories: 482 },
+    ingredients: [
+      { item: "Chicken breast", qty: 230, unit: "g", aisle: "Meat & Poultry" },
+      { item: "0% Greek yogurt", qty: 80, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Mixed salad leaves", qty: 100, unit: "g", aisle: "Produce" },
+      { item: "Cucumber, tomato & red onion", qty: 120, unit: "g", aisle: "Produce" },
+      { item: "Tikka spice (garam masala, cumin, paprika)", qty: null, unit: "to taste", aisle: "Condiments & Spices" },
+      { item: "Lemon & mint", qty: null, unit: "to taste", aisle: "Produce" }
+    ],
+    steps: [
+      "Marinate the diced chicken in half the yogurt and the tikka spices, then grill or pan-cook.",
+      "Thin the remaining yogurt with lemon and mint for a raita dressing.",
+      "Pile the salad into a bowl, add the chicken and drizzle with the raita."
+    ],
+    notes: "Lean and fragrant. Make extra chicken for tomorrow's lunch."
+  },
+  {
+    id: "korean-beef-bulgogi-cauli-bowl",
+    name: "Korean Beef Bulgogi Cauliflower Bowl",
+    category: "Lunch",
+    tags: ["beef", "korean", "meal-prep", "low-carb"],
+    vegetarian: false,
+    time: { prep: 12, cook: 10 },
+    macros: { protein: 70, netCarbs: 13, fat: 26, fiber: 4, calories: 566 },
+    ingredients: [
+      { item: "Lean beef strips", qty: 270, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Cauliflower rice", qty: 150, unit: "g", aisle: "Frozen" },
+      { item: "Kimchi", qty: 60, unit: "g", aisle: "Produce" },
+      { item: "Soy sauce, garlic, ginger & sesame", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" },
+      { item: "Spring onion", qty: 20, unit: "g", aisle: "Produce" }
+    ],
+    steps: [
+      "Marinate the beef in soy, garlic, ginger and a little sweetener, then sear hot and fast.",
+      "Warm the cauliflower rice and top with the beef.",
+      "Add kimchi, spring onion and a sprinkle of sesame."
+    ],
+    notes: "Big Korean BBQ flavour without the sugar or rice. Sub sweetener for the usual sugar in the marinade."
+  },
+  {
+    id: "greek-chicken-salad-bowl",
+    name: "Greek Chicken & Feta Salad Bowl",
+    category: "Lunch",
+    tags: ["chicken", "greek", "mediterranean", "meal-prep"],
+    vegetarian: false,
+    time: { prep: 10, cook: 12 },
+    macros: { protein: 70, netCarbs: 9, fat: 24, fiber: 4, calories: 532 },
+    ingredients: [
+      { item: "Chicken breast", qty: 200, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Feta cheese", qty: 40, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Cucumber, tomato & olives", qty: 150, unit: "g", aisle: "Produce" },
+      { item: "Red onion", qty: 30, unit: "g", aisle: "Produce" },
+      { item: "Olive oil, oregano & lemon", qty: 2, unit: "tsp", aisle: "Pantry" }
+    ],
+    steps: [
+      "Season and grill the chicken with oregano; slice.",
+      "Toss cucumber, tomato, olives and onion with olive oil and lemon.",
+      "Top with the chicken and crumbled feta."
+    ],
+    notes: "Sunshine on a plate. The feta adds a little extra protein and a salty hit."
+  },
+  {
+    id: "turkey-club-lettuce-wrap",
+    name: "Turkey Club Lettuce Wrap",
+    category: "Lunch",
+    tags: ["turkey", "eggs", "no-cook-ish", "low-carb"],
+    vegetarian: false,
+    time: { prep: 8, cook: 5 },
+    macros: { protein: 70, netCarbs: 6, fat: 26, fiber: 3, calories: 538 },
+    ingredients: [
+      { item: "Sliced turkey breast (deli)", qty: 200, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Turkey bacon", qty: 40, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Large egg (hard-boiled)", qty: 1, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Cheddar or Swiss cheese", qty: 30, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Large lettuce leaves, tomato", qty: 100, unit: "g", aisle: "Produce" },
+      { item: "Light mayo & mustard", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Crisp the turkey bacon and slice the hard-boiled egg.",
+      "Layer turkey, bacon, cheese, egg and tomato onto large lettuce leaves.",
+      "Add a little mayo-mustard, roll up and eat like a wrap."
+    ],
+    notes: "All the club-sandwich flavours, bread swapped for crunchy lettuce."
+  },
+  {
+    id: "italian-antipasto-protein-plate",
+    name: "Italian Antipasto Protein Plate",
+    category: "Lunch",
+    tags: ["turkey", "italian", "no-cook", "5-min"],
+    vegetarian: false,
+    time: { prep: 8, cook: 0 },
+    macros: { protein: 70, netCarbs: 5, fat: 30, fiber: 2, calories: 570 },
+    ingredients: [
+      { item: "Prosciutto", qty: 70, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Sliced turkey breast (deli)", qty: 100, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Fresh mozzarella", qty: 100, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Parmesan shavings", qty: 20, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Olives, cherry tomatoes & rocket", qty: 100, unit: "g", aisle: "Produce" },
+      { item: "Olive oil & balsamic", qty: 1, unit: "tsp", aisle: "Pantry" }
+    ],
+    steps: [
+      "Arrange the prosciutto, turkey, mozzarella and parmesan on a board or plate.",
+      "Add olives, tomatoes and rocket.",
+      "Drizzle with olive oil and a little balsamic. No cooking needed."
+    ],
+    notes: "A no-cook 'grazing' lunch. Pick leaner cured meats and part-skim mozzarella to manage the fat."
+  },
+
+  /* ===================== EXPANSION BATCH 3 ===================== */
+
+  /* ---- Lunch ---- */
+  {
+    id: "edamame-tofu-poke-bowl",
+    name: "Edamame & Tofu Poke Bowl",
+    category: "Lunch",
+    tags: ["tofu", "edamame", "vegan", "poke"],
+    vegetarian: true,
+    time: { prep: 12, cook: 8 },
+    macros: { protein: 70, netCarbs: 13, fat: 28, fiber: 9, calories: 584 },
+    ingredients: [
+      { item: "Extra-firm tofu", qty: 300, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Shelled edamame", qty: 200, unit: "g", aisle: "Frozen" },
+      { item: "Hemp seeds", qty: 30, unit: "g", aisle: "Pantry" },
+      { item: "Cauliflower rice", qty: 120, unit: "g", aisle: "Frozen" },
+      { item: "Cucumber, avocado & spring onion", qty: 100, unit: "g", aisle: "Produce" },
+      { item: "Soy sauce, sesame & lime", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Press and cube the tofu, then bake or pan-fry until golden.",
+      "Warm the edamame and cauliflower rice; arrange in a bowl.",
+      "Top with tofu, cucumber, avocado and spring onion; dress with soy, sesame and lime and scatter hemp seeds."
+    ],
+    notes: "A fully plant-based 70 g bowl — tofu, edamame and hemp do the heavy lifting."
+  },
+  {
+    id: "halloumi-greek-salad-bowl",
+    name: "Grilled Halloumi Greek Salad Bowl",
+    category: "Lunch",
+    tags: ["halloumi", "eggs", "greek", "vegetarian"],
+    vegetarian: true,
+    time: { prep: 10, cook: 8 },
+    macros: { protein: 70, netCarbs: 9, fat: 40, fiber: 4, calories: 676 },
+    ingredients: [
+      { item: "Halloumi", qty: 200, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Large eggs (hard-boiled)", qty: 2, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Parmesan", qty: 15, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "0% Greek yogurt", qty: 100, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Cucumber, tomato, olives & onion", qty: 150, unit: "g", aisle: "Produce" },
+      { item: "Olive oil, oregano & lemon", qty: 2, unit: "tsp", aisle: "Pantry" }
+    ],
+    steps: [
+      "Griddle the sliced halloumi until golden on both sides.",
+      "Toss the salad vegetables with olive oil, oregano and lemon.",
+      "Add the halloumi and quartered eggs; serve the yogurt alongside as a creamy dressing with the parmesan grated over."
+    ],
+    notes: "Halloumi is salty and high in protein but rich, so this is a higher-fat, vegetarian option."
+  },
+  {
+    id: "prawn-egg-protein-salad",
+    name: "Prawn & Egg Protein Salad",
+    category: "Lunch",
+    tags: ["prawn", "shrimp", "eggs", "lean"],
+    vegetarian: false,
+    time: { prep: 10, cook: 5 },
+    macros: { protein: 70, netCarbs: 7, fat: 16, fiber: 3, calories: 452 },
+    ingredients: [
+      { item: "Cooked king prawns", qty: 200, unit: "g", aisle: "Seafood" },
+      { item: "Large eggs (hard-boiled)", qty: 2, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Low-fat cottage cheese", qty: 100, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Little gem, cucumber & tomato", qty: 150, unit: "g", aisle: "Produce" },
+      { item: "Light mayo, lemon & dill", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Arrange the leaves, cucumber and tomato in a bowl.",
+      "Top with the prawns and quartered eggs and spoon over the cottage cheese.",
+      "Dress with a little lemon-dill mayo."
+    ],
+    notes: "One of the leanest, freshest lunches here — 70 g protein for about 450 kcal."
+  },
+  {
+    id: "smoked-trout-egg-salad",
+    name: "Smoked Trout & Egg Salad Plate",
+    category: "Lunch",
+    tags: ["trout", "eggs", "no-cook", "high-omega3"],
+    vegetarian: false,
+    time: { prep: 8, cook: 0 },
+    macros: { protein: 70, netCarbs: 5, fat: 32, fiber: 2, calories: 588 },
+    ingredients: [
+      { item: "Hot-smoked trout fillets", qty: 150, unit: "g", aisle: "Seafood" },
+      { item: "Large eggs (hard-boiled)", qty: 4, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Light cream cheese", qty: 40, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Low-fat cottage cheese", qty: 80, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Watercress, cucumber & radish", qty: 100, unit: "g", aisle: "Produce" },
+      { item: "Lemon, horseradish & dill", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Flake the trout onto a plate with the halved eggs.",
+      "Mix the cream cheese with horseradish, lemon and dill for a quick sauce.",
+      "Add the salad and cottage cheese; spoon the sauce over the trout."
+    ],
+    notes: "Trout is rich in omega-3s. A no-cook, picnic-friendly plate."
+  },
+
+  /* ---- Dinner ---- */
+  {
+    id: "beef-pepper-stir-fry",
+    name: "Black Pepper Beef & Pepper Stir-Fry",
+    category: "Dinner",
+    tags: ["beef", "chinese", "quick", "low-carb"],
+    vegetarian: false,
+    time: { prep: 12, cook: 10 },
+    macros: { protein: 70, netCarbs: 12, fat: 26, fiber: 4, calories: 562 },
+    ingredients: [
+      { item: "Lean beef strips", qty: 270, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Bell peppers & onion", qty: 160, unit: "g", aisle: "Produce" },
+      { item: "Soy sauce, garlic & ginger", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" },
+      { item: "Sesame oil", qty: 2, unit: "tsp", aisle: "Pantry" },
+      { item: "Black pepper & spring onion", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Sear the beef in a screaming-hot wok in batches; set aside.",
+      "Stir-fry the peppers and onion until just tender.",
+      "Return the beef, add soy, garlic, ginger and plenty of black pepper; toss and serve."
+    ],
+    notes: "Skip the cornflour and sugar of takeout versions — the flavour is all in the high heat and pepper."
+  },
+  {
+    id: "chicken-tikka-masala-cauli-rice",
+    name: "Chicken Tikka Masala with Cauliflower Rice",
+    category: "Dinner",
+    tags: ["chicken", "indian", "meal-prep", "low-carb"],
+    vegetarian: false,
+    time: { prep: 12, cook: 20 },
+    macros: { protein: 70, netCarbs: 13, fat: 24, fiber: 4, calories: 548 },
+    ingredients: [
+      { item: "Chicken breast", qty: 230, unit: "g", aisle: "Meat & Poultry" },
+      { item: "0% Greek yogurt", qty: 80, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Chopped tomatoes", qty: 120, unit: "g", aisle: "Pantry" },
+      { item: "Double cream", qty: 20, unit: "ml", aisle: "Eggs & Dairy" },
+      { item: "Cauliflower rice", qty: 150, unit: "g", aisle: "Frozen" },
+      { item: "Garam masala, ginger & garlic", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Marinate the diced chicken in the yogurt and spices, then sear.",
+      "Add tomatoes and simmer; stir in a little cream to finish the sauce.",
+      "Serve over warm cauliflower rice."
+    ],
+    notes: "Greek yogurt in the marinade keeps it tender and adds protein; just a splash of cream for richness."
+  },
+  {
+    id: "baked-haddock-parmesan-crust",
+    name: "Parmesan-Crusted Baked Haddock",
+    category: "Dinner",
+    tags: ["haddock", "white-fish", "low-carb", "quick"],
+    vegetarian: false,
+    time: { prep: 8, cook: 16 },
+    macros: { protein: 70, netCarbs: 6, fat: 20, fiber: 3, calories: 484 },
+    ingredients: [
+      { item: "Haddock fillets", qty: 280, unit: "g", aisle: "Seafood" },
+      { item: "Parmesan cheese", qty: 40, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Almond flour", qty: 15, unit: "g", aisle: "Pantry" },
+      { item: "Large egg", qty: 1, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Broccoli", qty: 150, unit: "g", aisle: "Produce" },
+      { item: "Lemon, parsley & pepper", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Heat oven to 200°C (400°F). Brush the haddock with beaten egg.",
+      "Press on a mix of parmesan and almond flour and bake 12-15 min until the crust is golden and the fish flakes.",
+      "Steam the broccoli and serve with lemon."
+    ],
+    notes: "Parmesan and almond flour make a grain-free crust that crisps beautifully."
+  },
+  {
+    id: "lamb-kofta-tzatziki",
+    name: "Lamb Kofta with Tzatziki",
+    category: "Dinner",
+    tags: ["lamb", "middle-eastern", "grill", "low-carb"],
+    vegetarian: false,
+    time: { prep: 15, cook: 12 },
+    macros: { protein: 70, netCarbs: 8, fat: 38, fiber: 3, calories: 654 },
+    ingredients: [
+      { item: "Lean ground lamb", qty: 250, unit: "g", aisle: "Meat & Poultry" },
+      { item: "0% Greek yogurt", qty: 150, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Feta cheese", qty: 20, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Cucumber, garlic & mint", qty: 80, unit: "g", aisle: "Produce" },
+      { item: "Cumin, coriander & paprika", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Mix the lamb with the spices and a little grated onion; shape onto skewers.",
+      "Grill or pan-cook the kofta until charred and cooked through.",
+      "Stir grated cucumber, garlic and mint into the yogurt for tzatziki; crumble the feta over and serve."
+    ],
+    notes: "Lamb is naturally higher in fat, so this is a richer meal — balance the day around it."
+  },
+  {
+    id: "teriyaki-chicken-broccoli",
+    name: "Teriyaki Chicken & Broccoli",
+    category: "Dinner",
+    tags: ["chicken", "japanese", "quick", "lean"],
+    vegetarian: false,
+    time: { prep: 8, cook: 14 },
+    macros: { protein: 70, netCarbs: 14, fat: 16, fiber: 4, calories: 480 },
+    ingredients: [
+      { item: "Chicken breast", qty: 230, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Broccoli", qty: 180, unit: "g", aisle: "Produce" },
+      { item: "Sugar-free teriyaki sauce", qty: 2, unit: "tbsp", aisle: "Condiments & Spices" },
+      { item: "Sesame oil & seeds", qty: 1, unit: "tsp", aisle: "Pantry" },
+      { item: "Garlic & ginger", qty: null, unit: "to taste", aisle: "Produce" }
+    ],
+    steps: [
+      "Sear the sliced chicken in sesame oil until golden.",
+      "Add broccoli and a splash of water; cover and steam-fry until tender.",
+      "Toss with teriyaki, garlic and ginger; finish with sesame seeds."
+    ],
+    notes: "A lean, fast weeknight stir-fry. Use a no-sugar teriyaki to keep carbs down."
+  },
+  {
+    id: "pork-green-bean-stir-fry",
+    name: "Szechuan Pork & Green Bean Stir-Fry",
+    category: "Dinner",
+    tags: ["pork", "chinese", "spicy", "quick"],
+    vegetarian: false,
+    time: { prep: 10, cook: 12 },
+    macros: { protein: 70, netCarbs: 10, fat: 26, fiber: 4, calories: 554 },
+    ingredients: [
+      { item: "Lean pork strips", qty: 290, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Green beans", qty: 150, unit: "g", aisle: "Produce" },
+      { item: "Soy sauce, garlic & chili", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" },
+      { item: "Sesame oil", qty: 2, unit: "tsp", aisle: "Pantry" },
+      { item: "Spring onion & Szechuan pepper", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Blister the green beans in a hot wok, then set aside.",
+      "Stir-fry the pork until browned, add garlic and chili.",
+      "Return the beans, splash in soy and toss; finish with spring onion."
+    ],
+    notes: "Punchy and fast. Dial the chili up or down to taste."
+  },
+  {
+    id: "moroccan-spiced-chicken-cauli",
+    name: "Moroccan-Spiced Chicken with Cauliflower",
+    category: "Dinner",
+    tags: ["chicken", "moroccan", "one-pan", "meal-prep"],
+    vegetarian: false,
+    time: { prep: 10, cook: 22 },
+    macros: { protein: 70, netCarbs: 12, fat: 22, fiber: 5, calories: 526 },
+    ingredients: [
+      { item: "Chicken breast", qty: 230, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Cauliflower & courgette", qty: 200, unit: "g", aisle: "Produce" },
+      { item: "0% Greek yogurt", qty: 60, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Olive oil", qty: 2, unit: "tsp", aisle: "Pantry" },
+      { item: "Ras el hanout, cumin & cinnamon", qty: null, unit: "to taste", aisle: "Condiments & Spices" },
+      { item: "Lemon & coriander", qty: null, unit: "to taste", aisle: "Produce" }
+    ],
+    steps: [
+      "Toss chicken and vegetables with oil and the warm spices.",
+      "Roast at 200°C (400°F) for ~20 min until the chicken is cooked and the veg caramelised.",
+      "Serve with a dollop of yogurt, lemon and coriander."
+    ],
+    notes: "Warm North-African spices make lean chicken anything but boring."
+  },
+  {
+    id: "steak-fajita-bowl",
+    name: "Steak Fajita Bowl",
+    category: "Dinner",
+    tags: ["beef", "steak", "mexican", "low-carb"],
+    vegetarian: false,
+    time: { prep: 10, cook: 12 },
+    macros: { protein: 70, netCarbs: 12, fat: 30, fiber: 5, calories: 598 },
+    ingredients: [
+      { item: "Sirloin or flank steak", qty: 250, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Bell peppers & onion", qty: 160, unit: "g", aisle: "Produce" },
+      { item: "Cheddar cheese", qty: 30, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Cauliflower rice", qty: 120, unit: "g", aisle: "Frozen" },
+      { item: "Fajita spice, lime & coriander", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Sear the seasoned steak to your liking; rest then slice against the grain.",
+      "Char the peppers and onion in the same pan with fajita spice.",
+      "Build a bowl with cauliflower rice, the steak and peppers, cheese, lime and coriander."
+    ],
+    notes: "All the sizzle of fajitas without the tortillas. Slice the steak thinly for tenderness."
+  },
+  {
+    id: "seared-tuna-sesame-bok-choy",
+    name: "Sesame-Seared Tuna with Bok Choy",
+    category: "Dinner",
+    tags: ["tuna", "asian", "lean", "quick"],
+    vegetarian: false,
+    time: { prep: 8, cook: 8 },
+    macros: { protein: 70, netCarbs: 8, fat: 18, fiber: 3, calories: 474 },
+    ingredients: [
+      { item: "Fresh tuna steak", qty: 280, unit: "g", aisle: "Seafood" },
+      { item: "Bok choy", qty: 150, unit: "g", aisle: "Produce" },
+      { item: "Soy sauce, ginger & garlic", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" },
+      { item: "Sesame oil & seeds", qty: 2, unit: "tsp", aisle: "Pantry" }
+    ],
+    steps: [
+      "Coat the tuna in sesame seeds and sear 1-2 min per side for rare.",
+      "Stir-fry the bok choy with ginger, garlic and soy until just wilted.",
+      "Slice the tuna and serve over the greens."
+    ],
+    notes: "A lean, restaurant-style plate. Don't overcook the tuna — it's best pink in the middle."
+  },
+  {
+    id: "chicken-cacciatore",
+    name: "Chicken Cacciatore",
+    category: "Dinner",
+    tags: ["chicken", "italian", "comfort", "meal-prep"],
+    vegetarian: false,
+    time: { prep: 10, cook: 25 },
+    macros: { protein: 70, netCarbs: 12, fat: 22, fiber: 4, calories: 526 },
+    ingredients: [
+      { item: "Chicken breast", qty: 230, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Chopped tomatoes", qty: 150, unit: "g", aisle: "Pantry" },
+      { item: "Mushrooms, pepper & onion", qty: 150, unit: "g", aisle: "Produce" },
+      { item: "Parmesan cheese", qty: 20, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Olive oil, garlic & herbs", qty: 2, unit: "tsp", aisle: "Pantry" }
+    ],
+    steps: [
+      "Brown the chicken in olive oil, then set aside.",
+      "Soften the mushrooms, pepper and onion; add garlic, herbs and tomatoes.",
+      "Return the chicken and simmer until cooked and the sauce thickens; finish with parmesan."
+    ],
+    notes: "A rustic Italian braise that reheats brilliantly for lunches."
+  },
+  {
+    id: "turkey-burger-slaw",
+    name: "Cheesy Turkey Burgers with Slaw",
+    category: "Dinner",
+    tags: ["turkey", "comfort", "low-carb", "grill"],
+    vegetarian: false,
+    time: { prep: 12, cook: 12 },
+    macros: { protein: 70, netCarbs: 8, fat: 28, fiber: 4, calories: 564 },
+    ingredients: [
+      { item: "Lean ground turkey (93%)", qty: 250, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Large egg", qty: 1, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Cheddar cheese", qty: 30, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Cabbage & carrot (slaw)", qty: 120, unit: "g", aisle: "Produce" },
+      { item: "Light mayo & mustard", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Mix the turkey with the egg and seasoning; form patties and grill or pan-cook.",
+      "Melt the cheddar over the patties in the last minute.",
+      "Toss the shredded cabbage and carrot with mayo-mustard and serve alongside."
+    ],
+    notes: "Serve bunless over the slaw, or in a lettuce 'bun'. The egg keeps lean turkey juicy."
+  },
+  {
+    id: "thai-shrimp-coconut-curry-cauli",
+    name: "Thai Shrimp Coconut Curry with Cauliflower Rice",
+    category: "Dinner",
+    tags: ["shrimp", "thai", "curry", "low-carb"],
+    vegetarian: false,
+    time: { prep: 10, cook: 14 },
+    macros: { protein: 70, netCarbs: 13, fat: 24, fiber: 4, calories: 548 },
+    ingredients: [
+      { item: "Raw shrimp (peeled)", qty: 300, unit: "g", aisle: "Seafood" },
+      { item: "Light coconut milk", qty: 120, unit: "ml", aisle: "Pantry" },
+      { item: "Red curry paste", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" },
+      { item: "Pepper, mangetout & spinach", qty: 150, unit: "g", aisle: "Produce" },
+      { item: "Cauliflower rice", qty: 150, unit: "g", aisle: "Frozen" },
+      { item: "Lime & coriander", qty: null, unit: "to taste", aisle: "Produce" }
+    ],
+    steps: [
+      "Fry the curry paste briefly, then add the coconut milk and bring to a simmer.",
+      "Add the vegetables, then the shrimp, and cook until the shrimp are just pink.",
+      "Finish with lime and coriander; serve over cauliflower rice."
+    ],
+    notes: "Use light coconut milk and lots of shrimp to keep it high-protein and lower-fat."
+  },
+  {
+    id: "tofu-katsu-cabbage",
+    name: "Crispy Tofu Katsu with Cabbage",
+    category: "Dinner",
+    tags: ["tofu", "japanese", "vegetarian", "edamame"],
+    vegetarian: true,
+    time: { prep: 12, cook: 18 },
+    macros: { protein: 70, netCarbs: 14, fat: 26, fiber: 7, calories: 570 },
+    ingredients: [
+      { item: "Extra-firm tofu", qty: 350, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Large egg", qty: 1, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Almond flour & nutritional yeast", qty: 30, unit: "g", aisle: "Pantry" },
+      { item: "Shelled edamame", qty: 120, unit: "g", aisle: "Frozen" },
+      { item: "Shredded cabbage", qty: 120, unit: "g", aisle: "Produce" },
+      { item: "Sugar-free katsu/tonkatsu sauce", qty: 2, unit: "tbsp", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Slice the pressed tofu into slabs; dip in beaten egg then the almond flour and nutritional yeast.",
+      "Pan-fry or air-fry until deeply golden and crisp.",
+      "Serve sliced over shredded cabbage and warm edamame, drizzled with katsu sauce."
+    ],
+    notes: "A vegetarian katsu that genuinely hits 70 g — tofu, egg, nutritional yeast and edamame stack up."
+  },
+
+  /* ===================== EXPANSION BATCH 4 ===================== */
+
+  /* ---- Dinner ---- */
+  {
+    id: "chicken-piccata-zoodles",
+    name: "Chicken Piccata with Zoodles",
+    category: "Dinner",
+    tags: ["chicken", "italian", "low-carb", "quick"],
+    vegetarian: false,
+    time: { prep: 10, cook: 16 },
+    macros: { protein: 70, netCarbs: 7, fat: 22, fiber: 3, calories: 506 },
+    ingredients: [
+      { item: "Chicken breast", qty: 230, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Zucchini (spiralized)", qty: 200, unit: "g", aisle: "Produce" },
+      { item: "Capers, lemon & garlic", qty: 1, unit: "tbsp", aisle: "Condiments & Spices" },
+      { item: "Butter", qty: 1, unit: "tbsp", aisle: "Eggs & Dairy" },
+      { item: "Parmesan & parsley", qty: 15, unit: "g", aisle: "Eggs & Dairy" }
+    ],
+    steps: [
+      "Pound the chicken thin, season and sear until golden; set aside.",
+      "Deglaze with lemon, capers, garlic and a splash of water; swirl in the butter.",
+      "Warm the zoodles, top with the chicken and lemon-caper sauce, and finish with parmesan."
+    ],
+    notes: "Bright, lemony and quick. Pounding the chicken thin helps it cook fast and stay juicy."
+  },
+  {
+    id: "baked-trout-lemon-asparagus",
+    name: "Baked Trout with Lemon & Asparagus",
+    category: "Dinner",
+    tags: ["trout", "high-omega3", "low-carb", "sheet-pan"],
+    vegetarian: false,
+    time: { prep: 6, cook: 16 },
+    macros: { protein: 70, netCarbs: 6, fat: 30, fiber: 3, calories: 574 },
+    ingredients: [
+      { item: "Trout fillets", qty: 290, unit: "g", aisle: "Seafood" },
+      { item: "Asparagus", qty: 150, unit: "g", aisle: "Produce" },
+      { item: "Parmesan cheese", qty: 15, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Olive oil, lemon & dill", qty: 2, unit: "tsp", aisle: "Pantry" },
+      { item: "Garlic, salt & pepper", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Heat oven to 200°C (400°F). Lay the trout and asparagus on a lined tray.",
+      "Drizzle with oil, lemon, garlic and dill; scatter the parmesan over the asparagus.",
+      "Bake 12-15 min until the trout flakes and the asparagus is tender."
+    ],
+    notes: "A one-tray dinner rich in omega-3s. Sea bass or salmon work just as well."
+  },
+  {
+    id: "swedish-style-beef-meatballs",
+    name: "Swedish-Style Beef Meatballs in Cream Sauce",
+    category: "Dinner",
+    tags: ["beef", "comfort", "low-carb", "meal-prep"],
+    vegetarian: false,
+    time: { prep: 15, cook: 18 },
+    macros: { protein: 70, netCarbs: 9, fat: 32, fiber: 3, calories: 604 },
+    ingredients: [
+      { item: "Lean ground beef (90%)", qty: 230, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Large egg", qty: 1, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Parmesan cheese", qty: 15, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Double cream", qty: 30, unit: "ml", aisle: "Eggs & Dairy" },
+      { item: "Almond flour & beef stock", qty: 15, unit: "g", aisle: "Pantry" },
+      { item: "Green beans", qty: 120, unit: "g", aisle: "Produce" }
+    ],
+    steps: [
+      "Mix the beef with the egg, parmesan, almond flour and seasoning; roll into small meatballs.",
+      "Brown the meatballs, then make a quick gravy with stock and cream; simmer until cooked.",
+      "Serve with steamed green beans."
+    ],
+    notes: "Comfort-food meatballs with a light cream gravy, kept low-carb with almond flour instead of breadcrumbs."
+  },
+
+  /* ---- Snack ---- */
+  {
+    id: "beef-jerky-cheese-plate",
+    name: "Beef Jerky & Cheese Plate",
+    category: "Snack",
+    tags: ["beef", "jerky", "no-cook", "5-min"],
+    vegetarian: false,
+    time: { prep: 3, cook: 0 },
+    macros: { protein: 70, netCarbs: 8, fat: 30, fiber: 2, calories: 582 },
+    ingredients: [
+      { item: "Beef jerky (low-sugar)", qty: 80, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Cheese (cheddar/gouda)", qty: 100, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Almonds", qty: 20, unit: "g", aisle: "Pantry" },
+      { item: "Cucumber & cherry tomatoes", qty: 80, unit: "g", aisle: "Produce" }
+    ],
+    steps: [
+      "Arrange the jerky, cheese, almonds and crunchy veg on a plate or in a box.",
+      "That's it — a savory, shelf-stable, high-protein snack."
+    ],
+    notes: "Choose a jerky with little or no added sugar. Great for travel and desk drawers."
+  },
+  {
+    id: "smoked-salmon-cucumber-rolls",
+    name: "Smoked Salmon & Cottage Cheese Cucumber Rolls",
+    category: "Snack",
+    tags: ["salmon", "cottage", "no-cook", "low-carb"],
+    vegetarian: false,
+    time: { prep: 8, cook: 0 },
+    macros: { protein: 70, netCarbs: 6, fat: 22, fiber: 2, calories: 502 },
+    ingredients: [
+      { item: "Smoked salmon", qty: 180, unit: "g", aisle: "Seafood" },
+      { item: "Low-fat cottage cheese", qty: 250, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Light cream cheese", qty: 40, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Cucumber", qty: 100, unit: "g", aisle: "Produce" },
+      { item: "Lemon, dill & pepper", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Mix the cottage cheese with the cream cheese, lemon and dill.",
+      "Lay out the smoked salmon, spread with the cheese mix and roll up; or spoon onto cucumber ribbons.",
+      "Season with pepper and serve cold."
+    ],
+    notes: "Elegant enough for guests, easy enough for a desk snack."
+  },
+  {
+    id: "tuna-egg-protein-box",
+    name: "Tuna & Egg Protein Box",
+    category: "Snack",
+    tags: ["tuna", "eggs", "no-cook", "meal-prep"],
+    vegetarian: false,
+    time: { prep: 6, cook: 0 },
+    macros: { protein: 70, netCarbs: 5, fat: 18, fiber: 2, calories: 462 },
+    ingredients: [
+      { item: "Canned tuna in water (drained)", qty: 150, unit: "g", aisle: "Pantry" },
+      { item: "Large eggs (hard-boiled)", qty: 3, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Low-fat cottage cheese", qty: 150, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Cucumber & cherry tomatoes", qty: 100, unit: "g", aisle: "Produce" },
+      { item: "Lemon, salt & pepper", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Pack the tuna, halved eggs and cottage cheese into a lunchbox.",
+      "Add the cucumber and tomatoes; season and squeeze over a little lemon."
+    ],
+    notes: "A no-cook, ultra-lean protein box you can assemble in minutes. Meal-prep friendly."
+  },
+  {
+    id: "protein-hot-chocolate",
+    name: "Protein Hot Chocolate",
+    category: "Snack",
+    tags: ["whey", "blender", "dessert", "warm"],
+    vegetarian: true,
+    time: { prep: 5, cook: 3 },
+    macros: { protein: 70, netCarbs: 12, fat: 8, fiber: 3, calories: 400 },
+    ingredients: [
+      { item: "Whey or casein protein powder (chocolate)", qty: 60, unit: "g", aisle: "Supplements" },
+      { item: "Skim milk", qty: 400, unit: "ml", aisle: "Eggs & Dairy" },
+      { item: "Powdered peanut butter (PB2)", qty: 16, unit: "g", aisle: "Pantry" },
+      { item: "Cocoa powder & sweetener", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Warm the milk gently (don't boil).",
+      "Whisk in the protein, PB powder, cocoa and sweetener until smooth and frothy.",
+      "Pour into a mug and enjoy warm."
+    ],
+    notes: "Casein protein makes an especially creamy, slow-digesting bedtime hot chocolate. 70 g protein in a mug."
+  },
+  {
+    id: "peanut-butter-protein-mousse",
+    name: "Peanut Butter Protein Mousse",
+    category: "Snack",
+    tags: ["whey", "yogurt", "dessert", "no-cook"],
+    vegetarian: true,
+    time: { prep: 5, cook: 0 },
+    macros: { protein: 70, netCarbs: 9, fat: 10, fiber: 2, calories: 406 },
+    ingredients: [
+      { item: "0% Greek yogurt", qty: 200, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Vanilla whey protein powder", qty: 45, unit: "g", aisle: "Supplements" },
+      { item: "Quark or fat-free fromage frais", qty: 80, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Powdered peanut butter (PB2)", qty: 16, unit: "g", aisle: "Pantry" },
+      { item: "Sweetener", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Whip the yogurt, quark, whey and PB powder until thick and airy.",
+      "Spoon into a glass and chill briefly for a firmer mousse."
+    ],
+    notes: "Peanut-butter dessert vibes for 70 g protein and around 400 kcal. Powdered PB keeps the fat low."
+  },
+  {
+    id: "frozen-greek-yogurt-protein-bark",
+    name: "Frozen Greek Yogurt Protein Bark",
+    category: "Snack",
+    tags: ["yogurt", "whey", "frozen", "make-ahead"],
+    vegetarian: true,
+    time: { prep: 8, cook: 0 },
+    macros: { protein: 70, netCarbs: 13, fat: 12, fiber: 3, calories: 440 },
+    ingredients: [
+      { item: "0% Greek yogurt", qty: 300, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Vanilla whey protein powder", qty: 45, unit: "g", aisle: "Supplements" },
+      { item: "Mixed berries", qty: 60, unit: "g", aisle: "Produce" },
+      { item: "Chopped nuts or seeds", qty: 15, unit: "g", aisle: "Pantry" }
+    ],
+    steps: [
+      "Stir the whey through the yogurt until smooth and spread onto a lined tray.",
+      "Scatter with berries and nuts and freeze until solid, ~3 hours.",
+      "Break into shards and keep frozen; eat straight from the freezer."
+    ],
+    notes: "A frozen treat you can make in batches. Let it sit a minute before biting."
+  },
+  {
+    id: "protein-mug-cake",
+    name: "1-Minute Protein Mug Cake",
+    category: "Snack",
+    tags: ["whey", "eggs", "dessert", "quick"],
+    vegetarian: true,
+    time: { prep: 3, cook: 2 },
+    macros: { protein: 70, netCarbs: 12, fat: 14, fiber: 3, calories: 454 },
+    ingredients: [
+      { item: "Vanilla or chocolate whey protein powder", qty: 40, unit: "g", aisle: "Supplements" },
+      { item: "Large egg", qty: 1, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Low-fat cottage cheese", qty: 150, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Almond flour", qty: 20, unit: "g", aisle: "Pantry" },
+      { item: "Baking powder, cocoa & sweetener", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Blend all ingredients into a smooth batter and pour into a greased mug.",
+      "Microwave 60-90 seconds until risen and just set.",
+      "Cool a moment and eat from the mug."
+    ],
+    notes: "Blending in cottage cheese keeps the mug cake moist instead of rubbery. Dessert in under five minutes."
+  },
+  {
+    id: "ricotta-berry-protein-bowl",
+    name: "Whipped Ricotta & Berry Protein Bowl",
+    category: "Snack",
+    tags: ["ricotta", "whey", "dessert", "no-cook"],
+    vegetarian: true,
+    time: { prep: 5, cook: 0 },
+    macros: { protein: 70, netCarbs: 12, fat: 14, fiber: 3, calories: 454 },
+    ingredients: [
+      { item: "Ricotta", qty: 200, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Vanilla whey protein powder", qty: 45, unit: "g", aisle: "Supplements" },
+      { item: "0% Greek yogurt", qty: 150, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Mixed berries", qty: 60, unit: "g", aisle: "Produce" },
+      { item: "Pumpkin seeds", qty: 10, unit: "g", aisle: "Pantry" }
+    ],
+    steps: [
+      "Whip the ricotta with the whey and yogurt until light and smooth.",
+      "Spoon into a bowl and top with berries and seeds."
+    ],
+    notes: "Whipped ricotta is luxuriously creamy; the whey lifts it to 70 g protein."
+  },
+  {
+    id: "ham-cheese-protein-pinwheels",
+    name: "Ham & Cheese Protein Pinwheels",
+    category: "Snack",
+    tags: ["ham", "pork", "no-cook", "5-min"],
+    vegetarian: false,
+    time: { prep: 6, cook: 0 },
+    macros: { protein: 70, netCarbs: 4, fat: 30, fiber: 1, calories: 566 },
+    ingredients: [
+      { item: "Lean cooked ham (slices)", qty: 250, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Light cream cheese", qty: 40, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Cheddar or Swiss cheese", qty: 80, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Cucumber or pickle spears", qty: 80, unit: "g", aisle: "Produce" },
+      { item: "Mustard & black pepper", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Spread the ham slices with cream cheese and a little mustard.",
+      "Add a strip of cheese and a cucumber/pickle spear and roll up.",
+      "Slice into pinwheels and serve."
+    ],
+    notes: "A near-zero-carb savory snack. Look for lower-sodium ham if you watch salt."
+  },
+  {
+    id: "chicken-cheese-protein-box",
+    name: "Chicken & Cheese Protein Box",
+    category: "Snack",
+    tags: ["chicken", "no-cook", "meal-prep", "low-carb"],
+    vegetarian: false,
+    time: { prep: 5, cook: 0 },
+    macros: { protein: 70, netCarbs: 4, fat: 22, fiber: 2, calories: 494 },
+    ingredients: [
+      { item: "Cooked chicken breast (sliced)", qty: 180, unit: "g", aisle: "Meat & Poultry" },
+      { item: "Cheese (cheddar/edam)", qty: 40, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Large egg (hard-boiled)", qty: 1, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Cucumber, pepper & olives", qty: 100, unit: "g", aisle: "Produce" }
+    ],
+    steps: [
+      "Pack the sliced chicken, cheese and egg into a snack box.",
+      "Add the crunchy veg and olives. Grab and go."
+    ],
+    notes: "Use leftover roast or poached chicken. A clean, portable 70 g protein hit."
+  },
+  {
+    id: "salmon-egg-protein-pot",
+    name: "Salmon & Egg Protein Pot",
+    category: "Snack",
+    tags: ["salmon", "eggs", "cottage", "no-cook"],
+    vegetarian: false,
+    time: { prep: 6, cook: 0 },
+    macros: { protein: 70, netCarbs: 4, fat: 24, fiber: 1, calories: 512 },
+    ingredients: [
+      { item: "Cooked or smoked salmon", qty: 150, unit: "g", aisle: "Seafood" },
+      { item: "Large eggs (hard-boiled)", qty: 3, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Low-fat cottage cheese", qty: 200, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Chives, lemon & pepper", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Layer the cottage cheese, flaked salmon and halved eggs in a pot or jar.",
+      "Finish with chives, lemon and pepper. Keeps for a day in the fridge."
+    ],
+    notes: "Three lean protein sources in one pot. A satisfying afternoon snack."
+  },
+  {
+    id: "savory-whipped-cottage-everything",
+    name: "Savory Whipped Cottage Cheese Bowl",
+    category: "Snack",
+    tags: ["cottage", "yogurt", "no-cook", "vegetarian"],
+    vegetarian: true,
+    time: { prep: 5, cook: 0 },
+    macros: { protein: 70, netCarbs: 10, fat: 12, fiber: 4, calories: 428 },
+    ingredients: [
+      { item: "Low-fat cottage cheese", qty: 350, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "0% Greek yogurt", qty: 250, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Hemp seeds", qty: 20, unit: "g", aisle: "Pantry" },
+      { item: "Cucumber & cherry tomatoes", qty: 100, unit: "g", aisle: "Produce" },
+      { item: "Everything bagel seasoning", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Blend the cottage cheese and yogurt until smooth and whipped.",
+      "Spoon into a bowl and top with chopped cucumber, tomatoes and hemp seeds.",
+      "Finish with a generous sprinkle of everything bagel seasoning."
+    ],
+    notes: "The viral whipped-cottage-cheese trick, made savory. High protein, very low effort."
+  },
+  {
+    id: "boiled-egg-cheese-snack-plate",
+    name: "Egg & Cheese Snack Plate",
+    category: "Snack",
+    tags: ["eggs", "no-cook", "vegetarian", "5-min"],
+    vegetarian: true,
+    time: { prep: 5, cook: 0 },
+    macros: { protein: 70, netCarbs: 5, fat: 32, fiber: 2, calories: 588 },
+    ingredients: [
+      { item: "Large eggs (hard-boiled)", qty: 4, unit: "", aisle: "Eggs & Dairy" },
+      { item: "Cheese (cheddar/gouda)", qty: 100, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Low-fat cottage cheese", qty: 200, unit: "g", aisle: "Eggs & Dairy" },
+      { item: "Cucumber, celery & cherry tomatoes", qty: 120, unit: "g", aisle: "Produce" },
+      { item: "Salt, pepper & paprika", qty: null, unit: "to taste", aisle: "Condiments & Spices" }
+    ],
+    steps: [
+      "Arrange the halved eggs, cheese and cottage cheese on a plate.",
+      "Add the crunchy veg and season. A vegetarian, no-cook protein plate."
+    ],
+    notes: "Simple, filling and entirely no-cook. A reliable fallback when the fridge is bare."
   }
 ];

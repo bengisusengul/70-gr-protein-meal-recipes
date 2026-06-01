@@ -15,7 +15,7 @@
   // ---- branding: edit these to make the book yours ----
   var BOOK = {
     title: "The 70 g Protein Cookbook",
-    subtitle: "High-Protein, Low-Sugar Recipes for Strength, Energy & Healthy Aging",
+    subtitle: "100 High-Protein, Low-Sugar Recipes for Strength, Energy & Healthy Aging",
     author: "Bengisu Sengul",
     year: new Date().getFullYear(),
     website: "",                       // e.g. "yourdomain.com" (optional)

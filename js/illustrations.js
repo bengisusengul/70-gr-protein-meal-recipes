@@ -215,11 +215,13 @@ window.ART = (function () {
   function pickArtKey(recipe) {
     var hay = (recipe.id + " " + recipe.name + " " + (recipe.tags || []).join(" ")).toLowerCase();
     var order = [
-      ["salmon", "salmon"], ["white-fish", "cod"], ["cod", "cod"], ["shrimp", "shrimp"],
-      ["tuna", "tuna"], ["beef", "beef"], ["steak", "beef"], ["pork", "pork"],
-      ["turkey", "turkey"], ["paneer", "paneer"], ["tofu", "tofu"], ["edamame", "edamame"],
+      ["salmon", "salmon"], ["trout", "salmon"], ["mackerel", "salmon"],
+      ["white-fish", "cod"], ["cod", "cod"], ["haddock", "cod"], ["shrimp", "shrimp"], ["prawn", "shrimp"],
+      ["tuna", "tuna"], ["beef", "beef"], ["steak", "beef"], ["lamb", "beef"], ["jerky", "beef"], ["bulgogi", "beef"],
+      ["pork", "pork"], ["prosciutto", "pork"], ["chorizo", "pork"], ["carnitas", "pork"],
+      ["turkey", "turkey"], ["halloumi", "paneer"], ["paneer", "paneer"], ["tofu", "tofu"], ["edamame", "edamame"],
       ["smoothie", "smoothie"], ["shake", "smoothie"], ["blender", "smoothie"],
-      ["pancake", "pancakes"], ["mousse", "yogurt"], ["yogurt", "yogurt"],
+      ["pancake", "pancakes"], ["mousse", "yogurt"], ["ricotta", "cottage"], ["yogurt", "yogurt"],
       ["cottage", "cottage"], ["chicken", "chicken"], ["eggs", "eggs"], ["egg", "eggs"]
     ];
     for (var i = 0; i < order.length; i++) {

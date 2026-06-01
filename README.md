@@ -1,6 +1,6 @@
 # The 70 g Protein Cookbook 🥩🥚🐟
 
-An interactive, offline-friendly cookbook website. **50 recipes (growing toward 100+)**, and every
+An interactive, offline-friendly cookbook website. **100 recipes**, and every
 single one follows one unbreakable rule:
 
 > **~70 g of protein** and **very low sugar / carbs** (target **< 20 g net carbs**) per serving.
