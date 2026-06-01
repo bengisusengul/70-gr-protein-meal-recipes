@@ -14,6 +14,32 @@ No build step, no server, no account, no tracking. Just open it.
 
 ---
 
+## 🌐 Live site
+
+Once GitHub Pages is enabled (below), the app is hosted at:
+
+**https://bengisusengul.github.io/70-gr-protein-meal-recipes/**
+
+On your iPhone, open that link in Safari, then **Share → Add to Home Screen**
+for an app-like icon. All your plans, shopping checkmarks, and "made it" marks
+are saved on your phone.
+
+### Enable hosting (one-time, ~15 seconds)
+
+A deploy workflow (`.github/workflows/deploy-pages.yml`) publishes the site
+automatically. You just need to turn the source on once:
+
+1. Go to the repo on GitHub → **Settings → Pages**.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+
+That's it — the workflow runs on every push and updates the live link in ~1 min.
+
+> **No-workflow alternative:** Settings → Pages → Source → **Deploy from a
+> branch** → branch `claude/high-protein-cookbook-3Av3B`, folder `/ (root)` →
+> Save. Same URL, no Actions needed.
+
+---
+
 ## ✨ What it does
 
 | Tab | What you get |
