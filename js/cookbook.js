@@ -19,7 +19,7 @@
     author: "Bengisu Sengul",
     year: new Date().getFullYear(),
     website: "",                       // your store/site URL once live (optional)
-    contact: "melikebengisusegul@gmail.com",
+    contact: "bengisu_sengul@hotmail.com",
     price: "$19",
     dedication: "Greetings to myself — and to anyone beginning again.",
     edition: "First Edition"
@@ -32,6 +32,12 @@
   var SWAPS = window.SWAPS || { forRecipe: function () { return []; } };
   var RECIPE_IMAGES = window.RECIPE_IMAGES || [];
   var EX = window.RECIPE_EXTRA || {};
+
+  // six varied dishes for the cover collage (shows the book's range)
+  var COVER_PHOTOS = [
+    "greek-yogurt-granola-parfait", "korean-beef-bulgogi-cauli-bowl", "baked-salmon-asparagus-parmesan",
+    "seared-tuna-nicoise-salad", "chicken-tikka-masala-cauli-rice", "ricotta-berry-protein-bowl"
+  ];
 
   function heroNode(r, cls) {
     var node = el("div", { class: cls, html: ART.hero(r) });
@@ -105,7 +111,11 @@
         el("div", { class: "cover-kicker" }, [String(RECIPES.length) + " recipes · 70 g protein each · very low sugar"]),
         el("h1", { class: "cover-title" }, [BOOK.title]),
         el("p", { class: "cover-subtitle" }, [BOOK.subtitle]),
-        el("div", { class: "cover-art" }, [el("img", { class: "cover-photo", src: "img/book/cover.jpg", alt: BOOK.title })]),
+        el("div", { class: "cover-art" }, [
+          el("div", { class: "cover-collage" }, COVER_PHOTOS.map(function (id) {
+            return el("img", { class: "cc-img", src: "img/recipes/" + id + ".jpg", alt: "" });
+          }))
+        ]),
         el("p", { class: "cover-author" }, ["by " + BOOK.author])
       ])
     ]);
