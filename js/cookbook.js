@@ -105,7 +105,7 @@
         el("div", { class: "cover-kicker" }, [String(RECIPES.length) + " recipes · 70 g protein each · very low sugar"]),
         el("h1", { class: "cover-title" }, [BOOK.title]),
         el("p", { class: "cover-subtitle" }, [BOOK.subtitle]),
-        el("div", { class: "cover-art", html: ART.hero(sample) }),
+        el("div", { class: "cover-art" }, [el("img", { class: "cover-photo", src: "img/book/cover.jpg", alt: BOOK.title })]),
         el("p", { class: "cover-author" }, ["by " + BOOK.author])
       ])
     ]);
@@ -274,7 +274,7 @@
     var sample = inCat[0] || {};
     return el("section", { class: "page page-divider", id: "sec-" + slug(cat) }, [
       el("div", { class: "divider-inner" }, [
-        el("div", { class: "divider-art", html: ART.hero(sample) }),
+        el("div", { class: "divider-art" }, [el("img", { class: "divider-photo", src: "img/book/" + slug(cat) + ".jpg", alt: cat })]),
         el("h2", { class: "divider-title" }, [cat]),
         el("p", { class: "divider-count" }, [inCat.length + (inCat.length === 1 ? " recipe" : " recipes")])
       ])
