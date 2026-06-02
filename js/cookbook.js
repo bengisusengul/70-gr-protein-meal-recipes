@@ -15,7 +15,7 @@
   // ---- branding: edit these to make the book yours ----
   var BOOK = {
     title: "The 70 g Protein Cookbook",
-    subtitle: "100 High-Protein, Low-Sugar Recipes for Strength, Energy & Healthy Aging",
+    subtitle: "Big-flavour meals that just happen to pack 70 g of protein — 100 crave-worthy, low-sugar recipes",
     author: "Bengisu Sengul",
     year: new Date().getFullYear(),
     website: "",                       // your store/site URL once live (optional)
@@ -111,11 +111,7 @@
         el("div", { class: "cover-kicker" }, [String(RECIPES.length) + " recipes · 70 g protein each · very low sugar"]),
         el("h1", { class: "cover-title" }, [BOOK.title]),
         el("p", { class: "cover-subtitle" }, [BOOK.subtitle]),
-        el("div", { class: "cover-art" }, [
-          el("div", { class: "cover-collage" }, COVER_PHOTOS.map(function (id) {
-            return el("img", { class: "cc-img", src: "img/recipes/" + id + ".jpg", alt: "" });
-          }))
-        ]),
+        el("div", { class: "cover-art" }, [el("img", { class: "cover-photo", src: "img/book/cover.jpg", alt: BOOK.title })]),
         el("p", { class: "cover-author" }, ["by " + BOOK.author])
       ])
     ]);
@@ -469,6 +465,23 @@
     ]);
   }
 
+  function pageWhatsInside() {
+    var veg = RECIPES.filter(function (r) { return r.vegetarian; }).length;
+    return el("section", { class: "page page-whatsinside" }, [
+      el("h2", { class: "section-title" }, ["What's Inside"]),
+      el("div", { class: "wi-grid" }, COVER_PHOTOS.map(function (id) {
+        return el("img", { class: "wi-img", src: "img/recipes/" + id + ".jpg", alt: "" });
+      })),
+      el("ul", { class: "wi-points" }, [
+        el("li", {}, [el("strong", {}, ["100 recipes"]), " — breakfasts, lunches, dinners & snacks, all big on flavour"]),
+        el("li", {}, ["About ", el("strong", {}, ["70 g of protein"]), " and under ~20 g net carbs in every single serving"]),
+        el("li", {}, [veg + " vegetarian options, plus dairy / nut / soy-free swaps on every recipe"]),
+        el("li", {}, ["3 done-for-you 7-day meal plans + auto shopping lists in the free companion app"]),
+        el("li", {}, ["A real photo for every dish, metric + imperial units, and the science (cited) behind it all"])
+      ])
+    ]);
+  }
+
   // ============================================================
   //  BUILD
   // ============================================================
@@ -482,6 +495,7 @@
     var ded = pageDedication(); if (ded) root.appendChild(ded);
     root.appendChild(pageContents());
     root.appendChild(pageWelcome());
+    root.appendChild(pageWhatsInside());
     root.appendChild(pageHowToUse());
     root.appendChild(pageIntro());
 

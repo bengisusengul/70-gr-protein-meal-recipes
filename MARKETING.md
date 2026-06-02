@@ -5,24 +5,27 @@ setup steps, and price as suggested. (This file is for you, not part of the prod
 
 ---
 
-## 1. Pricing
+## 1. Pricing (research-backed)
 
-| Product | Price | Why |
+Charm pricing ($19, not $20) lifts sales ~24% via left-digit bias; a high **anchor**
+raises perceived value ~32%; a **real, time-boxed launch** converts where fake
+urgency loses ~45% of trust; **tiers with a target middle** steer buyers there.
+
+| Offer | Price | Notes |
 |---|---|---|
-| **Digital PDF cookbook** | **$17–24** | 100 recipes + 3 meal plans + cited science + photos. Sweet spot for a niche digital cookbook. Launch at **$14** for the first 2 weeks, then raise to **$19**. |
-| **Free 7-day plan** | $0 (lead magnet) | Builds your email list — your most valuable asset. |
-| **Print edition (Amazon KDP, optional)** | $19–29 | Print-on-demand; you hold no stock. Adds credibility + passive Amazon search traffic. |
-| **Bundle / upsell** | +$8–15 | "Cookbook + printable meal-plan & shopping-list pack" or a body-weight protein planner. |
-
-Anchor the price: show "**$19**" next to "~$0.19 per recipe."
+| **Founding launch — first 7 days only** | **$12** | Real, time-boxed; email your list first, then actually raise it. |
+| **Regular — Digital PDF** | **$19** | Charm price. Anchor it on the page: "~~$39~~ **today $19**" and "≈ $0.19 per recipe." |
+| **Bundle (make this the obvious best buy)** | **$27** | Cookbook + printable meal-plan & shopping-list pack (add an "app pro" tier later). |
+| **Free 7-day plan** | $0 | Lead magnet → email list (your #1 asset). |
+| **Print edition (Amazon KDP, later)** | $24–29 | Print-on-demand, free ISBN, passive Amazon search traffic. |
 
 ---
 
 ## 2. Sales-page / listing copy (Gumroad, Etsy, Amazon)
 
-**Title:** The 70 g Protein Cookbook — 100 High-Protein, Low-Sugar Recipes
+**Title (front-load keywords + benefit, per Etsy/SEO research):** High-Protein Cookbook — 100 Big-Flavour, Low-Sugar Recipes · 70 g Protein Each · Instant PDF + Free App
 
-**Subtitle:** Hit 70 g of protein every meal, keep sugar low, and actually enjoy it — 100 recipes, 3 done-for-you weeks, and the science, in one book.
+**Subtitle (lead with TASTE, demote the macros — the "healthy = less tasty" trap):** Crave-worthy food that just happens to hit your protein. 100 chef-tested recipes (~70 g protein, low sugar), plus 3 meal-plan weeks, auto shopping lists, and the science.
 
 **Short blurb (Gumroad/Etsy summary):**
 > Tired of choking down plain chicken to hit your protein? This is 100 real,
