@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free 7-Day 70g Protein Meal Plan | The 70 g Protein Cookbook</title>
+<meta name="description" content="Get a free 7-day high-protein, low-sugar meal plan — 21 meals, ~210 g protein a day, with an auto shopping list. From The 70 g Protein Cookbook.">
+<link rel="canonical" href="https://bengisusengul.github.io/70-gr-protein-meal-recipes/free-plan.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free 7-Day 70g Protein Meal Plan">
+<meta property="og:description" content="21 high-protein, low-sugar meals + a ready-made shopping list. Free download.">
+<meta property="og:image" content="https://bengisusengul.github.io/70-gr-protein-meal-recipes/img/recipes/greek-yogurt-granola-parfait.jpg">
+<meta property="og:url" content="https://bengisusengul.github.io/70-gr-protein-meal-recipes/free-plan.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+ .lp{max-width:640px;margin:0 auto;padding:24px 16px;text-align:center}
+ .lp h1{font-size:32px;line-height:1.15;margin:.2em 0}
+ .lp .sub{font-size:19px;color:#5b5048;line-height:1.5}
+ .lp .hero{width:100%;max-width:520px;aspect-ratio:16/10;object-fit:cover;border-radius:16px;margin:18px auto;display:block}
+ .lp ul{display:inline-block;text-align:left;font-size:17px;line-height:1.7;margin:8px auto 18px}
+ .lp form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:14px 0}
+ .lp input[type=email]{flex:1 1 260px;min-height:50px;font-size:16px;padding:0 14px;border:2px solid #cdbfa9;border-radius:12px}
+ .lp button{min-height:50px;padding:0 22px;font-size:17px;font-weight:800;color:#fff;background:#2f7d52;border:0;border-radius:12px;cursor:pointer}
+ .lp .fine{font-size:13px;color:#7a7066;margin-top:6px}
+ .lp a.alt{color:#2f7d52;font-weight:700}
+ .lp .back{display:inline-block;margin-top:22px;color:#2f7d52;text-decoration:none;font-weight:600}
+ #lp-msg{display:none;margin:12px 0;padding:12px;border-radius:10px;background:#eaf3ec;color:#256241;font-weight:600}
+</style>
+</head>
+<body>
+<main class="lp">
+  <a class="back" href="index.html">← The 70 g Protein Cookbook</a>
+  <h1>Your free 7-day, 70 g protein meal plan</h1>
+  <p class="sub">21 high-protein, low-sugar meals — about <strong>210 g of protein a day</strong> — with a ready-made shopping list. A taste of the full 100-recipe cookbook.</p>
+  <img class="hero" src="img/recipes/greek-yogurt-granola-parfait.jpg" alt="A high-protein breakfast from the 7-day plan">
+  <ul>
+    <li>✅ 7 breakfasts, 7 lunches, 7 dinners — all ~70 g protein</li>
+    <li>✅ Under 20 g net carbs per meal, very low sugar</li>
+    <li>✅ One-tap shopping list, grouped by aisle</li>
+    <li>✅ Works offline on your phone</li>
+  </ul>
+  <!-- EMAIL CAPTURE — replace the form action with your provider's URL
+       (ConvertKit/Mailchimp/Buttondown). The hidden fallback below still
+       gives instant access so the page works before you wire a provider. -->
+  <form id="lp-form" action="REPLACE_WITH_YOUR_EMAIL_PROVIDER_FORM_URL" method="post">
+    <input type="email" name="email" placeholder="you@email.com" required aria-label="Your email">
+    <button type="submit">Send me the free plan</button>
+  </form>
+  <div id="lp-msg"></div>
+  <p class="fine">No spam — just the plan and the occasional new recipe. Unsubscribe anytime.<br>
+    Prefer instant access? <a class="alt" href="book/free-7-day-plan.pdf">Download the sample plan (PDF)</a>.</p>
+  <a class="back" href="cookbook.html">Want all 100 recipes? Get the full cookbook →</a>
+</main>
+<script>
+  // If the provider URL hasn't been set yet, don't 404 — confirm + offer the PDF.
+  (function () {
+    var f = document.getElementById("lp-form"), msg = document.getElementById("lp-msg");
+    f.addEventListener("submit", function (e) {
+      if (f.getAttribute("action").indexOf("REPLACE_WITH_YOUR") === 0) {
+        e.preventDefault();
+        msg.style.display = "block";
+        msg.innerHTML = 'Thanks! Your free plan is ready — <a href="book/free-7-day-plan.pdf">download it here</a>. (Owner: connect your email provider to collect this address.)';
+      }
+    });
+  })();
+</script>
+</body>
+</html>

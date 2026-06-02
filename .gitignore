@@ -4,3 +4,15 @@ package-lock.json
 
 # Generated, sellable PDF output
 dist/
+
+# Photo-fetch working files (not part of the product)
+img/_candidates/
+sample.html
+
+# OS cruft
+.DS_Store
+
+# The full cookbook PDF is the PAID product (upload to Gumroad) and a build
+# artifact — keep it OUT of the public repo. Build locally with: npm run build:pdf
+# (then compress: python3 build/compress-pdf.py dist/the-70g-protein-cookbook.pdf book/the-70g-protein-cookbook.pdf)
+book/the-70g-protein-cookbook.pdf

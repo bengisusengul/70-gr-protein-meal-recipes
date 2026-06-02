@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bengisusengul.github.io/70-gr-protein-meal-recipes/sitemap.xml

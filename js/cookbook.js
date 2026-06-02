@@ -18,7 +18,10 @@
     subtitle: "100 High-Protein, Low-Sugar Recipes for Strength, Energy & Healthy Aging",
     author: "Bengisu Sengul",
     year: new Date().getFullYear(),
-    website: "",                       // e.g. "yourdomain.com" (optional)
+    website: "",                       // your store/site URL once live (optional)
+    contact: "melikebengisusegul@gmail.com",
+    price: "$19",
+    dedication: "Greetings to myself — and to anyone beginning again.",
     edition: "First Edition"
   };
 
@@ -28,6 +31,7 @@
   var ART = window.ART || { hero: function () { return ""; } };
   var SWAPS = window.SWAPS || { forRecipe: function () { return []; } };
   var RECIPE_IMAGES = window.RECIPE_IMAGES || [];
+  var EX = window.RECIPE_EXTRA || {};
 
   function heroNode(r, cls) {
     var node = el("div", { class: cls, html: ART.hero(r) });
@@ -135,6 +139,7 @@
 
   function pageContents() {
     var list = el("ol", { class: "toc-list" });
+    list.appendChild(tocEntry("A note from Bengisu", "#sec-welcome"));
     list.appendChild(tocEntry("How to use this book", "#sec-howto"));
     list.appendChild(tocEntry("The science: why this works", "#sec-intro"));
     CATEGORY_ORDER.forEach(function (cat) {
@@ -148,6 +153,7 @@
     list.appendChild(tocEntry("7-Day meal plans", "#sec-plans", "toc-section"));
     list.appendChild(tocEntry("Kitchen conversions & protein chart", "#sec-appendix", "toc-section"));
     list.appendChild(tocEntry("Recipe index (A–Z)", "#sec-index", "toc-section"));
+    list.appendChild(tocEntry("About the author", "#sec-about", "toc-section"));
 
     return el("section", { class: "page page-contents" }, [
       el("h2", { class: "section-title" }, ["Contents"]),
@@ -277,6 +283,7 @@
 
   function recipePage(r) {
     var m = r.macros;
+    var x = EX[r.id] || {};
     var macroStrip = el("div", { class: "rcp-macros" }, [
       macroBox(m.protein + " g", "protein", "rcp-protein"),
       macroBox(m.netCarbs + " g", "net carbs", "rcp-carb"),
@@ -304,6 +311,7 @@
 
     var extras = el("div", { class: "rcp-extras" });
     if (r.notes) extras.appendChild(el("p", { class: "rcp-notes" }, [el("strong", {}, ["Tip. "]), r.notes]));
+    if (x.storage) extras.appendChild(el("p", { class: "rcp-storage" }, [el("strong", {}, ["Storage. "]), x.storage]));
     var swaps = SWAPS.forRecipe(r);
     if (swaps.length) {
       var sb = el("div", { class: "rcp-swaps" }, [el("h4", {}, ["Make it…"])]);
@@ -315,12 +323,20 @@
       });
       extras.appendChild(sb);
     }
+    extras.appendChild(el("p", { class: "rcp-nutri" }, [
+      "Full nutrition (estimated, per serving): " + m.calories + " kcal · " + m.protein + " g protein · " +
+      m.netCarbs + " g net carbs · " + m.fat + " g fat" + (x.satFat_g != null ? " (" + x.satFat_g + " g sat)" : "") +
+      " · " + m.fiber + " g fiber" + (x.sugar_g != null ? " · " + x.sugar_g + " g sugar" : "") +
+      (x.sodium_mg != null ? " · " + x.sodium_mg + " mg sodium" : "") +
+      ((x.allergens && x.allergens.length) ? ".  Allergens: " + x.allergens.join(", ") + "." : ".")
+    ]));
 
     return el("section", { class: "page page-recipe", id: recipeAnchor(r) }, [
       heroNode(r, "rcp-hero"),
       el("div", { class: "rcp-cat" }, [r.category + (r.vegetarian ? "  ·  Vegetarian" : "")]),
       el("h2", { class: "rcp-name" }, [r.name]),
-      el("p", { class: "rcp-time" }, ["Prep " + r.time.prep + " min · Cook " + r.time.cook + " min"]),
+      el("p", { class: "rcp-time" }, ["Prep " + r.time.prep + " min · Cook " + r.time.cook + " min" + (x.difficulty ? " · " + x.difficulty : "")]),
+      (x.badges && x.badges.length) ? el("div", { class: "rcp-badges" }, x.badges.map(function (b) { return el("span", { class: "rcp-badge" }, [b]); })) : null,
       macroStrip,
       col,
       extras
@@ -379,6 +395,71 @@
   }
 
   // ============================================================
+  //  FRONT / BACK MATTER (author pages)
+  // ============================================================
+  var CREST = '<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-label="Bengisu Sengul, Head Chef">' +
+    '<circle cx="110" cy="110" r="104" fill="#f3ead7" stroke="#2f7d52" stroke-width="6"/>' +
+    '<circle cx="110" cy="110" r="93" fill="none" stroke="#b4612a" stroke-width="1.5"/>' +
+    '<g transform="translate(110,72)">' +
+    '<circle cx="-20" cy="-6" r="15" fill="#2f7d52"/><circle cx="0" cy="-15" r="17" fill="#2f7d52"/><circle cx="20" cy="-6" r="15" fill="#2f7d52"/>' +
+    '<rect x="-32" y="2" width="64" height="16" rx="4" fill="#256241"/></g>' +
+    '<text x="110" y="142" text-anchor="middle" font-family="Georgia, serif" font-size="50" font-weight="700" fill="#23402e">BS</text>' +
+    '<rect x="46" y="163" width="128" height="26" rx="13" fill="#2f7d52"/>' +
+    '<text x="110" y="181" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="2.5" fill="#fff">HEAD CHEF</text>' +
+    '</svg>';
+
+  function pageDedication() {
+    if (!BOOK.dedication) return null;
+    return el("section", { class: "page page-dedication" }, [
+      el("p", { class: "dedication-text" }, [BOOK.dedication])
+    ]);
+  }
+
+  function pageWelcome() {
+    return el("section", { class: "page page-welcome", id: "sec-welcome" }, [
+      el("h2", { class: "section-title" }, ["A Note From Bengisu"]),
+      el("p", { class: "welcome-p" }, ["A few years ago I was heavier, exhausted, and frustrated — eating in a way that left me feeling worse every month. So I did something drastic: I stripped the sugar and the junk off my plate and built every meal around protein. Within two weeks, I felt alive again. The weight started to move, the fog lifted, and I began to feel like myself."]),
+      el("p", { class: "welcome-p" }, ["There were ups and downs. But the hardest part — every single day — was getting enough protein without eating the same plain thing on repeat. I'm a chef: I spent four years working my way from Sous Chef to Head Chef, and I refused to live on flavourless food. So I started cooking protein I actually looked forward to."]),
+      el("p", { class: "welcome-p" }, ["This book is that cooking. One hundred recipes, each built around about 70 g of protein with very little sugar — and the flavour a professional kitchen would be proud of. Whether you're starting over like I was, or you just want to eat strong without the boredom, I made these for you."]),
+      el("p", { class: "welcome-sign" }, ["Let's cook,"]),
+      el("p", { class: "welcome-name" }, [BOOK.author])
+    ]);
+  }
+
+  function pageAbout() {
+    return el("section", { class: "page page-about", id: "sec-about" }, [
+      el("h2", { class: "section-title" }, ["About the Author"]),
+      el("div", { class: "about-crest", html: CREST }),
+      el("p", { class: "about-p" }, [BOOK.author + " is a professional chef — a former Sous Chef and Head Chef with four years in demanding kitchens — who rebuilt her own health by putting protein first and cutting the sugar. After a high-protein, low-sugar reset gave her energy and confidence back in a matter of weeks, she set out to help others do the same without surrendering flavour."]),
+      el("p", { class: "about-p" }, ["The 70 g Protein Cookbook is the result: chef-tested, protein-packed food for real life — every recipe is one she actually cooks and eats."]),
+      BOOK.contact ? el("p", { class: "about-contact" }, ["Say hello: " + BOOK.contact]) : null
+    ]);
+  }
+
+  function pageLicense() {
+    return el("section", { class: "page page-license" }, [
+      el("h2", { class: "section-title" }, ["Your Copy, Your Kitchen"]),
+      el("p", { class: "license-p" }, ["Thank you for buying The 70 g Protein Cookbook. This copy is licensed for your personal use."]),
+      el("p", { class: "license-p" }, ["Please don't copy, redistribute, resell, or share the files. Cooking these recipes for friends and family — and sharing a photo or a tip — is wonderful; sharing the book itself is not. Your support is what lets an independent chef keep creating."]),
+      BOOK.contact ? el("p", { class: "license-p" }, ["Questions, swaps, or a win to share? Email me at " + BOOK.contact + "."]) : null,
+      el("p", { class: "license-copy" }, ["© " + BOOK.year + " " + BOOK.author + ". All rights reserved."])
+    ]);
+  }
+
+  function pageClosing() {
+    var where = BOOK.website ? BOOK.website : "the free companion web app";
+    return el("section", { class: "page page-closing" }, [
+      el("div", { class: "closing-inner" }, [
+        el("h2", { class: "closing-title" }, ["You started. That's everything."]),
+        el("p", { class: "closing-p" }, ["If these recipes helped you feel a little more like yourself, the kindest thing you can do is leave an honest review where you bought the book — it helps the next person find their way back to feeling good."]),
+        el("p", { class: "closing-p" }, ["Hungry for more? Grab the free 7-day meal plan and new recipes at " + where + "."]),
+        el("p", { class: "closing-sign" }, ["Greetings to yourself — and keep going."]),
+        el("p", { class: "welcome-name" }, ["— " + BOOK.author])
+      ])
+    ]);
+  }
+
+  // ============================================================
   //  BUILD
   // ============================================================
   function render() {
@@ -388,7 +469,9 @@
 
     root.appendChild(pageCover());
     root.appendChild(pageTitle());
+    var ded = pageDedication(); if (ded) root.appendChild(ded);
     root.appendChild(pageContents());
+    root.appendChild(pageWelcome());
     root.appendChild(pageHowToUse());
     root.appendChild(pageIntro());
 
@@ -402,6 +485,9 @@
     root.appendChild(pagePlans());
     root.appendChild(pageConversions());
     root.appendChild(pageIndex());
+    root.appendChild(pageAbout());
+    root.appendChild(pageLicense());
+    root.appendChild(pageClosing());
 
     document.body.setAttribute("data-rendered", "1"); // signal for the PDF builder
   }

@@ -226,6 +226,7 @@
     var tried = Store.has(K.TRIED, r.id);
     var fav = Store.has(K.FAVORITES, r.id);
     var inPlan = Store.read(K.PLAN, []).some(function (p) { return p.id === r.id; });
+    var x = (window.RECIPE_EXTRA || {})[r.id] || {};
 
     var card = el("article", { class: "card" + (tried ? " is-tried" : ""), "data-id": r.id });
 
@@ -248,8 +249,11 @@
 
     var title = el("h3", { class: "card-title" }, [r.name]);
     var time = el("div", { class: "card-time" }, [
-      "⏱ " + r.time.prep + " min prep · " + r.time.cook + " min cook"
+      "⏱ " + r.time.prep + " min prep · " + r.time.cook + " min cook" + (x.difficulty ? " · " + x.difficulty : "")
     ]);
+    var badges = (x.badges && x.badges.length)
+      ? el("div", { class: "card-badges" }, x.badges.map(function (b) { return el("span", { class: "card-badge" }, [b]); }))
+      : null;
 
     // collapsible details
     var sm = scaleMacros(r.macros);
@@ -288,11 +292,17 @@
       });
     }
 
+    var headnoteEl = x.headnote ? el("p", { class: "card-headnote" }, [x.headnote]) : null;
+    var storageEl = x.storage ? el("p", { class: "card-storage" }, ["🧊 " + x.storage]) : null;
+    var pageLink = el("a", { class: "recipe-page-link", href: "recipes/" + r.id + ".html" }, ["Open full recipe page ↗"]);
     var details = el("div", { class: "card-details" }, [
+      headnoteEl,
       el("h4", {}, [ingHeading]), ingList,
       el("h4", {}, ["Method"]), steps,
       notes,
-      swapEl
+      storageEl,
+      swapEl,
+      pageLink
     ]);
     details.style.display = "none";
 
@@ -331,6 +341,7 @@
     card.appendChild(hero);
     card.appendChild(head);
     card.appendChild(title);
+    if (badges) card.appendChild(badges);
     card.appendChild(macroBadges(sm));
     card.appendChild(time);
 

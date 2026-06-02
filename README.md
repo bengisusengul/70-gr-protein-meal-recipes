@@ -63,9 +63,12 @@ No build step or workflow is needed — it's a plain static site.
   soy-free substitutions** based on its ingredients (e.g. *feta → vegan feta*,
   *almond milk → oat milk*, *tofu → paneer or extra chicken/egg*).
 
-All artwork is **hand-crafted SVG generated in the browser** — no photos are
-fetched from the internet, so the site looks the same offline and nothing can
-break or expire.
+Every recipe now has a **real food photo** (with the hand-crafted SVG
+illustration as an automatic fallback if an image is ever missing). The photos
+ship with the app, and a **service worker** caches the shell, recipe pages and
+images — so it's a true installable PWA that works offline, not just an
+"Add to Home Screen" shortcut. Each recipe also has its own **crawlable page**
+under `/recipes/` with `Recipe` structured data so search engines can find it.
 
 Everything you do — your plan, servings, shopping check-offs, tried list, and
 favorites — is saved in your browser via `localStorage`, so it's there when you
