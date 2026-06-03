@@ -1,6 +1,8 @@
 # 📒 SESSION HANDOFF — The 70 g Protein Cookbook
 ### Complete context for a fresh Claude Code session. Read this top-to-bottom before doing anything.
-*Last updated: 2026-06-03. This document supersedes the older, pre-session `PROGRESS.md`.*
+*Last updated: 2026-06-03 (end of session — launching tomorrow). Supersedes the older `PROGRESS.md`.*
+
+> **▶ RESUME HERE — next session is LAUNCH DAY.** Everything is built, committed and pushed. Nothing is half-finished. Pick up at **§9 → A. Go-live**: (1) enable GitHub Pages, (2) set up Gumroad and upload `book/the-70g-protein-cookbook.pdf` then give Claude the product URL to wire the "Buy" CTAs + rebuild, (3) connect an email provider in `free-plan.html`, (4) submit `/sitemap.xml` to Google Search Console, (5) upload the 12 `pins/` to Pinterest. Only ask Bengisu for the Pexels key if you need to re-fetch photos.
 
 ---
 
