@@ -176,4 +176,12 @@ python3 -m http.server 8000                  # open http://localhost:8000/ and /
 - Want the full cited research saved as `RESEARCH.md`, and the headnote/typography polish done?
 
 ---
+## 11. Owner's note-to-self (future idea — full version in `IDEAS.md`)
+After launch, Bengisu wants to **build an AI agent / agents to run this book's selling &
+promotion** (Pinterest, email funnel, listings/SEO, social content, reviews/social proof,
+analytics) — likely via the Claude Agent SDK, drawing on this repo's assets (`pins/`,
+`recipes/` SEO pages, `MARKETING.md`, the email lead magnet). Not part of the current
+launch scope — revisit once the book is live.
+
+---
 *End of handoff. A new Claude session: read §0–§4 first, then §5–§7 to reproduce, then §9 for what to do next.*

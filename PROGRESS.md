@@ -32,6 +32,11 @@ The full sellable PDF builds locally to `book/the-70g-protein-cookbook.pdf` and 
 4. **Google Search Console:** submit `/sitemap.xml`. **Pinterest:** upload the 12 `pins/`.
 5. Then: beta-tester testimonials (social proof), recipe reliability QA, optional headnote/typography polish.
 
+## 💡 Note to self (future idea — see `IDEAS.md`)
+Build an **AI agent / agents to manage this book's selling & promotion** (Pinterest,
+email funnel, listings/SEO, social, reviews, analytics) — likely via the Claude Agent SDK.
+Not now; after launch. Full sketch in `IDEAS.md`.
+
 ## Guardrails for the next agent
 Don't edit `js/recipes-data.js` (validated core; use `js/recipes-extra.js`). Pexels API key: **ask
 Bengisu**, keep it env-only, never commit. Push only to the feature branch. Rebuild + compress the
