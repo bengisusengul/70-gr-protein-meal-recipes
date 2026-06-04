@@ -21,10 +21,11 @@ const SWAPS = window.SWAPS;
 
 // ---- site config (edit BASE / STORE_URL when the domain / store is live) ----
 const BASE = "https://bengisusengul.github.io/70-gr-protein-meal-recipes";
-const STORE_URL = ""; // e.g. "https://yourname.gumroad.com/l/70g" — empty -> link to the in-browser book
+const STORE_URL = "https://bengisus.gumroad.com/l/igjxu"; // empty -> link to in-browser book; set -> external Gumroad store
 const AUTHOR = "Bengisu Sengul";
 const buyHref = STORE_URL || "../cookbook.html";
 const buyText = STORE_URL ? "Get the full cookbook (PDF)" : "Read the full cookbook";
+const buyAttrs = /^https?:\/\//i.test(buyHref) ? ' target="_blank" rel="noopener"' : ""; // open external store in a new tab
 
 const esc = (s) => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const iso = (m) => "PT" + (m || 0) + "M";
@@ -146,7 +147,7 @@ function page(r) {
 </div>
 ${swapEls}
 <p class="note">Full nutrition (estimated, per serving): ${r.macros.calories} kcal · ${r.macros.protein} g protein · ${r.macros.netCarbs} g net carbs · ${r.macros.fat} g fat (${x.satFat_g} g sat) · ${r.macros.fiber} g fiber · ${x.sugar_g} g sugar · ${x.sodium_mg} mg sodium. Allergens: ${(x.allergens && x.allergens.length ? x.allergens.join(", ") : "none of the major allergens flagged")}. Macros are realistic estimates from standard food-composition values; brands and portions vary.</p>
-<a class="cta" href="${buyHref}">${esc(buyText)} — 100 recipes, 3 meal plans &amp; the science →</a>
+<a class="cta" href="${buyHref}"${buyAttrs}>${esc(buyText)} — 100 recipes, 3 meal plans &amp; the science →</a>
 <footer>
 <p><strong>The 70 g Protein Cookbook</strong> — 100 high-protein, low-sugar recipes. <a class="back" href="../index.html">Open the free interactive app</a> to plan your week and auto-build a shopping list.</p>
 <p>Not medical advice. 70 g/meal is a high per-meal target — match your total daily protein to your body and goals; consult a professional if you have a medical condition.</p>
@@ -182,7 +183,7 @@ function hub() {
 <h1>All 100 high-protein recipes</h1>
 <p>Every recipe delivers ~70 g of protein with very low sugar. Tap any recipe for ingredients, method, macros and dietary swaps.</p>
 ${body}
-<p style="margin-top:22px"><a href="${buyHref}">${esc(buyText)} →</a></p>
+<p style="margin-top:22px"><a href="${buyHref}"${buyAttrs}>${esc(buyText)} →</a></p>
 </main></body></html>`;
 }
 
@@ -195,7 +196,7 @@ fs.writeFileSync(path.join(dir, "index.html"), hub());
 
 // sitemap
 const today = (process.argv[2] || "2026-06-01"); // pass a date; default fixed
-let urls = [BASE + "/", BASE + "/cookbook.html", BASE + "/recipes/index.html"].concat(RECIPES.map((r) => BASE + "/recipes/" + r.id + ".html"));
+let urls = [BASE + "/", BASE + "/recipes/index.html"].concat(RECIPES.map((r) => BASE + "/recipes/" + r.id + ".html")); // cookbook.html intentionally excluded — paid product, not advertised to crawlers
 const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   urls.map((u) => "  <url><loc>" + u + "</loc><lastmod>" + today + "</lastmod></url>").join("\n") + "\n</urlset>\n";
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemap);
