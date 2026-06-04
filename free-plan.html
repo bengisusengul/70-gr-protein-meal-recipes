@@ -41,30 +41,13 @@
     <li>✅ One-tap shopping list, grouped by aisle</li>
     <li>✅ Works offline on your phone</li>
   </ul>
-  <!-- EMAIL CAPTURE — replace the form action with your provider's URL
-       (ConvertKit/Mailchimp/Buttondown). The hidden fallback below still
-       gives instant access so the page works before you wire a provider. -->
-  <form id="lp-form" action="REPLACE_WITH_YOUR_EMAIL_PROVIDER_FORM_URL" method="post">
-    <input type="email" name="email" placeholder="you@email.com" required aria-label="Your email">
-    <button type="submit">Send me the free plan</button>
-  </form>
-  <div id="lp-msg"></div>
+  <!-- EMAIL CAPTURE — Kit (ConvertKit) inline form (uid 57976b6071).
+       Renders the published form, collects the email and sends a
+       double opt-in confirmation. Restyle it in Kit — no code change needed. -->
+  <script async data-uid="57976b6071" src="https://wondrous-artisan-5286.kit.com/57976b6071/index.js"></script>
   <p class="fine">No spam — just the plan and the occasional new recipe. Unsubscribe anytime.<br>
     Prefer instant access? <a class="alt" href="book/free-7-day-plan.pdf">Download the sample plan (PDF)</a>.</p>
   <a class="back" href="https://bengisus.gumroad.com/l/igjxu" target="_blank" rel="noopener">Want all 100 recipes? Get the full cookbook →</a>
 </main>
-<script>
-  // If the provider URL hasn't been set yet, don't 404 — confirm + offer the PDF.
-  (function () {
-    var f = document.getElementById("lp-form"), msg = document.getElementById("lp-msg");
-    f.addEventListener("submit", function (e) {
-      if (f.getAttribute("action").indexOf("REPLACE_WITH_YOUR") === 0) {
-        e.preventDefault();
-        msg.style.display = "block";
-        msg.innerHTML = 'Thanks! Your free plan is ready — <a href="book/free-7-day-plan.pdf">download it here</a>. (Owner: connect your email provider to collect this address.)';
-      }
-    });
-  })();
-</script>
 </body>
 </html>
