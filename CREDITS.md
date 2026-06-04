@@ -2,6 +2,8 @@
 
 Imagery from open platforms (Pexels, Openverse/Creative Commons, TheMealDB), commercial-use only. CC-BY items credited below; Pexels/CC0/public-domain need no attribution.
 
+- **Site hero (homepage banner)** — Pexels, by Sergey Meshkov [Pexels (free, no attribution req.)] (https://www.pexels.com/photo/close-up-photo-of-cooked-food-on-black-ceramic-bowl-8481855/)
+
 - **Spinach & Feta Egg-White Scramble with Turkey Sausage** — Pexels, by mali maeder [Pexels (free, no attribution req.)] (https://www.pexels.com/photo/greek-frittata-on-red-ceramic-plate-13119151/)
 - **Cottage Cheese & Smoked Salmon Breakfast Bowl** — Pexels, by Nadin Sh [Pexels (free, no attribution req.)] (https://www.pexels.com/photo/smoked-salmon-with-mozzarella-cheese-dill-and-olive-oil-19062799/)
 - **Greek Yogurt & Berry Protein Bowl** — Pexels, by Engin Akyurt [Pexels (free, no attribution req.)] (https://www.pexels.com/photo/cereals-on-clear-glass-bowl-2531176/)
