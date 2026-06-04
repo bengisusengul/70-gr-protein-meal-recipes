@@ -18,7 +18,7 @@
     subtitle: "Big-flavour meals that just happen to pack 70 g of protein — 100 crave-worthy, low-sugar recipes",
     author: "Bengisu Sengul",
     year: new Date().getFullYear(),
-    website: "",                       // your store/site URL once live (optional)
+    website: "https://bengisusengul.github.io/70-gr-protein-meal-recipes/", // free companion web app
     contact: "bengisu_sengul@hotmail.com",
     price: "$19",
     dedication: "Greetings to myself — and to anyone beginning again.",

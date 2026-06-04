@@ -15,7 +15,7 @@ const RECIPES = window.RECIPES, X = window.RECIPE_EXTRA || {}, PLANS = window.ME
 const byId = (id) => RECIPES.find((r) => r.id === id);
 const esc = (s) => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const imgAbs = (id) => "file://" + path.join(ROOT, "img", "recipes", id + ".jpg");
-const STORE = ""; // set to your Gumroad URL when live
+const STORE = "https://bengisus.gumroad.com/l/igjxu"; // Gumroad product (live)
 
 const plan = PLANS[0] || { name: "Week 1", days: [] };
 // unique meals in week 1
@@ -84,7 +84,7 @@ const html = `<!doctype html><html><head><meta charset="utf8"><style>
 <div class="page cta">
   <h2>Hungry for the other 96?</h2>
   <p style="font-size:18px;color:#5b5048;margin:10px 60px">Get all 100 high-protein, low-sugar recipes — with photos, dietary swaps, three meal-plan weeks and the cited science — in the full cookbook.</p>
-  <div class="buy">${STORE ? "Get the full cookbook" : "Get the full cookbook — link inside your welcome email"}</div>
+  ${STORE ? '<a class="buy" href="' + STORE + '">Get the full cookbook (PDF) &rarr;</a>' : '<div class="buy">Get the full cookbook — link inside your welcome email</div>'}
   <p style="margin-top:40px;font-style:italic;color:#7a7066">Greetings to yourself — you started, and that's everything. — Bengisu</p>
 </div>
 </body></html>`;
