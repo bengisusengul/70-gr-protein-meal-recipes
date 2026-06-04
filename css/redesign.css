@@ -1,0 +1,152 @@
+/* ==================================================================
+   The 70 g Protein Cookbook — REDESIGN layer
+   Loads AFTER css/styles.css and overrides it. A premium, editorial
+   elevation: a selling hero, conversion CTAs, refined recipe cards,
+   a chef/trust band, and display typography. Every base DOM hook
+   (.tab-btn, #recipe-grid, .card, etc.) is preserved.
+   ================================================================== */
+
+:root {
+  --bg: #faf8f3;                 /* warmer cream than the cool base */
+  --ink: #1c241f;
+  --muted: #6c756c;
+  --line: #e8e3d7;
+  --brand: #2f7d52;
+  --brand-dark: #1d4e34;
+  --brand-deep: #143527;         /* hero overlay + chef band base */
+  --gold: #e0b13a;
+  --gold-soft: #f1dca6;
+  --radius: 16px;
+  --shadow: 0 1px 2px rgba(20,40,28,.05), 0 10px 28px rgba(20,40,28,.07);
+  --shadow-lg: 0 20px 52px rgba(20,40,28,.18);
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+}
+
+body { background: var(--bg); }
+
+/* ---------- display typography ---------- */
+.logo, h2, .chef-title, .plan-card-head h3, .science-section h3 {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -.01em;
+}
+h2 { font-weight: 600; font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.85rem); }
+
+/* ==================== HERO ==================== */
+.site-header {
+  display: flex; align-items: center;
+  min-height: clamp(440px, 62vh, 580px);
+  padding: 0;
+  background:
+    linear-gradient(180deg, rgba(15,38,27,.50) 0%, rgba(15,38,27,.42) 38%, rgba(15,38,27,.88) 100%),
+    url("../img/book/cover.jpg");
+  background-size: cover;
+  background-position: center 62%;
+}
+#header-art-mount { display: none; }            /* drop the SVG band; let the photo carry the hero */
+.site-header .header-content {
+  position: relative; z-index: 1;
+  max-width: 760px;
+  padding-top: calc(56px + env(safe-area-inset-top));
+  padding-bottom: 56px;
+  text-align: left;
+}
+.hero-kicker {
+  margin: 0 0 14px; font-size: .78rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--gold-soft);
+}
+.site-header .logo {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2.5rem, 1.5rem + 4.6vw, 4.2rem);
+  line-height: 1.02; letter-spacing: -.02em; margin: 0;
+  text-shadow: 0 2px 34px rgba(0,0,0,.28);
+}
+.site-header .logo .accent { color: var(--gold); font-style: italic; }
+.site-header .tagline {
+  margin: 18px 0 0; max-width: 42ch;
+  font-size: clamp(1rem, .9rem + .45vw, 1.22rem); line-height: 1.5;
+  opacity: .95; font-weight: 400;
+}
+.hero-stats {
+  list-style: none; display: flex; flex-wrap: wrap; gap: 14px 30px;
+  margin: 28px 0 0; padding: 0;
+}
+.hero-stats li { display: flex; flex-direction: column; line-height: 1.05; }
+.hero-stats b { font-family: var(--font-display); font-size: 1.55rem; font-weight: 600; color: #fff; }
+.hero-stats small { margin-top: 3px; font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; opacity: .82; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+/* ---------- CTA buttons (shared) ---------- */
+.btn-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font); font-weight: 700; font-size: .98rem; line-height: 1;
+  padding: 15px 24px; border-radius: 999px; text-decoration: none; cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn-cta:active { transform: translateY(1px); }
+.btn-cta-primary { background: var(--gold); color: #2a3119; box-shadow: 0 10px 26px rgba(224,177,58,.36); }
+.btn-cta-primary:hover { background: #ecc056; transform: translateY(-2px); }
+.btn-cta-ghost { background: rgba(255,255,255,.10); color: #fff; border-color: rgba(255,255,255,.55); }
+.btn-cta-ghost:hover { background: rgba(255,255,255,.18); transform: translateY(-2px); }
+
+/* ==================== STICKY NAV + ALWAYS-ON BUY ==================== */
+.tabs-bar { display: flex; align-items: center; gap: 10px; }
+.tabs-bar .tabs-inner { flex: 1 1 auto; min-width: 0; }
+.nav-buy {
+  flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px;
+  background: var(--brand); color: #fff; font-weight: 700; font-size: .85rem;
+  padding: 9px 16px; border-radius: 999px; text-decoration: none; white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(47,125,82,.30); transition: background .15s, transform .15s;
+}
+.nav-buy:hover { background: var(--brand-dark); transform: translateY(-1px); }
+.nav-buy .nav-buy-short { display: none; }
+
+/* ==================== RECIPE CARDS ==================== */
+.card {
+  border-radius: var(--radius);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card-hero { height: 172px; }
+.card-title { font-size: 1.12rem; font-weight: 700; letter-spacing: -.005em; }
+.macro-protein { background: #e2f1e8; color: var(--brand-dark); }
+@media (hover: hover) {
+  .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: #cfe0d4; }
+}
+
+/* ==================== CHEF / TRUST BAND ==================== */
+.chef-band { background: var(--brand-deep); color: #eef0e6; margin-top: 10px; }
+.chef-band-inner { display: flex; gap: 30px; align-items: center; padding: 52px 0; }
+.chef-crest {
+  flex: 0 0 auto; width: 98px; height: 98px; border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #2f7d52, #143527);
+  border: 2px solid var(--gold); color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 2rem; font-weight: 600; letter-spacing: .02em;
+}
+.chef-title { color: #fff; margin: 0 0 12px; }
+.chef-band p { margin: 0 0 20px; max-width: 60ch; opacity: .92; line-height: 1.62; }
+.chef-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ==================== FOOTER ==================== */
+.site-footer { text-align: center; padding: 30px 0; }
+.footer-links { margin: 0 0 8px; font-weight: 600; }
+.footer-links a { color: var(--brand); text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; }
+
+/* ==================== MOBILE ==================== */
+@media (max-width: 640px) {
+  .site-header { min-height: clamp(420px, 78vh, 560px); }
+  .site-header .header-content { padding-top: calc(34px + env(safe-area-inset-top)); padding-bottom: 40px; }
+  .hero-stats { gap: 12px 22px; }
+  .hero-stats b { font-size: 1.3rem; }
+  .hero-cta .btn-cta { flex: 1 1 100%; }
+  .nav-buy { padding: 8px 13px; }
+  .nav-buy .nav-buy-full { display: none; }
+  .nav-buy .nav-buy-short { display: inline; }
+  .card-hero { height: 200px; }
+  .chef-band-inner { flex-direction: column; text-align: center; gap: 20px; padding: 40px 0; }
+  .chef-band p { margin-left: auto; margin-right: auto; }
+  .chef-cta { justify-content: center; }
+  .chef-cta .btn-cta { flex: 1 1 100%; }
+}

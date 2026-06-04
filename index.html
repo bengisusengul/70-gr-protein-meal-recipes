@@ -36,25 +36,46 @@
     /* real photo banner behind the header (dark-green overlay keeps white text readable) */
     .site-header{background-image:linear-gradient(180deg,rgba(18,52,36,.72),rgba(18,52,36,.88)),url("img/book/cover.jpg");background-size:cover;background-position:center}
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/redesign.css" />
 </head>
 <body>
   <header class="site-header">
     <div id="header-art-mount" aria-hidden="true"></div>
     <div class="wrap header-content">
+      <p class="hero-kicker">By Bengisu Sengul &middot; Professional Chef</p>
       <h1 class="logo">The <span class="accent">70&nbsp;g</span> Protein Cookbook</h1>
-      <p class="tagline">Crave-worthy, big-flavour food &middot; 100 high-protein, low-sugar recipes</p>
+      <p class="tagline">100 crave-worthy, low-sugar recipes &mdash; every plate engineered to hit ~70&nbsp;g of protein and stay under 20&nbsp;g net carbs.</p>
+      <ul class="hero-stats">
+        <li><b>100</b><small>Recipes</small></li>
+        <li><b>~70 g</b><small>Protein / meal</small></li>
+        <li><b>&lt;20 g</b><small>Net carbs</small></li>
+        <li><b>27</b><small>Vegetarian</small></li>
+      </ul>
+      <div class="hero-cta">
+        <a class="btn-cta btn-cta-primary" href="https://bengisus.gumroad.com/l/igjxu" target="_blank" rel="noopener">Get the cookbook</a>
+        <a class="btn-cta btn-cta-ghost" href="free-plan.html">Free 7-day plan</a>
+        <a class="btn-cta btn-cta-ghost" href="#recipe-grid">Browse recipes</a>
+      </div>
     </div>
   </header>
 
   <nav class="tabs">
-    <div class="wrap tabs-inner">
-      <button class="tab-btn active" data-tab="recipes">Recipes</button>
-      <button class="tab-btn" data-tab="planner">
-        Plan &amp; Shop <span id="plan-badge" class="badge" style="display:none">0</span>
-      </button>
-      <button class="tab-btn" data-tab="plans">7-Day Plans</button>
-      <button class="tab-btn" data-tab="tracker">Tracker</button>
-      <button class="tab-btn" data-tab="science">Why It Works</button>
+    <div class="wrap tabs-bar">
+      <div class="tabs-inner">
+        <button class="tab-btn active" data-tab="recipes">Recipes</button>
+        <button class="tab-btn" data-tab="planner">
+          Plan &amp; Shop <span id="plan-badge" class="badge" style="display:none">0</span>
+        </button>
+        <button class="tab-btn" data-tab="plans">7-Day Plans</button>
+        <button class="tab-btn" data-tab="tracker">Tracker</button>
+        <button class="tab-btn" data-tab="science">Why It Works</button>
+      </div>
+      <a class="nav-buy" href="https://bengisus.gumroad.com/l/igjxu" target="_blank" rel="noopener">
+        <span class="nav-buy-full">Get the cookbook</span><span class="nav-buy-short">Cookbook</span>
+      </a>
     </div>
   </nav>
 
@@ -175,14 +196,24 @@
     </section>
   </main>
 
+  <section class="chef-band">
+    <div class="wrap chef-band-inner">
+      <div class="chef-crest" aria-hidden="true">BS</div>
+      <div class="chef-band-text">
+        <h2 class="chef-title">Real food from a real kitchen</h2>
+        <p>Bengisu Sengul is a professional chef &mdash; a former Sous&nbsp;Chef and Head&nbsp;Chef &mdash; who rebuilt her own health by putting protein first and cutting the sugar, without ever surrendering flavour. Every recipe here is one she'd actually cook for herself.</p>
+        <div class="chef-cta">
+          <a class="btn-cta btn-cta-primary" href="https://bengisus.gumroad.com/l/igjxu" target="_blank" rel="noopener">Get the full cookbook</a>
+          <a class="btn-cta btn-cta-ghost" href="free-plan.html">Start with the free 7-day plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="wrap">
-      <p class="footer-cta" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 14px">
-        <a href="recipes/index.html" style="background:#256241;color:#fff;padding:11px 16px;border-radius:10px;text-decoration:none;font-weight:700">Browse all 100 recipes</a>
-        <a href="free-plan.html" style="background:#2f7d52;color:#fff;padding:11px 16px;border-radius:10px;text-decoration:none;font-weight:700">Get a free 7-day plan</a>
-        <a href="https://bengisus.gumroad.com/l/igjxu" target="_blank" rel="noopener" style="background:#b4612a;color:#fff;padding:11px 16px;border-radius:10px;text-decoration:none;font-weight:700">Get the full cookbook (PDF)</a>
-      </p>
-      <p>Built as an open, offline-friendly cookbook. Your plan &amp; progress are saved only in your browser.</p>
+      <p class="footer-links"><a href="free-plan.html">Free 7-day plan</a> &middot; <a href="https://bengisus.gumroad.com/l/igjxu" target="_blank" rel="noopener">Get the cookbook</a> &middot; <a href="recipes/index.html">All 100 recipes</a></p>
+      <p>The 70&nbsp;g Protein Cookbook by Bengisu Sengul &middot; Built as an open, offline-friendly app &mdash; your plan &amp; progress stay in your browser.</p>
     </div>
   </footer>
 

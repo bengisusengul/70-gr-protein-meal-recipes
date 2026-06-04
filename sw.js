@@ -1,9 +1,9 @@
 /* Service worker — makes the app genuinely offline-capable + installable.
  * Precaches the app shell; runtime-caches recipe photos and static recipe
  * pages as they're visited. Bump CACHE to invalidate after a deploy. */
-var CACHE = "70g-cookbook-v1";
+var CACHE = "70g-cookbook-v2";
 var CORE = [
-  "./", "./index.html", "./css/styles.css",
+  "./", "./index.html", "./css/styles.css", "./css/redesign.css",
   "./js/recipes-data.js", "./js/science-data.js", "./js/plans-data.js",
   "./js/illustrations.js", "./js/swaps.js", "./js/recipe-images.js",
   "./js/recipes-extra.js", "./js/storage.js", "./js/app.js",
