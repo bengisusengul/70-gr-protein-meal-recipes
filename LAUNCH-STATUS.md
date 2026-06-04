@@ -20,16 +20,19 @@ Legend: ✅ done · ⏳ needs your action · ⬜ optional / later
 - ✅ Free lead-magnet PDF committed (`book/free-7-day-plan.pdf`).
 - ✅ 12 Pinterest pins generated (`pins/`) and Gumroad gallery images prepared (`../gumroad-images/`).
 
-## ✅ Shipped this session — site ↔ Gumroad now connected
+## ✅ Shipped this session
 
-- ✅ Every "Get the full cookbook (PDF)" buy CTA points to the live Gumroad product and opens in a new tab: homepage footer (`index.html`), `free-plan.html`, all 100 recipe pages + the hub (via `STORE_URL` in `build/build-pages.js`).
-- ✅ Locked down the free full book: removed `cookbook.html` from the sitemap, added `noindex`, and removed every public link to it. (Note: it still returns `200` by direct URL — unavoidable on a static host — but it is unlinked and de-indexed.)
+- ✅ **Site → Gumroad wiring (W1):** every "Get the full cookbook (PDF)" buy CTA points to the live Gumroad product (new tab) — homepage footer (`index.html`), `free-plan.html`, all 100 recipe pages + the hub (via `STORE_URL` in `build/build-pages.js`). Verified live.
+- ✅ **Locked down the free full book:** removed `cookbook.html` from the sitemap, added `noindex`, and removed every public link to it. (Still returns `200` by direct URL — unavoidable on a static host — but unlinked + de-indexed.)
+- ✅ **Gumroad listing polished (W2):** added a 30-day-money-back-guarantee line to the description; set Category → *Self Improvement › Cooking › Recipes* + 5 tags (high protein, protein, meal prep, low carb, low sugar). Permalink unchanged (`igjxu`); enables Gumroad Discover after first sale + risk review.
+- ✅ **Email capture wired (W3):** `free-plan.html` embeds a published **Kit (ConvertKit)** inline form (uid `57976b6071`, green "Send me the free plan" button). Double opt-in; instant-download fallback kept.
+- ✅ **Lead-magnet upsell (Tier B):** the free 7-day-plan PDF now ends with a clickable Gumroad link; `BOOK.website` set for the next full PDF rebuild.
 
 ## ⏳ Needs your action
 
-- ⏳ **Optimize the Gumroad listing** _(W2)_ — connect the **Claude-in-Chrome** extension and log into Gumroad; I'll then read the live listing and apply an improved title, description, price, and gallery images (keeping the `igjxu` permalink so the wired links don't break).
-- ⏳ **Connect email capture** _(W3)_ — the free-plan signup form (`free-plan.html`) still isn't wired to a provider. Recommended: **Kit (ConvertKit)** free plan (hosts the form + auto-emails the free PDF). Create the account, then give me the form action/embed URL and I'll wire it in.
-- ⬜ **PDF store/website links** _(W1 Tier B, optional)_ — set `BOOK.website` in `js/cookbook.js` to the live site and add the store link in `build/build-lead-magnet.js`, then rebuild the PDF (`npm run build:pdf` → `python3 build/compress-pdf.py …`) and **re-upload** it to Gumroad.
+- ⏳ **Activate your Kit account** — two banners in Kit: (1) **confirm your sign-up email** (click the link Kit emailed you), and (2) **complete account approval** ("Start the approvals process"). Until both are done, Kit holds the double-opt-in confirmation emails, so new subscribers stay pending. The form already captures emails — this just switches on sending.
+- ⬜ **(Optional) Auto-email the free PDF** — in Kit, set the form's **Incentive** email to deliver `book/free-7-day-plan.pdf` (or link to the hosted copy) so subscribers get it on confirm. The on-page download already gives instant access, so this is a nice-to-have.
+- ⬜ **(Optional) Full cookbook PDF rebuild (Tier B)** — rebuild so the companion-site URL appears on the PDF's copyright/about pages, then re-upload to Gumroad. Minor.
 
 ## ⏳ Owner tasks (manual — step-by-step)
 
