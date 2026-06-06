@@ -58,14 +58,15 @@ Full path: `/Users/bengisusengul/Desktop/cookbook/70-gr-protein-meal-recipes/pin
 
 ---
 
-## 3. ✉️ Kit — build the welcome→sell sequence (≈10 min)
+## 3. ✉️ Kit — DONE ✅ (one decision for you)
 
-Full paste-ready copy (5 emails, subjects, bodies, timing) is in **`marketing/email-sequence.md`**.
+**I built and activated the whole email funnel for you:**
+- A **5-email sequence** (all published): welcome+free PDF → chef story → Reset pitch → objections → last call. (Currently named "Sequence" — rename if you like. Source copy: `marketing/email-sequence.md`.)
+- An **active automation** ("Visual Automation 1"): anyone who joins the **Clare form** is auto-added to the sequence. It's live now.
 
-- Kit → **Automate → Sequences → New sequence**. Add the 5 emails, set each delay (+2 days).
-- Then **Automate → Automations**: "When someone subscribes to the Clare form (57976b6071) → add to this sequence."
-- Heads-up: sequences need Kit's **Creator (paid) plan**. You're on a free trial now (works during the trial).
-  Decide whether to keep the paid plan before it ends — it's the engine that converts subscribers to Reset buyers.
+**Your only decision:** sequences/automations need Kit's **Creator (paid) plan**. You're on a free trial (≈12 days). To keep the funnel running past the trial, add a card in Kit (Settings → Billing) — *you won't be charged until the trial ends*. If you don't, the funnel pauses when the trial ends. It's the engine that turns free subscribers into Reset buyers, so it's worth keeping.
+
+*Timing note: emails are spaced 1 day apart by default (a 5-day drip). Tweak the "Send this email" delay on any email if you'd prefer 2-day spacing.*
 
 ---
 
@@ -92,6 +93,7 @@ While you're in Namecheap: **turn ON auto-renew** (domain expires 2027-06-05, au
 - ✅ Reset landing page **live**: https://the70gprotein.com/reset.html (+ homepage/chef-band/footer CTAs)
 - ✅ Gumroad Reset product created (draft, £29, slug `reset`, full description)
 - ✅ Branded Gumroad images generated (`build/reset-gumroad/`)
+- ✅ **Kit funnel BUILT & ACTIVE** — 5-email sequence (all published) + live automation (Clare form → sequence). Only the paid-plan decision is yours (#3).
 - ✅ Google Search Console: domain verified + `sitemap.xml` submitted
 - ✅ Cookbook + lead-magnet PDFs rebuilt with the new domain
 - ✅ All marketing copy written (`marketing/`)

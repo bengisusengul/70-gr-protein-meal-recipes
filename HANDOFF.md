@@ -231,15 +231,20 @@ owner checklist in `marketing/FINISH-LAUNCH.md`.**
    thumbnail 800×800, 3 gallery cards). Both build outputs git-ignored.
 4. **Google Search Console** — `the70gprotein.com` verified (URL-prefix; `google065c8bec089f087c.html`
    at root — keep it) and `sitemap.xml` submitted.
-5. **Marketing copy** in `marketing/`: `reset-gumroad-listing.md`, `email-sequence.md` (5 emails),
+5. **Kit email funnel BUILT & ACTIVE** — a 5-email welcome→sell sequence (all published, in Kit) +
+   an active Visual Automation ("Visual Automation 1": Clare form `57976b6071` → that sequence). New
+   free-plan signups now auto-enter the nurture. Source copy in `marketing/email-sequence.md`. Needs
+   Kit's paid Creator plan to keep running past the ~12-day trial (owner billing decision).
+6. **Marketing copy** in `marketing/`: `reset-gumroad-listing.md`, `email-sequence.md` (5 emails),
    `pinterest-pins.md` (12 pins), `FINISH-LAUNCH.md` (owner checklist).
-6. **Rebuilt** `book/the-70g-protein-cookbook.pdf` + `book/free-7-day-plan.pdf` so they show the new domain.
+7. **Rebuilt** `book/the-70g-protein-cookbook.pdf` + `book/free-7-day-plan.pdf` so they show the new domain.
 
 **What needs the owner (can't be automated — see `marketing/FINISH-LAUNCH.md`):** uploading files to
 Gumroad/Pinterest is blocked (the assistant's browser only accepts files the user attaches); Namecheap
 DNS needs the login (not signed in); the Kit Creator plan is a billing decision. Steps: publish the
-Gumroad Reset (upload 3 PDFs + 5 images) → upload Pinterest pins → build the Kit sequence + verify the
-sending domain in Kit (add DNS at Namecheap) → enable domain auto-renew.
+Gumroad Reset (upload 3 PDFs + 5 images) → upload the 12 Pinterest pins → add a card in Kit to keep the
+(already-built) funnel running + verify the sending domain in Kit (add DNS at Namecheap) → enable domain
+auto-renew. **The Kit sequence + automation are already done.**
 
 ---
 *End of handoff. New session order: `CLAUDE.md` → **`LAUNCH-STATUS.md`** (current to-do) →
