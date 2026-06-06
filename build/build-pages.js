@@ -20,7 +20,7 @@ const RECIPES = window.RECIPES, X = window.RECIPE_EXTRA, HASIMG = new Set(window
 const SWAPS = window.SWAPS;
 
 // ---- site config (edit BASE / STORE_URL when the domain / store is live) ----
-const BASE = "https://bengisusengul.github.io/70-gr-protein-meal-recipes";
+const BASE = "https://the70gprotein.com";
 const STORE_URL = "https://bengisus.gumroad.com/l/igjxu"; // empty -> link to in-browser book; set -> external Gumroad store
 const AUTHOR = "Bengisu Sengul";
 const buyHref = STORE_URL || "../cookbook.html";
