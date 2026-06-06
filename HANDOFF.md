@@ -1,8 +1,8 @@
 # 📒 SESSION HANDOFF — The 70 g Protein Cookbook
 ### Complete context for a fresh Claude Code session. Read this top-to-bottom before doing anything.
-*Last updated: 2026-06-03 (end of session — launching tomorrow). Supersedes the older `PROGRESS.md`.*
+*Last updated: 2026-06-06. The original build context is preserved below (§0–§11). For the CURRENT state + live to-do, see **`LAUNCH-STATUS.md`** and **§12** of this doc.*
 
-> **▶ RESUME HERE — next session is LAUNCH DAY.** Everything is built, committed and pushed. Nothing is half-finished. Pick up at **§9 → A. Go-live**: (1) enable GitHub Pages, (2) set up Gumroad and upload `book/the-70g-protein-cookbook.pdf` then give Claude the product URL to wire the "Buy" CTAs + rebuild, (3) connect an email provider in `free-plan.html`, (4) submit `/sitemap.xml` to Google Search Console, (5) upload the 12 `pins/` to Pinterest. Only ask Bengisu for the Pexels key if you need to re-fetch photos.
+> **▶ RESUME HERE — LAUNCHED.** The product is live at **https://the70gprotein.com** (custom domain + HTTPS), with the Gumroad store and a Kit (ConvertKit) email funnel wired. The original pre-launch roadmap in §9 is now **DONE**. **Read `LAUNCH-STATUS.md` for the current to-do** (in order: verify domain in Kit → Google Search Console → Pinterest → build the £29 "Reset" offer → email sequence → membership). The full session-2 narrative + current state of every service is in **§12 below**. **Strategy:** keep the app FREE; monetize via the email funnel + higher-value offers, *not* by gating recipes.
 
 ---
 
@@ -12,7 +12,7 @@
 - **Goal of this session:** make it look professional and **sellable straight away** — real photos, SEO, a real PWA, deeper recipes, a sales funnel, a polished PDF, and a research-backed cover/copy/pricing pass.
 - **Where the code is:** local git clone at **`~/Desktop/70-gr-protein-meal-recipes`** on branch **`claude/high-protein-cookbook-3Av3B`** (this is the default branch; **do NOT use `main`**). GitHub: `https://github.com/bengisusengul/70-gr-protein-meal-recipes`.
 - **Latest commit:** `e1571b5` (pushed). Everything below is committed EXCEPT the full sellable PDF (intentionally git-ignored — see §6).
-- **Status:** essentially launch-ready. Remaining work is mostly **off-platform setup the owner must do** (Gumroad, email provider, enable GitHub Pages) + optional polish. See §9 (Next tasks).
+- **Status:** **LAUNCHED & LIVE** at https://the70gprotein.com (custom domain + HTTPS). Gumroad store live, Kit email funnel live. Original go-live roadmap (§9) complete. Current state + next steps: see **§12** and **`LAUNCH-STATUS.md`**.
 
 > ⚠️ **Critical brand decision:** This is **HIGH-PROTEIN, NOT carnivore.** Bengisu's personal story is carnivore, but a check proved **0 of the 100 recipes are carnivore** (all contain plants; 27 are vegetarian). We deliberately tell her comeback story as a *high-protein / low-sugar* journey. **Never add a "carnivore" claim anywhere.**
 
@@ -184,4 +184,30 @@ analytics) — likely via the Claude Agent SDK, drawing on this repo's assets (`
 launch scope — revisit once the book is live.
 
 ---
-*End of handoff. A new Claude session: read §0–§4 first, then §5–§7 to reproduce, then §9 for what to do next.*
+
+## 12. Session 2 — Launch, redesign, custom domain & funnel pivot (2026-06-05 → 06)
+
+**Actual working path:** `~/Desktop/cookbook/70-gr-protein-meal-recipes` (the §1 path predates the move under `cookbook/`). Branch unchanged: `claude/high-protein-cookbook-3Av3B` (push only here; GitHub Pages auto-deploys on push).
+
+**Everything that shipped this session (the original §9 go-live + much more):**
+
+1. **GitHub Pages enabled** → site went live.
+2. **Site → Gumroad wired.** Product published at **https://bengisus.gumroad.com/l/igjxu** (id `igjxu`). Set `STORE_URL` in `build/build-pages.js`; pointed every "Get the cookbook" CTA (homepage, `free-plan.html`, all 100 recipe pages + hub) at it. **`cookbook.html` locked down** (noindex, removed from sitemap, all public links removed) so the full in-browser book isn't given away.
+3. **Gumroad listing polished** (via the owner's logged-in browser): added a 30-day-money-back-guarantee line; set Discover category **Self-Improvement › Cooking › Recipes** + tags. Founding price ~£/$12.
+4. **Email capture wired — Kit (ConvertKit), not the placeholder.** Created + published an inline form (**form id 9523057 / uid `57976b6071`**) and embedded it in `free-plan.html` (replaced the old form + stub script). Double opt-in; the **incentive email** (warm on-brand copy) redirects new confirmers to the free PDF. Tested end-to-end (test sub `bengisushopify+70gtest@gmail.com` left *Unconfirmed* — delete it). Kit account **activated** (sign-up email confirmed + account approved). **Brand colors saved** (green `#2F7D52`, gold `#E0B13A`, deep green `#143527`). Kit currently sends from `hello@softwareyeah.com`.
+5. **Premium redesign** — new `css/redesign.css` layer (loads after `styles.css`): editorial **Fraunces** display type, a selling hero (value prop + stats strip + 3 CTAs), an always-visible **"Get the cookbook"** button in the sticky nav, a **chef/trust band** above the footer, refined cards + mobile tuning. Bumped `sw.js` cache (now **v3**).
+6. **New hero photo** — swapped the steak (read as carnivore) for a moody high-protein **bowl**: `img/book/hero.jpg` (Pexels, Sergey Meshkov; credited in `CREDITS.md`). Hero bg + overlay set in `redesign.css`.
+7. **Custom domain — `the70gprotein.com`** (Namecheap; order 204487821; expires 2027-06-05; **auto-renew OFF**; registrant email verified). DNS: 4× **A** `@` → `185.199.108/109/110/111.153`, **CNAME** `www` → `bengisusengul.github.io.`. Added repo **`CNAME`** file, set the GitHub Pages custom domain, **Enforce HTTPS ON**. Rewrote every absolute URL (canonical/OG, `build/build-pages.js` `BASE`, `js/cookbook.js` `BOOK.website`) from the old github.io subpath to `https://the70gprotein.com`; regenerated the 100 recipe pages + sitemap + robots. Old github.io URLs 301-redirect.
+
+**KEY STRATEGY DECISION:** we considered **gating** recipes (e.g., only ~10 free) to force PDF sales, but decided **against it**. The interactive app (planner/tracker/plans) is built around all 100, gating guts SEO/Pinterest traffic, and the recipe data ships in-page anyway. **Verdict: keep the app + all 100 recipes FREE** as the traffic/email engine, and monetize via a **funnel** — free → email list → sell *outcomes* + recurring. Revenue ladder: free app → £9–15 PDF (impulse) → **£25–35 "4-Week 70 g Protein Reset" program** (core) → **£5–8/mo membership** (recurring) → later a chef-led challenge. The money is in the **email list + recurring**, not the £12 PDF.
+
+**Current live state of each service:**
+- **Website:** https://the70gprotein.com — live, HTTPS enforced, redesigned. GitHub Pages from `claude/high-protein-cookbook-3Av3B`.
+- **Gumroad:** `igjxu` — published, ~£12 founding, guarantee + category/tags.
+- **Kit:** active; form `57976b6071` live on `free-plan.html`; incentive email + brand colors set; sends from `hello@softwareyeah.com` (→ switch to `@the70gprotein.com` after Kit domain verification).
+- **Domain/DNS:** Namecheap, configured + GitHub-verified; **auto-renew OFF** (enable it).
+
+**Next steps live in `LAUNCH-STATUS.md`** (prioritized): 1) verify the domain in Kit, 2) Google Search Console (Domain property + sitemap), 3) Pinterest pins, 4) build the £29 "Reset" offer, 5) Kit welcome→sell email sequence, 6) later membership. Plus small bits: enable domain auto-renew, delete the test subscriber, optional PDF rebuild so `BOOK.website` shows the new domain.
+
+---
+*End of handoff. New session order: `CLAUDE.md` → **`LAUNCH-STATUS.md`** (current to-do) → **§12** here (what we did + current state) → §0–§7 for deep build context + commands.*
