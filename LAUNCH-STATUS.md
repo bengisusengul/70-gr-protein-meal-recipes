@@ -16,7 +16,9 @@ Legend: ✅ done · ⏭️ next (do in order) · ⬜ optional / later
 | **Live website** | **https://the70gprotein.com** (custom domain, HTTPS enforced) |
 | **Hosting** | GitHub Pages, repo `github.com/bengisusengul/70-gr-protein-meal-recipes`, branch **`claude/high-protein-cookbook-3Av3B`** (push ONLY here; deploys on push) |
 | **Domain** | `the70gprotein.com` — Namecheap, order 204487821, expires **2027-06-05**, registrant email verified. **Auto-renew is OFF** (see to-do). DNS: 4× A `@` → `185.199.108/109/110/111.153`, CNAME `www` → `bengisusengul.github.io.` |
-| **Gumroad (paid)** | https://bengisus.gumroad.com/l/igjxu (id `igjxu`) — "The 70 g Protein Cookbook", ~£/$12 founding, 30-day guarantee, category *Self-Improvement › Cooking › Recipes* + tags. Published. |
+| **Gumroad — cookbook (£12)** | https://bengisus.gumroad.com/l/igjxu (id `igjxu`) — "The 70 g Protein Cookbook", ~£/$12 founding, 30-day guarantee, category *Self-Improvement › Cooking › Recipes* + tags. Published. |
+| **Gumroad — Reset (£29)** | https://bengisus.gumroad.com/l/reset (slug `reset`, edit id `ardyku`) — "The 4-Week 70 g Protein Reset". **DRAFT** (name/£29/description/slug all set). Needs owner to upload 3 PDFs + 5 images, then Publish — see `marketing/FINISH-LAUNCH.md`. Bundle = `book/the-4-week-reset.pdf` + `book/reset-printables.pdf` + `book/the-70g-protein-cookbook.pdf`. |
+| **Google Search Console** | `the70gprotein.com` **verified** (URL-prefix, via `google065c8bec089f087c.html` at site root — do NOT delete it). `sitemap.xml` submitted. Logged in under bengisushopify@gmail.com. |
 | **Kit / ConvertKit (email)** | Account **active** (email confirmed + approved). Form "Clare form" **id 9523057 / uid `57976b6071`**, embedded in `free-plan.html`. Double opt-in; incentive email → redirects to the free PDF on confirm. Brand colors saved (green `#2F7D52`, gold `#E0B13A`, deep green `#143527`). **Currently sends from `hello@softwareyeah.com`** (→ switch to `@the70gprotein.com` after domain verification). Test subscriber `bengisushopify+70gtest@gmail.com` is *Unconfirmed* — safe to delete. |
 | **Free lead magnet** | https://the70gprotein.com/book/free-7-day-plan.pdf |
 | **Hero image** | `img/book/hero.jpg` (Pexels, Sergey Meshkov; credited in `CREDITS.md`) |
@@ -44,6 +46,15 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 
 ## ✅ Done
 
+**Session 3 (2026-06-06) — the £29 Reset + funnel build:**
+- ✅ **Built the £29 "4-Week 70 g Protein Reset" product** (`build/build-reset.js`): a 26-page Program Guide (`book/the-4-week-reset.pdf`) + an 11-page Printables Pack (`book/reset-printables.pdf`) with computed aisle-grouped shopping lists, day-by-day plans, a 28-day tracker, coaching, troubleshooting & FAQ. Sold as a bundle with the cookbook PDF. (Paid PDFs git-ignored.)
+- ✅ **Reset landing page LIVE** — `reset.html` (https://the70gprotein.com/reset.html): selling hero, what's-inside, 4-week arc, £49→£29 pricing, 30-day guarantee, FAQ. Wired as the **flagship CTA** on the homepage hero + chef-band + footer, and as the free-plan upsell. `sw.js` cache v3→v4; reset.html + free-plan.html added to sitemap.
+- ✅ **Gumroad Reset product created (DRAFT)** — `/l/reset`, £29, full description + slug set. Branded cover/thumbnail/gallery images generated (`build/build-reset-gumroad.js` → `build/reset-gumroad/`).
+- ✅ **Google Search Console** — domain verified + sitemap submitted.
+- ✅ **All marketing copy written** (`marketing/`): Gumroad listing, 5-email Kit sequence, 12 Pinterest pins, and `FINISH-LAUNCH.md` (owner checklist).
+- ✅ **Cookbook + lead-magnet PDFs rebuilt** so they show `the70gprotein.com`.
+
+**Sessions 1–2 (the app + first launch):**
 - ✅ Free interactive web app (Recipes, Plan & Shop, 7-Day Plans, Tracker, Why It Works) — 100 recipes, real photos, 100 SEO recipe pages + `sitemap.xml`/`robots.txt`, offline PWA.
 - ✅ **Site → Gumroad** buy CTAs wired everywhere (homepage, `free-plan.html`, 100 recipe pages + hub). `cookbook.html` locked down (noindex, unlinked, off sitemap).
 - ✅ **Gumroad listing polished** — 30-day-guarantee line, category + tags. Live.
@@ -55,14 +66,18 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 
 ---
 
-## ⏭️ Next — to-do, in priority order
+## ⏭️ Next — OWNER ACTIONS (≈15–30 min)
 
-1. **Kit: verify `the70gprotein.com` as the sending domain.** In Kit Settings → add the domain → add the DKIM/SPF/Return-Path DNS records it gives you to Namecheap DNS → verify. Then set the from-address to `@the70gprotein.com`. *(Better inbox deliverability. I add the DNS records.)*
-2. **Google Search Console.** Add `the70gprotein.com` as a **Domain** property → add its TXT verification record to Namecheap DNS → verify → submit `https://the70gprotein.com/sitemap.xml` → request indexing. *(All 100 recipe pages stay indexed since we kept them free. I add the DNS record.)*
-3. **Pinterest.** Upload the 12 pins in `pins/` (business account); link each to a recipe page or `free-plan.html`; keyword-rich titles/descriptions; enable Rich Pins. *(Needs Pinterest login in Chrome.)*
-4. **Build the £29 "4-Week 70 g Protein Reset" on Gumroad.** Repackage cookbook PDF + 3 meal plans + printable shopping/meal-plan packs + the science into a structured program; new outcome-focused listing copy. Keep the £12 cookbook as the impulse tier.
-5. **Kit welcome→sell email sequence** (~4–5 emails): welcome + deliver PDF → chef story/value → soft pitch → social proof/objection → last call. Nurtures free subscribers toward the Reset. Build in Kit (Automate → Sequences).
-6. **Later: recurring membership** (£5–8/mo) — new monthly meal plans + recipes + community.
+👉 **Everything that can be automated is done. The rest needs your login/files/billing — a tight,
+step-by-step checklist is in `marketing/FINISH-LAUNCH.md`.** In priority order:
+
+1. **Publish the Reset on Gumroad** (≈5 min) — the draft is ready; upload the 3 PDFs + 5 images and hit Publish. *(Claude can't upload local files — the browser sandbox only accepts files you attach. This is the one blocker on turning sales on.)*
+2. **Pinterest** — upload the 12 pins with the copy in `marketing/pinterest-pins.md` (Business account → Rich Pins).
+3. **Kit sequence** — paste the 5 emails from `marketing/email-sequence.md` (Automate → Sequences), trigger on form `57976b6071`. Needs Kit's paid Creator plan (you're on a trial).
+4. **Namecheap DNS** — add Kit's sending-domain records (DKIM/SPF/Return-Path) so email sends from `@the70gprotein.com`; also turn ON domain auto-renew.
+5. **Later: recurring membership** (£5–8/mo) — new monthly meal plans + recipes + community.
+
+*Why these are owner-only: file uploads (Gumroad/Pinterest) are blocked for the assistant; DNS needs the Namecheap login (not signed in); the Kit plan is a billing decision.*
 
 ---
 
@@ -83,5 +98,9 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 - **HIGH-PROTEIN, NOT carnivore** (27 vegetarian recipes) — never add a carnivore claim.
 - **Don't edit `js/recipes-data.js`** (validated 100-recipe core); add per-recipe data in `js/recipes-extra.js`.
 - **Pexels API key:** env-only, never commit.
-- After recipe/photo changes, **rebuild + recompress the PDF** and re-upload to Gumroad (`npm run build:pdf` → `python3 build/compress-pdf.py …`).
+- After recipe/photo changes, **rebuild + recompress the PDFs** and re-upload to Gumroad:
+  - Cookbook: `npm run build:pdf` → `python3 build/compress-pdf.py dist/the-70g-protein-cookbook.pdf book/the-70g-protein-cookbook.pdf 1000 72`
+  - Reset: `node build/build-reset.js` → `python3 build/compress-pdf.py dist/the-4-week-reset.pdf book/the-4-week-reset.pdf 1400 80` (printables already small) · Gumroad images: `node build/build-reset-gumroad.js`
+- **Don't delete `google065c8bec089f087c.html`** at the repo root — it keeps Google Search Console verified.
+- **Reset slug on Gumroad = `reset`** — the site CTAs hard-link to `bengisus.gumroad.com/l/reset`; keep that slug when publishing.
 - **Owner-only actions** (Claude cannot do these): entering passwords / logging in, making purchases, creating accounts, entering card/payment details. Claude guides; the owner clicks those.

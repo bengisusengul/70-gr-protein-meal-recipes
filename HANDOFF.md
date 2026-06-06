@@ -210,4 +210,37 @@ launch scope — revisit once the book is live.
 **Next steps live in `LAUNCH-STATUS.md`** (prioritized): 1) verify the domain in Kit, 2) Google Search Console (Domain property + sitemap), 3) Pinterest pins, 4) build the £29 "Reset" offer, 5) Kit welcome→sell email sequence, 6) later membership. Plus small bits: enable domain auto-renew, delete the test subscriber, optional PDF rebuild so `BOOK.website` shows the new domain.
 
 ---
-*End of handoff. New session order: `CLAUDE.md` → **`LAUNCH-STATUS.md`** (current to-do) → **§12** here (what we did + current state) → §0–§7 for deep build context + commands.*
+
+## 13. Session 3 — the £29 Reset + funnel build (2026-06-06)
+
+Built the next revenue tier and the discovery funnel. **All automatable work is done; the rest is an
+owner checklist in `marketing/FINISH-LAUNCH.md`.**
+
+**Shipped (live or in-repo):**
+1. **The £29 "4-Week 70 g Protein Reset" product** — `build/build-reset.js` generates a 26-page
+   Program Guide (`book/the-4-week-reset.pdf`) + an 11-page Printables Pack (`book/reset-printables.pdf`):
+   4 structured weeks (Foundation → Momentum → Lean & Light → Lock-In), day-by-day plans, **computed
+   aisle-grouped shopping lists** (mirrors the app's `buildShoppingList`), a 28-day habit tracker,
+   distilled science, coaching, troubleshooting & FAQ. Sold as a bundle with the 100-recipe cookbook
+   PDF. Both Reset PDFs are git-ignored (paid). Week 4 is a curated "Chef's Favourites" week.
+2. **`reset.html`** — a dedicated conversion landing page (live), wired as the **flagship CTA** across
+   the homepage (hero/chef-band/footer) + free-plan upsell. Cookbook demoted to the always-on sticky
+   nav button. `sw.js` → v4; `reset.html` + `free-plan.html` added to `sitemap.xml`.
+3. **Gumroad Reset product** created as a **draft** (`/l/reset`, £29, full description, slug set).
+   Branded marketing imagery via `build/build-reset-gumroad.js` → `build/reset-gumroad/` (cover 1600×900,
+   thumbnail 800×800, 3 gallery cards). Both build outputs git-ignored.
+4. **Google Search Console** — `the70gprotein.com` verified (URL-prefix; `google065c8bec089f087c.html`
+   at root — keep it) and `sitemap.xml` submitted.
+5. **Marketing copy** in `marketing/`: `reset-gumroad-listing.md`, `email-sequence.md` (5 emails),
+   `pinterest-pins.md` (12 pins), `FINISH-LAUNCH.md` (owner checklist).
+6. **Rebuilt** `book/the-70g-protein-cookbook.pdf` + `book/free-7-day-plan.pdf` so they show the new domain.
+
+**What needs the owner (can't be automated — see `marketing/FINISH-LAUNCH.md`):** uploading files to
+Gumroad/Pinterest is blocked (the assistant's browser only accepts files the user attaches); Namecheap
+DNS needs the login (not signed in); the Kit Creator plan is a billing decision. Steps: publish the
+Gumroad Reset (upload 3 PDFs + 5 images) → upload Pinterest pins → build the Kit sequence + verify the
+sending domain in Kit (add DNS at Namecheap) → enable domain auto-renew.
+
+---
+*End of handoff. New session order: `CLAUDE.md` → **`LAUNCH-STATUS.md`** (current to-do) →
+**`marketing/FINISH-LAUNCH.md`** (owner's remaining clicks) → **§13 / §12** here → §0–§7 for build context.*
