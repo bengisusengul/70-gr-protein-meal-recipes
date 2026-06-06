@@ -18,5 +18,7 @@ research evidence, and the next-tasks roadmap. `PROGRESS.md` is the short status
 - Always run the recipe validator + a JS syntax check before committing (see `HANDOFF.md` §7).
 
 ## Status & next step
-Everything is built and pushed. **Next session = LAUNCH** — start at `HANDOFF.md` §9
-(enable GitHub Pages → Gumroad → email provider → Search Console → Pinterest).
+**LAUNCHED** — live at **https://the70gprotein.com** (custom domain + HTTPS), with Gumroad + a Kit email funnel wired.
+👉 **Read `LAUNCH-STATUS.md` first** — it is the current handoff: everything done, the to-do list (in order),
+all key facts/IDs (domain, Gumroad `igjxu`, Kit form `57976b6071`), and the strategy
+(keep the app free; build the email funnel + a £29 "Reset" offer + membership).
