@@ -1,8 +1,8 @@
-# ✅ Finish the launch — your 15-minute owner checklist
+# ✅ Finish the launch — short owner checklist
 
-Claude did everything it could do without your login/files. These last steps need **you**
-(file uploads, DNS, and a billing choice are blocked for an automated assistant). Each is quick.
-Order is by money impact.
+Almost everything is done (incl. the Kit funnel **and** all 12 Pinterest pins). **The only thing left to
+turn on sales is #1: publishing the Gumroad Reset** (file uploads can't be automated). Then a couple of
+small optional items (#3 Kit billing, #4 DNS). Order is by money impact.
 
 ---
 
@@ -45,16 +45,15 @@ Full paths (drag these in from Finder):
 
 ---
 
-## 2. 📌 Pinterest — upload the 12 pins (≈10 min, big free-traffic lever)
+## 2. 📌 Pinterest — DONE ✅
 
-All copy (title + description + destination link) is in **`marketing/pinterest-pins.md`**.
-The pin images are in `pins/` and also live at `https://the70gprotein.com/pins/<name>.jpg`.
+All **12 pins are live** on the board **"High-Protein Low-Sugar Recipes"** — each with the branded
+vertical image (pulled from `the70gprotein.com/pins/…`), a keyword-rich description, and a link back
+to its recipe page. Done via Pinterest's "Pin from URL" flow (no file upload needed).
 
-- First, make sure you're on a **Business** account (free): pinterest.com/business/convert → enables Rich Pins.
-- Create 4 boards: *High-Protein Dinners, Breakfast, Lunch & Meal Prep, Low-Carb High-Protein Recipes*.
-- For each pin: upload the image, paste the title + description, paste the destination URL. Post a few/day.
-
-Full path: `/Users/bengisusengul/Desktop/cookbook/70-gr-protein-meal-recipes/pins/`
+*Optional polish for you later: convert to a **Business** account (free, pinterest.com/business/convert)
+to unlock Rich Pins + analytics; and split the pins into themed boards (Dinners / Breakfast / Lunch)
+for slightly better reach. Not required — they're already published and discoverable.*
 
 ---
 
@@ -94,6 +93,7 @@ While you're in Namecheap: **turn ON auto-renew** (domain expires 2027-06-05, au
 - ✅ Gumroad Reset product created (draft, £29, slug `reset`, full description)
 - ✅ Branded Gumroad images generated (`build/reset-gumroad/`)
 - ✅ **Kit funnel BUILT & ACTIVE** — 5-email sequence (all published) + live automation (Clare form → sequence). Only the paid-plan decision is yours (#3).
+- ✅ **Pinterest: all 12 pins published** to the "High-Protein Low-Sugar Recipes" board (via Pin-from-URL).
 - ✅ Google Search Console: domain verified + `sitemap.xml` submitted
 - ✅ Cookbook + lead-magnet PDFs rebuilt with the new domain
 - ✅ All marketing copy written (`marketing/`)

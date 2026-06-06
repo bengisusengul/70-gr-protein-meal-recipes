@@ -51,6 +51,7 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 - ✅ **Reset landing page LIVE** — `reset.html` (https://the70gprotein.com/reset.html): selling hero, what's-inside, 4-week arc, £49→£29 pricing, 30-day guarantee, FAQ. Wired as the **flagship CTA** on the homepage hero + chef-band + footer, and as the free-plan upsell. `sw.js` cache v3→v4; reset.html + free-plan.html added to sitemap.
 - ✅ **Gumroad Reset product created (DRAFT)** — `/l/reset`, £29, full description + slug set. Branded cover/thumbnail/gallery images generated (`build/build-reset-gumroad.js` → `build/reset-gumroad/`).
 - ✅ **Kit email funnel BUILT & ACTIVE** — a 5-email welcome→sell sequence (all published) + a live Visual Automation (Clare form `57976b6071` → sequence). Auto-nurtures every new free-plan signup toward the Reset. (Needs the paid Creator plan to keep running past the trial — owner decision.)
+- ✅ **Pinterest: all 12 pins PUBLISHED** to the board "High-Protein Low-Sugar Recipes" — branded vertical images + keyword descriptions + recipe-page links. Done via Pinterest's Pin-from-URL flow (the pins are live at `the70gprotein.com/pins/`), which sidesteps the file-upload limitation.
 - ✅ **Google Search Console** — domain verified + sitemap submitted.
 - ✅ **All marketing copy written** (`marketing/`): Gumroad listing, 5-email Kit sequence, 12 Pinterest pins, and `FINISH-LAUNCH.md` (owner checklist).
 - ✅ **Cookbook + lead-magnet PDFs rebuilt** so they show `the70gprotein.com`.
@@ -72,8 +73,8 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 👉 **Everything that can be automated is done. The rest needs your login/files/billing — a tight,
 step-by-step checklist is in `marketing/FINISH-LAUNCH.md`.** In priority order:
 
-1. **Publish the Reset on Gumroad** (≈5 min) — the draft is ready; upload the 3 PDFs + 5 images and hit Publish. *(Claude can't upload local files — the browser sandbox only accepts files you attach. This is the one blocker on turning sales on.)*
-2. **Pinterest** — upload the 12 pins with the copy in `marketing/pinterest-pins.md` (Business account → Rich Pins).
+1. **Publish the Reset on Gumroad** (≈5 min) — the draft is ready; upload the 3 PDFs + 5 images and hit Publish. *(Claude can't upload product files to Gumroad — no URL workaround exists there. This is the one blocker on turning sales on.)*
+2. **Pinterest — DONE ✅** — all 12 pins published to the "High-Protein Low-Sugar Recipes" board (Claude did this via Pin-from-URL). Optional: convert to a Business account for Rich Pins/analytics.
 3. **Kit — DECISION ONLY.** The 5-email sequence + the form→sequence automation are **already built and ACTIVE** (Claude did this). To keep them running past the ~12-day trial, add a card in Kit billing (no charge until trial ends). *(Optional: rename "Sequence"/"Visual Automation 1"; tweak the 1-day spacing.)*
 4. **Namecheap DNS** — add Kit's sending-domain records (DKIM/SPF/Return-Path) so email sends from `@the70gprotein.com`; also turn ON domain auto-renew.
 5. **Later: recurring membership** (£5–8/mo) — new monthly meal plans + recipes + community.
