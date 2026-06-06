@@ -196,7 +196,7 @@ fs.writeFileSync(path.join(dir, "index.html"), hub());
 
 // sitemap
 const today = (process.argv[2] || "2026-06-01"); // pass a date; default fixed
-let urls = [BASE + "/", BASE + "/recipes/index.html"].concat(RECIPES.map((r) => BASE + "/recipes/" + r.id + ".html")); // cookbook.html intentionally excluded — paid product, not advertised to crawlers
+let urls = [BASE + "/", BASE + "/reset.html", BASE + "/free-plan.html", BASE + "/recipes/index.html"].concat(RECIPES.map((r) => BASE + "/recipes/" + r.id + ".html")); // cookbook.html intentionally excluded — paid product, not advertised to crawlers
 const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   urls.map((u) => "  <url><loc>" + u + "</loc><lastmod>" + today + "</lastmod></url>").join("\n") + "\n</urlset>\n";
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemap);

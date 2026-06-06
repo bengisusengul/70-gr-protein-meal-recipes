@@ -9,10 +9,17 @@ dist/
 img/_candidates/
 sample.html
 
+# Generated Gumroad marketing images (regenerate: node build/build-reset-gumroad.js)
+build/reset-gumroad/
+
 # OS cruft
 .DS_Store
 
-# The full cookbook PDF is the PAID product (upload to Gumroad) and a build
-# artifact — keep it OUT of the public repo. Build locally with: npm run build:pdf
-# (then compress: python3 build/compress-pdf.py dist/the-70g-protein-cookbook.pdf book/the-70g-protein-cookbook.pdf)
+# PAID products (upload to Gumroad) — build artifacts, kept OUT of the public repo.
+# Rebuild locally:
+#   Cookbook:  npm run build:pdf  ->  compress to book/the-70g-protein-cookbook.pdf
+#   Reset:     node build/build-reset.js  ->  compress guide to book/the-4-week-reset.pdf
+# The FREE lead magnet (book/free-7-day-plan.pdf) stays committed.
 book/the-70g-protein-cookbook.pdf
+book/the-4-week-reset.pdf
+book/reset-printables.pdf
