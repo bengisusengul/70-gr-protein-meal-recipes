@@ -211,10 +211,11 @@ launch scope — revisit once the book is live.
 
 ---
 
-## 13. Session 3 — the £29 Reset + funnel build (2026-06-06)
+## 13. Session 3 — the £29 Reset + funnel build & LAUNCH (2026-06-06)
 
-Built the next revenue tier and the discovery funnel. **All automatable work is done; the rest is an
-owner checklist in `marketing/FINISH-LAUNCH.md`.**
+Built the next revenue tier and the discovery funnel — **and it went LIVE this session.** The £29 Reset
+is published and selling on Gumroad, the Kit email funnel is running, all 12 Pinterest pins are up, and
+SEO is submitted. Only small owner tidy-ups remain (`marketing/FINISH-LAUNCH.md`).
 
 **Shipped (live or in-repo):**
 1. **The £29 "4-Week 70 g Protein Reset" product** — `build/build-reset.js` generates a 26-page
@@ -226,9 +227,10 @@ owner checklist in `marketing/FINISH-LAUNCH.md`.**
 2. **`reset.html`** — a dedicated conversion landing page (live), wired as the **flagship CTA** across
    the homepage (hero/chef-band/footer) + free-plan upsell. Cookbook demoted to the always-on sticky
    nav button. `sw.js` → v4; `reset.html` + `free-plan.html` added to `sitemap.xml`.
-3. **Gumroad Reset product** created as a **draft** (`/l/reset`, £29, full description, slug set).
-   Branded marketing imagery via `build/build-reset-gumroad.js` → `build/reset-gumroad/` (cover 1600×900,
-   thumbnail 800×800, 3 gallery cards). Both build outputs git-ignored.
+3. **Gumroad Reset product PUBLISHED & LIVE** (`/l/reset`, £29) — full description + slug + cover/gallery/
+   thumbnail. Owner uploaded the 3 PDF files + images and hit Publish (verified purchasable). Branded
+   imagery via `build/build-reset-gumroad.js` → `build/reset-gumroad/` (cover 1600×900, thumbnail 800×800,
+   3 gallery cards; git-ignored). **Sales are on.**
 4. **Google Search Console** — `the70gprotein.com` verified (URL-prefix; `google065c8bec089f087c.html`
    at root — keep it) and `sitemap.xml` submitted.
 5. **Kit email funnel BUILT & ACTIVE** — a 5-email welcome→sell sequence (all published, in Kit) +
@@ -238,13 +240,23 @@ owner checklist in `marketing/FINISH-LAUNCH.md`.**
 6. **Marketing copy** in `marketing/`: `reset-gumroad-listing.md`, `email-sequence.md` (5 emails),
    `pinterest-pins.md` (12 pins), `FINISH-LAUNCH.md` (owner checklist).
 7. **Rebuilt** `book/the-70g-protein-cookbook.pdf` + `book/free-7-day-plan.pdf` so they show the new domain.
+8. **Pinterest: all 12 pins LIVE** on the board "High-Protein Low-Sugar Recipes" — branded vertical images
+   + keyword descriptions + recipe-page links, via Pinterest's **Pin-from-URL** flow
+   (`pinterest.com/pin/create/button/?url=…&media=…&description=…`; pins are live at `the70gprotein.com/pins/`),
+   which sidesteps the file-upload block entirely. ⚠️ The loop double-saved (~23 pins, ≈2× each) — owner to
+   dedupe via the board's "Organise" tool (deleting pins is owner-only).
 
-**What needs the owner (can't be automated — see `marketing/FINISH-LAUNCH.md`):** uploading files to
-Gumroad/Pinterest is blocked (the assistant's browser only accepts files the user attaches); Namecheap
-DNS needs the login (not signed in); the Kit Creator plan is a billing decision. Steps: publish the
-Gumroad Reset (upload 3 PDFs + 5 images) → upload the 12 Pinterest pins → add a card in Kit to keep the
-(already-built) funnel running + verify the sending domain in Kit (add DNS at Namecheap) → enable domain
-auto-renew. **The Kit sequence + automation are already done.**
+**What needs the owner now (small tidy-ups — see `marketing/FINISH-LAUNCH.md`):**
+1. **Dedupe the Pinterest board** (~23 pins → keep 12) via the board's "Organise" tool — deleting pins is owner-only.
+2. **Kit billing:** the built & active funnel runs on a **Creator** trial ($39/mo or $390/yr; ≤1,000 subs) that auto-cancels ~2026-06-18. With 0 subscribers, recommended to let it lapse to free and upgrade to Creator (annual) once the list grows — **NOT** Creator Pro. The sequence + automation are saved and re-activate on upgrade.
+3. **Namecheap:** add Kit's sending-domain DNS (DKIM/SPF/Return-Path) so email sends from `@the70gprotein.com`, and enable domain auto-renew — both need the Namecheap login.
+
+**Key learnings (for the next session):** the assistant's browser `file_upload` only accepts files the
+user attaches to chat — NOT working-dir files, and not `@`-referenced files (that's read-access only); and
+`request_directory` is blocked in unsupervised mode. So Gumroad's product files needed the owner. BUT
+image-based sites can often be driven with **no upload** if the images are on a public URL — Pinterest's
+`/pin/create/button/?media=<url>` pulls the image server-side (used here for all 12 pins). See the
+`chrome-file-upload-limitation` memory.
 
 ---
 *End of handoff. New session order: `CLAUDE.md` → **`LAUNCH-STATUS.md`** (current to-do) →

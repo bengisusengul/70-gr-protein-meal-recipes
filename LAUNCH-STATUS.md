@@ -17,13 +17,13 @@ Legend: ✅ done · ⏭️ next (do in order) · ⬜ optional / later
 | **Hosting** | GitHub Pages, repo `github.com/bengisusengul/70-gr-protein-meal-recipes`, branch **`claude/high-protein-cookbook-3Av3B`** (push ONLY here; deploys on push) |
 | **Domain** | `the70gprotein.com` — Namecheap, order 204487821, expires **2027-06-05**, registrant email verified. **Auto-renew is OFF** (see to-do). DNS: 4× A `@` → `185.199.108/109/110/111.153`, CNAME `www` → `bengisusengul.github.io.` |
 | **Gumroad — cookbook (£12)** | https://bengisus.gumroad.com/l/igjxu (id `igjxu`) — "The 70 g Protein Cookbook", ~£/$12 founding, 30-day guarantee, category *Self-Improvement › Cooking › Recipes* + tags. Published. |
-| **Gumroad — Reset (£29)** | https://bengisus.gumroad.com/l/reset (slug `reset`, edit id `ardyku`) — "The 4-Week 70 g Protein Reset". **DRAFT** (name/£29/description/slug all set). Needs owner to upload 3 PDFs + 5 images, then Publish — see `marketing/FINISH-LAUNCH.md`. Bundle = `book/the-4-week-reset.pdf` + `book/reset-printables.pdf` + `book/the-70g-protein-cookbook.pdf`. |
+| **Gumroad — Reset (£29)** | https://bengisus.gumroad.com/l/reset (slug `reset`, edit id `ardyku`) — "The 4-Week 70 g Protein Reset". **PUBLISHED & LIVE ✅** (owner uploaded the 3 PDFs + cover/gallery + thumbnail and hit Publish, 2026-06-06; verified purchasable). Bundle = `book/the-4-week-reset.pdf` + `book/reset-printables.pdf` + `book/the-70g-protein-cookbook.pdf`. 30-day guarantee. *Still optional:* set Discover category/tags + add a cross-sell line on the £12 listing. |
 | **Google Search Console** | `the70gprotein.com` **verified** (URL-prefix, via `google065c8bec089f087c.html` at site root — do NOT delete it). `sitemap.xml` submitted. Logged in under bengisushopify@gmail.com. |
-| **Kit / ConvertKit (email)** | Account **active** (email confirmed + approved). Form "Clare form" **id 9523057 / uid `57976b6071`**, embedded in `free-plan.html`. Double opt-in; incentive email → redirects to the free PDF on confirm. Brand colors saved (green `#2F7D52`, gold `#E0B13A`, deep green `#143527`). **Currently sends from `hello@softwareyeah.com`** (→ switch to `@the70gprotein.com` after domain verification). Test subscriber `bengisushopify+70gtest@gmail.com` is *Unconfirmed* — safe to delete. |
+| **Kit / ConvertKit (email)** | Account **active** (email confirmed + approved). Form "Clare form" **id 9523057 / uid `57976b6071`**, embedded in `free-plan.html`. Double opt-in; incentive email → redirects to the free PDF on confirm. Brand colors saved (green `#2F7D52`, gold `#E0B13A`, deep green `#143527`). **Currently sends from `hello@softwareyeah.com`** (→ switch to `@the70gprotein.com` after domain verification). Test subscriber `bengisushopify+70gtest@gmail.com` is *Unconfirmed* — safe to delete. **Plan:** on a free trial of **Creator** ($39/mo or $390/yr = 2 months free; ≤1,000 subs), ends ~2026-06-18 then **auto-cancels to free**. The 5-email sequence + automation need Creator to run; recommended to let it lapse to free now (0 subs) and upgrade to Creator (annual) once the list grows — NOT "Creator Pro". |
 | **Free lead magnet** | https://the70gprotein.com/book/free-7-day-plan.pdf |
 | **Hero image** | `img/book/hero.jpg` (Pexels, Sergey Meshkov; credited in `CREDITS.md`) |
 | **Owner emails** | `bengisushopify@gmail.com` (Kit + Namecheap + Gmail) · `bengisu_sengul@hotmail.com` (cookbook contact). UK address on file (private via WhoisGuard). |
-| **Service worker** | `sw.js` cache **v3**. Bump version when changing precached assets; returning visitors may need 1 refresh. |
+| **Service worker** | `sw.js` cache **v4**. Bump version when changing precached assets; returning visitors may need 1 refresh. |
 
 ---
 
@@ -49,9 +49,9 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 **Session 3 (2026-06-06) — the £29 Reset + funnel build:**
 - ✅ **Built the £29 "4-Week 70 g Protein Reset" product** (`build/build-reset.js`): a 26-page Program Guide (`book/the-4-week-reset.pdf`) + an 11-page Printables Pack (`book/reset-printables.pdf`) with computed aisle-grouped shopping lists, day-by-day plans, a 28-day tracker, coaching, troubleshooting & FAQ. Sold as a bundle with the cookbook PDF. (Paid PDFs git-ignored.)
 - ✅ **Reset landing page LIVE** — `reset.html` (https://the70gprotein.com/reset.html): selling hero, what's-inside, 4-week arc, £49→£29 pricing, 30-day guarantee, FAQ. Wired as the **flagship CTA** on the homepage hero + chef-band + footer, and as the free-plan upsell. `sw.js` cache v3→v4; reset.html + free-plan.html added to sitemap.
-- ✅ **Gumroad Reset product created (DRAFT)** — `/l/reset`, £29, full description + slug set. Branded cover/thumbnail/gallery images generated (`build/build-reset-gumroad.js` → `build/reset-gumroad/`).
+- ✅ **Gumroad Reset product PUBLISHED & LIVE** — `/l/reset`, £29, full description + slug + cover/gallery/thumbnail. Branded images generated via `build/build-reset-gumroad.js`; owner uploaded the files & hit Publish (verified purchasable). **Sales are ON.**
 - ✅ **Kit email funnel BUILT & ACTIVE** — a 5-email welcome→sell sequence (all published) + a live Visual Automation (Clare form `57976b6071` → sequence). Auto-nurtures every new free-plan signup toward the Reset. (Needs the paid Creator plan to keep running past the trial — owner decision.)
-- ✅ **Pinterest: all 12 pins PUBLISHED** to the board "High-Protein Low-Sugar Recipes" — branded vertical images + keyword descriptions + recipe-page links. Done via Pinterest's Pin-from-URL flow (the pins are live at `the70gprotein.com/pins/`), which sidesteps the file-upload limitation.
+- ✅ **Pinterest: all 12 pins PUBLISHED** to the board "High-Protein Low-Sugar Recipes" — branded vertical images + keyword descriptions + recipe-page links. Done via Pinterest's Pin-from-URL flow (`pinterest.com/pin/create/button/?url=…&media=…&description=…`; the pins are live at `the70gprotein.com/pins/`), which sidesteps the file-upload limitation. ⚠️ **The loop double-saved — the board has ~23 pins (≈2× each); owner to dedupe via the board's "Organise" tool** (Claude can't delete pins).
 - ✅ **Google Search Console** — domain verified + sitemap submitted.
 - ✅ **All marketing copy written** (`marketing/`): Gumroad listing, 5-email Kit sequence, 12 Pinterest pins, and `FINISH-LAUNCH.md` (owner checklist).
 - ✅ **Cookbook + lead-magnet PDFs rebuilt** so they show `the70gprotein.com`.
@@ -68,18 +68,18 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 
 ---
 
-## ⏭️ Next — OWNER ACTIONS (≈15–30 min)
+## ⏭️ Next — OWNER ACTIONS (the launch is LIVE — just tidy-ups left)
 
-👉 **Everything that can be automated is done. The rest needs your login/files/billing — a tight,
-step-by-step checklist is in `marketing/FINISH-LAUNCH.md`.** In priority order:
+👉 **The full funnel is live and selling** (free app → £12 cookbook → **£29 Reset**, with the Kit
+email funnel running and Pinterest + SEO seeding traffic). Everything automatable is done. What's
+left needs your login/billing — short checklist in `marketing/FINISH-LAUNCH.md`:
 
-1. **Publish the Reset on Gumroad** (≈5 min) — the draft is ready; upload the 3 PDFs + 5 images and hit Publish. *(Claude can't upload product files to Gumroad — no URL workaround exists there. This is the one blocker on turning sales on.)*
-2. **Pinterest — DONE ✅** — all 12 pins published to the "High-Protein Low-Sugar Recipes" board (Claude did this via Pin-from-URL). Optional: convert to a Business account for Rich Pins/analytics.
-3. **Kit — DECISION ONLY.** The 5-email sequence + the form→sequence automation are **already built and ACTIVE** (Claude did this). To keep them running past the ~12-day trial, add a card in Kit billing (no charge until trial ends). *(Optional: rename "Sequence"/"Visual Automation 1"; tweak the 1-day spacing.)*
-4. **Namecheap DNS** — add Kit's sending-domain records (DKIM/SPF/Return-Path) so email sends from `@the70gprotein.com`; also turn ON domain auto-renew.
-5. **Later: recurring membership** (£5–8/mo) — new monthly meal plans + recipes + community.
+1. **Pinterest — dedupe the board** (~2 min). All 12 pins are live, but the pinning double-saved (~23 pins). Open the "High-Protein Low-Sugar Recipes" board → **Organise** → delete one copy of each duplicate (keep 12). *(Claude can't delete pins.)* Optional: convert to a Business account for Rich Pins/analytics.
+2. **Kit — billing decision (no rush).** The 5-email sequence + automation are built & ACTIVE on a 12-day trial of **Creator** ($39/mo, or $390/yr = 2 months free; ≤1,000 subs). With 0 subscribers, recommended to let the trial **lapse to free** (forms still capture emails + deliver the PDF; the sell-sequence just pauses, fully saved) and **upgrade to Creator — annual — once the list starts growing**. **Skip "Creator Pro"** — not needed. Trial auto-cancels, no surprise charge.
+3. **Namecheap DNS** — verify Kit's sending domain (add the DKIM/SPF/Return-Path records Kit gives you so email sends from `@the70gprotein.com`); also turn ON domain auto-renew (expires 2027-06-05).
+4. **Later: recurring membership** (£5–8/mo) — new monthly meal plans + recipes + community.
 
-*Why these are owner-only: file uploads (Gumroad/Pinterest) are blocked for the assistant; DNS needs the Namecheap login (not signed in); the Kit plan is a billing decision.*
+*Why these are owner-only: Pinterest pin deletion + the Namecheap login + the Kit billing decision all need you. The revenue-critical work (product live, funnel running, pins up, SEO submitted) is done.*
 
 ---
 
@@ -88,7 +88,7 @@ step-by-step checklist is in `marketing/FINISH-LAUNCH.md`.** In priority order:
 - ⬜ **Enable domain auto-renew** at Namecheap (so it doesn't lapse 2027-06-05).
 - ⬜ Delete the test subscriber `bengisushopify+70gtest@gmail.com` in Kit.
 - ⬜ Update the Kit incentive redirect URL to the `the70gprotein.com` PDF (currently github.io — redirects fine, so cosmetic).
-- ⬜ Full cookbook PDF rebuild so `BOOK.website` (now the new domain) shows on the PDF → re-upload to Gumroad. Minor.
+- ⬜ The cookbook PDF was **rebuilt** with the new domain and is in the Reset bundle ✅. Optional: re-upload that refreshed `book/the-70g-protein-cookbook.pdf` to the standalone **£12** cookbook listing (`igjxu`) so it shows the new domain too. Minor.
 - ⬜ Kit **Creator Profile** (another email-capture hub).
 
 ---
@@ -96,7 +96,7 @@ step-by-step checklist is in `marketing/FINISH-LAUNCH.md`.** In priority order:
 ## ⚠️ Conventions & gotchas
 
 - **Push only to `claude/high-protein-cookbook-3Av3B`** — GitHub Pages auto-deploys from it.
-- **Bump `sw.js` CACHE version** (now `v3`) when changing precached assets; returning visitors may need one refresh to see updates.
+- **Bump `sw.js` CACHE version** (now `v4`) when changing precached assets; returning visitors may need one refresh to see updates.
 - **HIGH-PROTEIN, NOT carnivore** (27 vegetarian recipes) — never add a carnivore claim.
 - **Don't edit `js/recipes-data.js`** (validated 100-recipe core); add per-recipe data in `js/recipes-extra.js`.
 - **Pexels API key:** env-only, never commit.
