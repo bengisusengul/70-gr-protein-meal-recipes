@@ -46,6 +46,15 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 
 ## ✅ Done
 
+**Session 4 (2026-06-10) — the growth engine (sales push month 1):**
+- ✅ **30-day video content calendar** — `marketing/30-day-content-calendar.md`: a script/hook/caption for every day (real recipes + exact macros), weekly themes, filming workflow. Owner films & posts (Reels + TikTok + Shorts).
+- ✅ **Reddit launch posts** — `marketing/reddit-posts.md`: 6 value-first posts (r/MealPrepSunday, r/HighProtein, r/EatCheapAndHealthy, r/Volumeeating, r/loseit, r/recipes) + reply templates + sequencing. All share only the FREE app.
+- ✅ **Warm-network templates** — `marketing/warm-network-messages.md`: WhatsApp/IG/FB/email scripts for the first 10–20 sales, the review-ask, the share-ask.
+- ✅ **22 new Pinterest pins generated & LIVE** on the site (34 total in `pins/`; `build/build-pins.py` paths fixed + batch 2). **Ready-to-click pin queue:** `marketing/pinterest-queue.md` (Pin-from-URL links, **2/day for 11 days** — do NOT bulk-pin).
+- ✅ **reset.html conversion pass** — value anchor (£12 cookbook included), checkout microcopy, "not ready → free 7-day plan" path at the pricing box, Product JSON-LD. `sw.js` cache → v5.
+- ✅ **Gumroad Reset Discover enabled** — category **Self Improvement > Cooking > Nutrition** + tags (high protein recipes, meal plan, low carb, meal prep, weight loss). Saved & verified in-browser.
+- ⬜ *Denied/not done:* cross-sell line on the **£12 cookbook** description (permission scope) — owner: paste into `igjxu`'s description end: *"PS — Want the next four weeks fully planned for you? The 4-Week 70 g Protein Reset includes this cookbook PLUS 28 days of meal plans, aisle-grouped shopping lists and a habit tracker: https://bengisus.gumroad.com/l/reset"*
+
 **Session 3 (2026-06-06) — the £29 Reset + funnel build:**
 - ✅ **Built the £29 "4-Week 70 g Protein Reset" product** (`build/build-reset.js`): a 26-page Program Guide (`book/the-4-week-reset.pdf`) + an 11-page Printables Pack (`book/reset-printables.pdf`) with computed aisle-grouped shopping lists, day-by-day plans, a 28-day tracker, coaching, troubleshooting & FAQ. Sold as a bundle with the cookbook PDF. (Paid PDFs git-ignored.)
 - ✅ **Reset landing page LIVE** — `reset.html` (https://the70gprotein.com/reset.html): selling hero, what's-inside, 4-week arc, £49→£29 pricing, 30-day guarantee, FAQ. Wired as the **flagship CTA** on the homepage hero + chef-band + footer, and as the free-plan upsell. `sw.js` cache v3→v4; reset.html + free-plan.html added to sitemap.
@@ -68,11 +77,17 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 
 ---
 
-## ⏭️ Next — OWNER ACTIONS (the launch is LIVE — just tidy-ups left)
+## ⏭️ Next — OWNER ACTIONS
 
-👉 **The full funnel is live and selling** (free app → £12 cookbook → **£29 Reset**, with the Kit
-email funnel running and Pinterest + SEO seeding traffic). Everything automatable is done. What's
-left needs your login/billing — short checklist in `marketing/FINISH-LAUNCH.md`:
+**🎯 The month-1 sales engine (start today — this is the priority):**
+1. **Send the warm-network messages** (`marketing/warm-network-messages.md`) — 30 personal messages over 3–4 days. The first 10–20 sales + first reviews live here.
+2. **Film & post daily** from `marketing/30-day-content-calendar.md` (batch-film 3–4 videos per cook; post to Reels + TikTok + Shorts; free-plan link in bio).
+3. **Pin 2/day** from `marketing/pinterest-queue.md` (11 days of ready-to-click links). First dedupe the board (~23 → 12, board → Organise).
+4. **Post to Reddit** per the schedule in `marketing/reddit-posts.md` (warm the account with normal comments first).
+5. **Ask every buyer for a Gumroad review** within 24h (template G in the warm-network file).
+6. **Paste the cross-sell line** into the £12 cookbook's Gumroad description (text in Session 4 notes above).
+
+**Tidy-ups (from before, still open) — checklist in `marketing/FINISH-LAUNCH.md`:**
 
 1. **Pinterest — dedupe the board** (~2 min). All 12 pins are live, but the pinning double-saved (~23 pins). Open the "High-Protein Low-Sugar Recipes" board → **Organise** → delete one copy of each duplicate (keep 12). *(Claude can't delete pins.)* Optional: convert to a Business account for Rich Pins/analytics.
 2. **Kit — billing decision (no rush).** The 5-email sequence + automation are built & ACTIVE on a 12-day trial of **Creator** ($39/mo, or $390/yr = 2 months free; ≤1,000 subs). With 0 subscribers, recommended to let the trial **lapse to free** (forms still capture emails + deliver the PDF; the sell-sequence just pauses, fully saved) and **upgrade to Creator — annual — once the list starts growing**. **Skip "Creator Pro"** — not needed. Trial auto-cancels, no surprise charge.
