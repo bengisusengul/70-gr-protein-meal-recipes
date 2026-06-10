@@ -3,19 +3,28 @@ Run: python3 build/build-pins.py    (needs Pillow)"""
 import os, json, subprocess
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
-ROOT = os.path.expanduser("~/Desktop/70-gr-protein-meal-recipes")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repo root, wherever it lives
 IMG = os.path.join(ROOT, "img", "recipes")
 OUT = os.path.join(ROOT, "pins")
 os.makedirs(OUT, exist_ok=True)
 
 # strong, on-topic photos across categories
+# batch 1 (published 2026-06-06)
 PICKS = ["baked-salmon-asparagus-parmesan","greek-yogurt-granola-parfait","korean-beef-bulgogi-cauli-bowl",
  "chicken-tikka-masala-cauli-rice","seared-tuna-nicoise-salad","chocolate-pb-protein-smoothie",
  "steak-fajita-bowl","lamb-kofta-tzatziki","baked-trout-lemon-asparagus","chicken-piccata-zoodles",
  "greek-chicken-salad-bowl","turkey-club-lettuce-wrap"]
+# batch 2 (2026-06-10) — 22 more across all four categories incl. 8 vegetarian
+PICKS += ["garlic-butter-steak-mushrooms","shrimp-scampi-zoodles","bunless-cheeseburger-bowl",
+ "sheet-pan-chicken-thighs-brussels","teriyaki-chicken-broccoli","thai-shrimp-coconut-curry-cauli",
+ "swedish-style-beef-meatballs","turkey-meatballs-marinara-zoodles","baked-cod-lemon-broccoli",
+ "chicken-shawarma-salad-bowl","buffalo-chicken-lettuce-cups","teriyaki-salmon-poke-bowl",
+ "thai-beef-larb-lettuce-cups","halloumi-greek-salad-bowl","tuna-avocado-lettuce-wraps",
+ "protein-pancakes","protein-french-toast","turkey-shakshuka-feta","chocolate-protein-chia-pudding",
+ "protein-mug-cake","frozen-greek-yogurt-protein-bark","protein-hot-chocolate"]
 
 names = json.loads(subprocess.check_output(["node","-e",
-  'global.window={};require(process.env.HOME+"/Desktop/70-gr-protein-meal-recipes/js/recipes-data.js");'
+  'global.window={};require("'+ROOT.replace('"','')+'/js/recipes-data.js");'
   'const m={};window.RECIPES.forEach(r=>m[r.id]={name:r.name,p:r.macros.protein,nc:r.macros.netCarbs});console.log(JSON.stringify(m))']).decode())
 
 def font(sz, bold=True):
