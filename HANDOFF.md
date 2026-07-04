@@ -37,7 +37,7 @@ positioning; **HIGH-PROTEIN, NOT carnivore** (27 recipes are vegetarian — neve
 
 **LIVE & working:** site on custom domain (HTTPS) · both Gumroad products published & purchasable ·
 Kit form capturing emails + delivering the free PDF (double opt-in) · 8 SEO collection pages ·
-GoatCounter analytics wired site-wide (placeholder — see §3) · 12 Pinterest pins on the board ·
+GoatCounter analytics LIVE site-wide (code `the70gprotein`, verified Jul 4 — see §3) · 12 Pinterest pins on the board ·
 GSC verified, sitemap (112 URLs) submitted · 34 pin images + ready-to-click queue for 22 more.
 
 **THE HONEST GAP:** the June-10 growth engine was **never executed** — as of Jul 4 there were
@@ -60,7 +60,7 @@ from Aug 3) · **Reset Challenge cohort starts Mon 8 Sep** (push Aug 25–Sep 7)
 | **Gumroad £29** | `/l/reset` (edit id `ardyku`) — published, verified purchasable; Discover category+tags set. Files = the 3 PDFs in `book/` (paid ones git-ignored) |
 | **Kit (ConvertKit)** | Form "Clare form" id **9523057** / uid **`57976b6071`** on free-plan.html. 5-email sequence + automation BUILT, currently **paused on free tier**. Sends from `hello@softwareyeah.com` until sending-domain DNS is added. **Gate:** upgrade to Creator ANNUAL ($390/yr) at ~250 subs or first £100 month — never "Creator Pro". Broadcasts work on free tier |
 | **Google Search Console** | Verified via `google065c8bec089f087c.html` at site root — **never delete that file**. Resubmit sitemap after URL changes |
-| **GoatCounter** | Wired everywhere with placeholder **`GOATCOUNTER_SITE`** — owner creates free account (goatcounter.com/signup), then swap the code (§6) and analytics go live: pageviews + `buy-*` click events on every Gumroad CTA |
+| **GoatCounter** | **LIVE** since Jul 4 — code **`the70gprotein`**, dashboard https://the70gprotein.goatcounter.com (login bengisushopify@gmail.com, email verified). Tracks pageviews + `buy-*` click events on every Gumroad CTA. Verified end-to-end (first visit recorded). Note: GoatCounter drops data until the account email is verified; count.js skips hidden/background tabs |
 | **Pinterest** | Board "High-Protein Low-Sugar Recipes" — 12 pins live **plus ~11 duplicates (owner dedupes via board → Organise)**. Queue for 22 more: `marketing/pinterest-queue.md`. Pin via Pin-from-URL only (§10) |
 | **Socials** | TikTok / Instagram / YouTube — **not created yet**; Week-0 item (one handle, bio link → /free-plan.html) |
 | **Site assets** | Hero `img/book/hero.jpg` (Pexels, Sergey Meshkov — credited in CREDITS.md). 100 recipe photos in `img/recipes/`, credits in `img/recipes/_credits.json` |
@@ -137,10 +137,10 @@ node build/build-pages.js YYYY-MM-DD     # 100 recipe pages + hub + sitemap (exp
 node build/build-collections.js          # 8 collection pages (defs: build/collections-def.js)
 # ^ shared defs; either order; rerun-safe. After editing defs run BOTH.
 
-# 3) Analytics go-live (once the owner has a GoatCounter code):
-grep -rl "GOATCOUNTER_SITE" --include="*.html" --include="*.js" . | grep -v node_modules
-#   replace GOATCOUNTER_SITE -> <code> in: index.html, reset.html, free-plan.html,
-#   build/build-pages.js, build/build-collections.js — then rerun step 2 and push.
+# 3) Analytics — DONE (Jul 4): code `the70gprotein` is wired everywhere; dashboard at
+#    the70gprotein.goatcounter.com. If a Pages deploy seems stuck, check
+#    curl -s api.github.com/repos/bengisusengul/70-gr-protein-meal-recipes/actions/runs?per_page=3
+#    (public, no auth) — a failed "Deploy" step is transient; retrigger with an empty commit.
 
 # 4) PDFs (only after recipe/photo changes; re-upload to Gumroad after)
 npm run build:pdf && python3 build/compress-pdf.py dist/the-70g-protein-cookbook.pdf book/the-70g-protein-cookbook.pdf 1000 72
@@ -177,7 +177,7 @@ git commit && git push origin claude/high-protein-cookbook-3Av3B   # push = depl
 ## 8. Owner's to-do (as of 2026-07-04)
 
 **Now (Week 0 — see plan §1):** socials · warm messages · film 1–3 · pins + dedupe board ·
-GoatCounter account (→ give Claude the code) · confirm Kit on free · resubmit sitemap in GSC.
+~~GoatCounter account~~ ✅ done Jul 4 · confirm Kit on free · resubmit sitemap in GSC.
 **Soon:** paste cross-sell line into £12 listing · Namecheap: auto-renew ON + Kit sending-domain
 DNS (when upgrading Kit) · delete Kit test subscriber.
 **Gated:** Kit → Creator annual (~250 subs or £100 month) · membership tier (only after Reset
@@ -185,8 +185,8 @@ sells ≥5/wk for 3 straight weeks).
 
 ## 9. Claude's next-session queue
 
-1. Swap in the GoatCounter code → rebuild pages → push (2 min once the code exists).
-2. Read `SCOREBOARD.md` rows / owner screenshots → analyze → adjust hooks/formats.
+1. ~~Swap in the GoatCounter code~~ ✅ done Jul 4 (commit 0f79a62; verified live).
+2. Read `SCOREBOARD.md` rows / owner screenshots + GoatCounter dashboard → analyze → adjust hooks/formats.
 3. **Early Aug:** month-2 video-script pack (from real July retention data) + price-rise emails.
 4. **Mid-Aug:** September Reset-Challenge kit (launch emails, challenge emails, daily scripts, pins).
 5. On 3+ reviews: testimonial quote-strip into reset.html (placeholder comment is in the code).
@@ -205,7 +205,9 @@ sells ≥5/wk for 3 straight weeks).
 - **Never edit `js/recipes-data.js`** — per-recipe additions go in `js/recipes-extra.js`.
 - **Collections:** selection/copy lives ONLY in `build/collections-def.js`; `build-pages.js` is the
   ONLY sitemap writer; after def changes run both builds; sitemap must read 112 (104 + 8).
-- **`GOATCOUNTER_SITE`** is a deliberate placeholder (fails silently). Swap → rebuild → push.
+- **GoatCounter is live** (`the70gprotein`). New pages get the snippet from the build scripts
+  automatically. GitHub Pages' "Deploy" step can fail transiently after a green build — check the
+  public actions API and retrigger with an empty commit (happened Jul 4 on 0f79a62).
 - **Paid PDFs are git-ignored by design** (`book/the-70g-protein-cookbook.pdf`, `the-4-week-reset.pdf`,
   `reset-printables.pdf`, `build/reset-gumroad/`). If missing locally: rebuild (§6) — masters also
   live on Gumroad and in `~/Desktop/cookbook/RESET-UPLOADS/`.
@@ -245,6 +247,10 @@ sells ≥5/wk for 3 straight weeks).
   scoreboard + July broadcasts; **GoatCounter wired site-wide** (placeholder + buy-click events);
   **8 SEO collection pages** (sitemap 104→112, interlinked); sw v6; this handoff rewritten;
   Desktop folder tidied (`_archive/`).
+- **S6 · Jul 4 (evening)** — **GoatCounter LIVE**: owner created account `the70gprotein` (email
+  verified), placeholder swapped everywhere (0f79a62), first Pages deploy failed transiently →
+  retriggered with empty commit (58f0c22), verified end-to-end (count POST 200 + visit on the
+  dashboard).
 
 ---
 *End of handoff. If you're a fresh session: `LAUNCH-STATUS.md` next, then live out of
