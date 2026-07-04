@@ -22,10 +22,10 @@ const RECIPES = window.RECIPES, X = window.RECIPE_EXTRA;
 // ---- site config (keep in sync with build-pages.js) ----
 const BASE = "https://the70gprotein.com";
 const STORE_URL = "https://bengisus.gumroad.com/l/igjxu";
-// GoatCounter (free, no cookie banner). GOATCOUNTER_SITE is a placeholder until
+// GoatCounter (free, no cookie banner). the70gprotein is a placeholder until
 // the owner creates the account — a bogus subdomain fails silently, so it is
-// harmless to deploy; replace in all files at once (grep GOATCOUNTER_SITE).
-const GC_SNIPPET = '<script data-goatcounter="https://GOATCOUNTER_SITE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>';
+// harmless to deploy; replace in all files at once (grep the70gprotein).
+const GC_SNIPPET = '<script data-goatcounter="https://the70gprotein.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>';
 
 const esc = (s) => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 

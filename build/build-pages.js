@@ -23,10 +23,10 @@ const { COLLECTIONS } = require("./collections-def.js"); // shared defs: sitemap
 // ---- site config (edit BASE / STORE_URL when the domain / store is live) ----
 const BASE = "https://the70gprotein.com";
 const STORE_URL = "https://bengisus.gumroad.com/l/igjxu"; // empty -> link to in-browser book; set -> external Gumroad store
-// GoatCounter analytics (free, no cookie banner). GOATCOUNTER_SITE is a placeholder
-// until the owner creates the account (grep GOATCOUNTER_SITE to replace everywhere);
+// GoatCounter analytics (free, no cookie banner). the70gprotein is a placeholder
+// until the owner creates the account (grep the70gprotein to replace everywhere);
 // a bogus subdomain fails silently, so deploying the placeholder is harmless.
-const GC_SNIPPET = '<script data-goatcounter="https://GOATCOUNTER_SITE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>';
+const GC_SNIPPET = '<script data-goatcounter="https://the70gprotein.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>';
 const AUTHOR = "Bengisu Sengul";
 const buyHref = STORE_URL || "../cookbook.html";
 const buyText = STORE_URL ? "Get the full cookbook (PDF)" : "Read the full cookbook";
