@@ -18,10 +18,15 @@ require(path.join(ROOT, "js", "recipe-images.js"));
 require(path.join(ROOT, "js", "swaps.js"));
 const RECIPES = window.RECIPES, X = window.RECIPE_EXTRA, HASIMG = new Set(window.RECIPE_IMAGES);
 const SWAPS = window.SWAPS;
+const { COLLECTIONS } = require("./collections-def.js"); // shared defs: sitemap + hub row + per-recipe links
 
 // ---- site config (edit BASE / STORE_URL when the domain / store is live) ----
 const BASE = "https://the70gprotein.com";
 const STORE_URL = "https://bengisus.gumroad.com/l/igjxu"; // empty -> link to in-browser book; set -> external Gumroad store
+// GoatCounter analytics (free, no cookie banner). GOATCOUNTER_SITE is a placeholder
+// until the owner creates the account (grep GOATCOUNTER_SITE to replace everywhere);
+// a bogus subdomain fails silently, so deploying the placeholder is harmless.
+const GC_SNIPPET = '<script data-goatcounter="https://GOATCOUNTER_SITE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>';
 const AUTHOR = "Bengisu Sengul";
 const buyHref = STORE_URL || "../cookbook.html";
 const buyText = STORE_URL ? "Get the full cookbook (PDF)" : "Read the full cookbook";
@@ -71,6 +76,9 @@ function page(r) {
   const x = X[r.id], t = r.time.prep + r.time.cook, url = BASE + "/recipes/" + r.id + ".html";
   const img = "../img/recipes/" + r.id + ".jpg", imgAbs = BASE + "/img/recipes/" + r.id + ".jpg";
   const swaps = (SWAPS && SWAPS.forRecipe) ? SWAPS.forRecipe(r) : [];
+  // internal links to the collection pages this recipe belongs to (category first by defs order)
+  const colls = COLLECTIONS.filter((c) => c.filter(r, x)).slice(0, 3);
+  const collLinks = colls.length ? '<p>More like this: ' + colls.map((c) => '<a class="back" href="../collections/' + c.slug + '.html">' + esc(c.h1) + "</a>").join(" · ") + "</p>" : "";
   const ingLis = r.ingredients.map((i) => "<li>" + esc(qty(i)) + "</li>").join("");
   const stepLis = r.steps.map((s) => "<li>" + esc(s) + "</li>").join("");
   const badgeEls = (x.badges || []).map((b) => '<span class="badge">' + esc(b) + "</span>").join("");
@@ -147,12 +155,14 @@ function page(r) {
 </div>
 ${swapEls}
 <p class="note">Full nutrition (estimated, per serving): ${r.macros.calories} kcal · ${r.macros.protein} g protein · ${r.macros.netCarbs} g net carbs · ${r.macros.fat} g fat (${x.satFat_g} g sat) · ${r.macros.fiber} g fiber · ${x.sugar_g} g sugar · ${x.sodium_mg} mg sodium. Allergens: ${(x.allergens && x.allergens.length ? x.allergens.join(", ") : "none of the major allergens flagged")}. Macros are realistic estimates from standard food-composition values; brands and portions vary.</p>
-<a class="cta" href="${buyHref}"${buyAttrs}>${esc(buyText)} — 100 recipes, 3 meal plans &amp; the science →</a>
+<a class="cta" href="${buyHref}"${buyAttrs} data-goatcounter-click="buy-cookbook-recipe">${esc(buyText)} — 100 recipes, 3 meal plans &amp; the science →</a>
 <footer>
 <p><strong>The 70 g Protein Cookbook</strong> — 100 high-protein, low-sugar recipes. <a class="back" href="../index.html">Open the free interactive app</a> to plan your week and auto-build a shopping list.</p>
+${collLinks}
 <p>Not medical advice. 70 g/meal is a high per-meal target — match your total daily protein to your body and goals; consult a professional if you have a medical condition.</p>
 </footer>
 </main>
+${GC_SNIPPET}
 </body>
 </html>
 `;
@@ -177,14 +187,17 @@ function hub() {
 <link rel="canonical" href="${BASE}/recipes/index.html">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../css/styles.css">
-<style>.rp{max-width:760px;margin:0 auto;padding:16px}.rp h1{font-size:30px}.hublist{line-height:1.8;padding-left:18px}.rp a{color:#2f7d52}</style>
+<style>.rp{max-width:760px;margin:0 auto;padding:16px}.rp h1{font-size:30px}.hublist{line-height:1.8;padding-left:18px}.rp a{color:#2f7d52}.collrow{background:#f4efe3;border-radius:10px;padding:10px 14px;font-size:14.5px;line-height:1.8}</style>
 </head><body><main class="rp">
 <nav><a href="../index.html">← The 70 g Protein Cookbook</a></nav>
 <h1>All 100 high-protein recipes</h1>
 <p>Every recipe delivers ~70 g of protein with very low sugar. Tap any recipe for ingredients, method, macros and dietary swaps.</p>
+<p class="collrow"><strong>Browse by collection:</strong> ${COLLECTIONS.map((c) => '<a href="../collections/' + c.slug + '.html">' + esc(c.h1) + "</a>").join(" · ")}</p>
 ${body}
-<p style="margin-top:22px"><a href="${buyHref}"${buyAttrs}>${esc(buyText)} →</a></p>
-</main></body></html>`;
+<p style="margin-top:22px"><a href="${buyHref}"${buyAttrs} data-goatcounter-click="buy-cookbook-hub">${esc(buyText)} →</a></p>
+</main>
+${GC_SNIPPET}
+</body></html>`;
 }
 
 // ---- write ----
@@ -196,7 +209,9 @@ fs.writeFileSync(path.join(dir, "index.html"), hub());
 
 // sitemap
 const today = (process.argv[2] || "2026-06-01"); // pass a date; default fixed
-let urls = [BASE + "/", BASE + "/reset.html", BASE + "/free-plan.html", BASE + "/recipes/index.html"].concat(RECIPES.map((r) => BASE + "/recipes/" + r.id + ".html")); // cookbook.html intentionally excluded — paid product, not advertised to crawlers
+let urls = [BASE + "/", BASE + "/reset.html", BASE + "/free-plan.html", BASE + "/recipes/index.html"]
+  .concat(COLLECTIONS.map((c) => BASE + "/collections/" + c.slug + ".html"))
+  .concat(RECIPES.map((r) => BASE + "/recipes/" + r.id + ".html")); // cookbook.html intentionally excluded — paid product, not advertised to crawlers
 const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   urls.map((u) => "  <url><loc>" + u + "</loc><lastmod>" + today + "</lastmod></url>").join("\n") + "\n</urlset>\n";
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemap);

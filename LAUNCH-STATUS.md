@@ -1,6 +1,7 @@
 # 🚀 Launch status & to-do — The 70 g Protein Cookbook
 
-_Last updated: 2026-06-06. This is the up-to-date handoff: read it first to resume._
+_Last updated: 2026-07-04. This is the up-to-date handoff: read it first to resume._
+_**Current operating doc: `marketing/90-DAY-SALES-PLAN.md`** (July–Sept). Fill `marketing/SCOREBOARD.md` every Sunday._
 
 **What this is:** a free interactive web app **+** a sellable PDF, from one dataset of 100
 high-protein (~70 g), low-sugar (<20 g net carbs) recipes. Owner/author: **Bengisu Sengul** (chef).
@@ -23,7 +24,8 @@ Legend: ✅ done · ⏭️ next (do in order) · ⬜ optional / later
 | **Free lead magnet** | https://the70gprotein.com/book/free-7-day-plan.pdf |
 | **Hero image** | `img/book/hero.jpg` (Pexels, Sergey Meshkov; credited in `CREDITS.md`) |
 | **Owner emails** | `bengisushopify@gmail.com` (Kit + Namecheap + Gmail) · `bengisu_sengul@hotmail.com` (cookbook contact). UK address on file (private via WhoisGuard). |
-| **Service worker** | `sw.js` cache **v4**. Bump version when changing precached assets; returning visitors may need 1 refresh. |
+| **Service worker** | `sw.js` cache **v6**. Bump version when changing precached assets; returning visitors may need 1 refresh. |
+| **Analytics** | **GoatCounter** wired site-wide (pageviews + `buy-*` click events on every Gumroad CTA) — **placeholder `GOATCOUNTER_SITE`** until the owner creates the free account (goatcounter.com/signup) and gives Claude the site code to swap in (grep `GOATCOUNTER_SITE`). Harmless while placeholder (fails silently). |
 
 ---
 
@@ -45,6 +47,13 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 ---
 
 ## ✅ Done
+
+**Session 5 (2026-07-04) — the 90-day sales plan, measurement & SEO collections:**
+- ✅ **`marketing/90-DAY-SALES-PLAN.md`** — the July→September operating plan. Honest reset: the June engine was built but **never executed** (0 videos/messages/subs as of Jul 4), so month 1 = *turn it on* + measure + habit. Includes: Week-0 sprint, ranked DO list, DON'T list, monthly targets & gates, weekly rhythm + minimum-viable-week, and **two real sales moments** (cookbook £12→£19 on **Aug 17**; **Reset Challenge cohort starts Sep 8**). Calibrated to owner's answers: 10–20 h/wk, face+voice video, £0 ads, socials from zero.
+- ✅ **`marketing/SCOREBOARD.md`** — 13-week accountability tracker (fill Sundays; paste to Claude for analysis).
+- ✅ **`marketing/broadcast-templates.md`** — 4 July Kit broadcasts (work on the FREE Kit tier).
+- ✅ **GoatCounter analytics wired site-wide** — snippet on index/reset/free-plan + all 101 recipe pages + 8 collections; `data-goatcounter-click` buy-events on every Gumroad CTA (`buy-cookbook-home/-recipe/-hub/-collection/-reset`, `buy-reset`, `free-plan-pdf`). Placeholder until owner creates the account. `sw.js` → **v6**.
+- ✅ **8 SEO collection pages** (`collections/`, via new `build/collections-def.js` + `build/build-collections.js`; sitemap now **112 URLs**): breakfast/lunch/dinner/snacks (20/25/33/22), vegetarian (27), under-30-min (58), under-500-kcal (31), meal-prep (23). ItemList JSON-LD, unique intros, interlinked from all 100 recipe pages + hub + homepage footer. **Owner: resubmit sitemap.xml in Search Console (2 min).**
 
 **Session 4 (2026-06-10) — the growth engine (sales push month 1):**
 - ✅ **30-day video content calendar** — `marketing/30-day-content-calendar.md`: a script/hook/caption for every day (real recipes + exact macros), weekly themes, filming workflow. Owner films & posts (Reels + TikTok + Shorts).
@@ -79,7 +88,10 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 
 ## ⏭️ Next — OWNER ACTIONS
 
-**🎯 The month-1 sales engine (start today — this is the priority):**
+**👉 THE operating doc is now `marketing/90-DAY-SALES-PLAN.md` — start with its WEEK-0 sprint
+(§1): create the TikTok/IG/YT accounts, send the warm messages, film videos 1–3, start the pin
+queue, create the free GoatCounter account (then tell Claude the site code), check Kit is on free,
+resubmit sitemap.xml in GSC.** The items below are the same engine, kept for reference:
 1. **Send the warm-network messages** (`marketing/warm-network-messages.md`) — 30 personal messages over 3–4 days. The first 10–20 sales + first reviews live here.
 2. **Film & post daily** from `marketing/30-day-content-calendar.md` (batch-film 3–4 videos per cook; post to Reels + TikTok + Shorts; free-plan link in bio).
 3. **Pin 2/day** from `marketing/pinterest-queue.md` (11 days of ready-to-click links). First dedupe the board (~23 → 12, board → Organise).
@@ -111,7 +123,9 @@ The money is in the **email list + recurring revenue**, not the £12 PDF. Revenu
 ## ⚠️ Conventions & gotchas
 
 - **Push only to `claude/high-protein-cookbook-3Av3B`** — GitHub Pages auto-deploys from it.
-- **Bump `sw.js` CACHE version** (now `v4`) when changing precached assets; returning visitors may need one refresh to see updates.
+- **Bump `sw.js` CACHE version** (now `v6`) when changing precached assets; returning visitors may need one refresh to see updates.
+- **Collections**: recipe selection/copy lives in `build/collections-def.js` (shared by `build/build-collections.js` AND `build-pages.js` for the sitemap + interlinks). After changing defs, run BOTH builds. Sitemap should read 112 URLs.
+- **GOATCOUNTER_SITE** is a deliberate placeholder — swap it everywhere (`grep -rl GOATCOUNTER_SITE`, then rebuild pages) once the owner's account exists.
 - **HIGH-PROTEIN, NOT carnivore** (27 vegetarian recipes) — never add a carnivore claim.
 - **Don't edit `js/recipes-data.js`** (validated 100-recipe core); add per-recipe data in `js/recipes-extra.js`.
 - **Pexels API key:** env-only, never commit.
