@@ -1,263 +1,251 @@
-# 📒 SESSION HANDOFF — The 70 g Protein Cookbook
-### Complete context for a fresh Claude Code session. Read this top-to-bottom before doing anything.
-*Last updated: 2026-06-06. The original build context is preserved below (§0–§11). For the CURRENT state + live to-do, see **`LAUNCH-STATUS.md`** and **§12** of this doc.*
+# 📕 MASTER HANDOFF — The 70 g Protein Cookbook
 
-> **▶ RESUME HERE — LAUNCHED.** The product is live at **https://the70gprotein.com** (custom domain + HTTPS), with the Gumroad store and a Kit (ConvertKit) email funnel wired. The original pre-launch roadmap in §9 is now **DONE**. **Read `LAUNCH-STATUS.md` for the current to-do** (in order: verify domain in Kit → Google Search Console → Pinterest → build the £29 "Reset" offer → email sequence → membership). The full session-2 narrative + current state of every service is in **§12 below**. **Strategy:** keep the app FREE; monetize via the email funnel + higher-value offers, *not* by gating recipes.
+_Rewritten clean on **2026-07-04** (supersedes the old session-appended handoff; that history is
+condensed in §11 and fully preserved in git). This file + the three operating docs below are
+everything a fresh session — or a fresh human — needs._
 
----
-
-## 0. TL;DR (read me first)
-- **Product:** an independent chef's **digital high-protein, low-sugar cookbook** — a free interactive **web app** + a **sellable PDF** (the paid product), generated from one shared dataset of **100 recipes**.
-- **Owner / author:** **Bengisu Sengul**, a professional chef (Sous Chef → Head Chef, 4 yrs). Contact: **bengisu_sengul@hotmail.com**.
-- **Goal of this session:** make it look professional and **sellable straight away** — real photos, SEO, a real PWA, deeper recipes, a sales funnel, a polished PDF, and a research-backed cover/copy/pricing pass.
-- **Where the code is:** local git clone at **`~/Desktop/70-gr-protein-meal-recipes`** on branch **`claude/high-protein-cookbook-3Av3B`** (this is the default branch; **do NOT use `main`**). GitHub: `https://github.com/bengisusengul/70-gr-protein-meal-recipes`.
-- **Latest commit:** `e1571b5` (pushed). Everything below is committed EXCEPT the full sellable PDF (intentionally git-ignored — see §6).
-- **Status:** **LAUNCHED & LIVE** at https://the70gprotein.com (custom domain + HTTPS). Gumroad store live, Kit email funnel live. Original go-live roadmap (§9) complete. Current state + next steps: see **§12** and **`LAUNCH-STATUS.md`**.
-
-> ⚠️ **Critical brand decision:** This is **HIGH-PROTEIN, NOT carnivore.** Bengisu's personal story is carnivore, but a check proved **0 of the 100 recipes are carnivore** (all contain plants; 27 are vegetarian). We deliberately tell her comeback story as a *high-protein / low-sugar* journey. **Never add a "carnivore" claim anywhere.**
+**▶ Read-first order for any new session:**
+1. **This file** (the map — 10 minutes)
+2. `LAUNCH-STATUS.md` (the status ledger + owner to-dos)
+3. `marketing/90-DAY-SALES-PLAN.md` (**THE operating plan**, July–September 2026)
+4. `marketing/SCOREBOARD.md` (weekly numbers — the ground truth of execution)
 
 ---
 
-## 1. Environment & exact paths
-| Thing | Path / value |
+## 1. What this business is
+
+One validated dataset — **100 recipes, each ≈70 g protein and <20 g net carbs** — rendered into
+four surfaces:
+
+| Surface | What | Price | Where |
+|---|---|---|---|
+| **Web app + 100 SEO recipe pages + 8 collection pages** | Traffic & trust engine (planner, tracker, shopping lists; PWA) | Free | https://the70gprotein.com |
+| **Free 7-day plan (PDF)** | Email magnet → Kit list | Free | /free-plan.html |
+| **The 70 g Protein Cookbook (PDF)** | Impulse product ("support the chef") | **£12** → £19 on Aug 17 | https://bengisus.gumroad.com/l/igjxu |
+| **The 4-Week 70 g Protein Reset** | Core money-maker: 26-pp program guide + printables pack + cookbook bundled | **£29** | https://bengisus.gumroad.com/l/reset |
+
+**Owner/author:** Bengisu Sengul, professional chef (ex Sous/Head Chef), UK.
+Emails: `bengisushopify@gmail.com` (Kit, Namecheap, Google) · `bengisu_sengul@hotmail.com` (book contact).
+
+**Strategy (locked):** keep the app + all 100 recipes FREE (traffic/email engine — do NOT gate);
+monetise via the funnel: attention → email → £12 → £29 → (later, gated) membership. Taste-first
+positioning; **HIGH-PROTEIN, NOT carnivore** (27 recipes are vegetarian — never claim carnivore).
+
+---
+
+## 2. Status snapshot — 2026-07-04
+
+**LIVE & working:** site on custom domain (HTTPS) · both Gumroad products published & purchasable ·
+Kit form capturing emails + delivering the free PDF (double opt-in) · 8 SEO collection pages ·
+GoatCounter analytics wired site-wide (placeholder — see §3) · 12 Pinterest pins on the board ·
+GSC verified, sitemap (112 URLs) submitted · 34 pin images + ready-to-click queue for 22 more.
+
+**THE HONEST GAP:** the June-10 growth engine was **never executed** — as of Jul 4 there were
+0 videos posted, 0 warm messages sent, 0 subscribers, no recorded sales, and the Kit trial lapsed
+to the free tier (~Jun 18; the 5-email sequence is saved but **paused** until a Creator upgrade).
+The 90-day plan is built around fixing exactly this: **Week-0 restart + weekly rhythm + scoreboard.**
+
+**Two scheduled sales moments (real, one-time):** cookbook **£12 → £19 on Sun 17 Aug** (announce
+from Aug 3) · **Reset Challenge cohort starts Mon 8 Sep** (push Aug 25–Sep 7).
+
+---
+
+## 3. Accounts & key facts
+
+| Thing | Detail |
 |---|---|
-| **Working git clone (USE THIS)** | `~/Desktop/70-gr-protein-meal-recipes` |
-| **Stale/incomplete copy (IGNORE / can delete)** | `~/Desktop/70-gr-protein-meal-recipes-claude-high-protein-cookbook-3Av3B` (an old unzip — missing files, not a git repo) |
-| GitHub repo | `https://github.com/bengisusengul/70-gr-protein-meal-recipes` |
-| Branch (default) | `claude/high-protein-cookbook-3Av3B` |
-| This session's plan file (local, NOT portable) | `~/.claude/plans/hey-rickety-progress-file-refactored-riddle.md` — historical only; **this HANDOFF is the source of truth.** |
-| Machine | macOS (zsh). Tools present: node, npm, git, python3 + Pillow + PyMuPDF (installed via pip --user), sips. **No** ImageMagick/Ghostscript. |
-| Live site (once Pages enabled) | `https://bengisusengul.github.io/70-gr-protein-meal-recipes/` |
-
-**Secrets:** A **Pexels API key** is required to (re)fetch photos. Bengisu pasted one in chat; it is **deliberately NOT stored in this repo or this doc** (security). A new session must **ask Bengisu for the Pexels key** and use it as an env var only (`PEXELS_API_KEY=...`), never commit/echo it.
-
----
-
-## 2. What the product is
-- **Web app** (`index.html`, vanilla JS, no framework, no build step) — 5 tabs: Recipes, Plan & Shop, 7-Day Plans, Tracker, Why It Works. Data in `localStorage`. Now also a real **PWA** (installable + offline).
-- **Sellable PDF** (`cookbook.html` + `build/build-cookbook.js`, rendered with Puppeteer) — 118-page A4 book from the same data.
-- **SEO layer** — 100 static crawlable recipe pages under `recipes/` with `Recipe` JSON-LD, a hub, `sitemap.xml`, `robots.txt`.
-- **Funnel** — free lead-magnet PDF + `free-plan.html` email-capture page + 12 Pinterest pins + `MARKETING.md` (listing copy, pricing, setup steps).
-- The "unbreakable rule": every recipe ≈ **70 g protein**, **< ~20 g net carbs**, one serving.
+| **Repo / hosting** | github.com/bengisusengul/70-gr-protein-meal-recipes · branch **`claude/high-protein-cookbook-3Av3B`** (the ONLY branch — push here; GitHub Pages auto-deploys). Local: `~/Desktop/cookbook/70-gr-protein-meal-recipes` |
+| **Domain** | `the70gprotein.com` — Namecheap (order 204487821), expires **2027-06-05**, **auto-renew OFF** (owner to-do). DNS: 4× A → 185.199.108/109/110/111.153, CNAME www → bengisusengul.github.io |
+| **Gumroad £12** | `/l/igjxu` — published. Founding price until Aug 17. Owner still to paste the cross-sell line (text in LAUNCH-STATUS §Session-4) |
+| **Gumroad £29** | `/l/reset` (edit id `ardyku`) — published, verified purchasable; Discover category+tags set. Files = the 3 PDFs in `book/` (paid ones git-ignored) |
+| **Kit (ConvertKit)** | Form "Clare form" id **9523057** / uid **`57976b6071`** on free-plan.html. 5-email sequence + automation BUILT, currently **paused on free tier**. Sends from `hello@softwareyeah.com` until sending-domain DNS is added. **Gate:** upgrade to Creator ANNUAL ($390/yr) at ~250 subs or first £100 month — never "Creator Pro". Broadcasts work on free tier |
+| **Google Search Console** | Verified via `google065c8bec089f087c.html` at site root — **never delete that file**. Resubmit sitemap after URL changes |
+| **GoatCounter** | Wired everywhere with placeholder **`GOATCOUNTER_SITE`** — owner creates free account (goatcounter.com/signup), then swap the code (§6) and analytics go live: pageviews + `buy-*` click events on every Gumroad CTA |
+| **Pinterest** | Board "High-Protein Low-Sugar Recipes" — 12 pins live **plus ~11 duplicates (owner dedupes via board → Organise)**. Queue for 22 more: `marketing/pinterest-queue.md`. Pin via Pin-from-URL only (§10) |
+| **Socials** | TikTok / Instagram / YouTube — **not created yet**; Week-0 item (one handle, bio link → /free-plan.html) |
+| **Site assets** | Hero `img/book/hero.jpg` (Pexels, Sergey Meshkov — credited in CREDITS.md). 100 recipe photos in `img/recipes/`, credits in `img/recipes/_credits.json` |
 
 ---
 
-## 3. Author, brand & key decisions (locked with Bengisu)
-- **Name on the book:** Bengisu Sengul. **Contact:** bengisu_sengul@hotmail.com. **Dedication:** "Greetings to myself — and to anyone beginning again."
-- **Her story (told as high-protein, NOT carnivore):** was overweight/unhealthy → did a protein-first, very-low-sugar reset → "felt alive again in two weeks" → as a chef, refused bland food, so built flavourful high-protein recipes to help others. (Used in the PDF Welcome letter + About-the-Author.)
-- **Positioning:** **sell TASTE first, demote the macros to a badge** (research: foregrounding "healthy" lowers perceived tastiness & sales). Cover/listing/hero copy all lead with flavour.
-- **Cover:** **single warm hero photo** (a steak) + big title + macro callout badge + negative space (research: a single hero out-converts a collage at thumbnail size). Variety is shown on a separate **"What's Inside"** page, not the cover.
-- **Pricing (in `MARKETING.md`):** charm **$19** regular, **$39 anchor**, **$12 founding price for the first 7 days only** (real, time-boxed), **$27 bundle** (book + meal-plan pack) as the target middle tier.
-- **Photos:** sourced from **Pexels (primary) + Openverse (CC) + TheMealDB**, **commercial-use only, no CC-BY-SA**; per-image source/license recorded in `CREDITS.md` and `img/recipes/_credits.json`. A subtle, consistent warm + saturation **enhancement** was applied to all photos.
-- **Licensing/monetization posture:** the full polished PDF is the **paid product** → kept **out of the public repo** (git-ignored); only the **free** lead-magnet PDF is committed.
-- **Do NOT edit** `js/recipes-data.js` (the validated 100-recipe core) — all added per-recipe content lives in `js/recipes-extra.js`.
+## 4. The Desktop folder — `~/Desktop/cookbook/`
+
+```
+cookbook/
+├── 70-gr-protein-meal-recipes/   ← THE repo (everything current; committed & pushed)
+├── NEXT-SESSION-START-HERE.md    ← 1-page pointer: state + owner sprint + session queue
+├── RESET-UPLOADS/                ← convenience copies used for the Jun-6 Gumroad/Pinterest uploads
+│   ├── 1-gumroad/                  (3 product PDFs + 5 listing images — already uploaded)
+│   └── 2-pinterest/                (the 12 pin images — already pinned)
+├── gumroad-images/               ← £12 cookbook listing images (already uploaded Jun 3)
+└── _archive/                     ← stale June-1 copies; see WHY-THIS-EXISTS.md; safe to delete
+```
+Nothing cookbook-related lives anywhere else on this machine's Desktop. The repo is the single
+source of truth; RESET-UPLOADS/gumroad-images are already-consumed upload copies kept for convenience.
 
 ---
 
-## 4. File / architecture map
-**App + book shells**
-- `index.html` — web app shell (head has SEO/OG/canonical/PWA links + inline `<style>` for card badges & the photo header banner). Loads JS in order: recipes-data, science-data, plans-data, illustrations, swaps, recipe-images, **recipes-extra**, storage, app; registers `sw.js`.
-- `cookbook.html` — print/PDF shell (loads the same data + recipes-extra + cookbook.js; has an inline `<style>` block for the new PDF pages/cover/dividers).
+## 5. Repo map (what matters, where)
 
-**Data (`js/`)**
-- `recipes-data.js` — `window.RECIPES` (100 recipes). **CORE — do not edit.** Shape: `{id,name,category(Breakfast|Lunch|Dinner|Snack),tags[],vegetarian,time{prep,cook},macros{protein,netCarbs,fat,fiber,calories},ingredients[{item,qty,unit,aisle}],steps[],notes}`.
-- `recipes-extra.js` — `window.RECIPE_EXTRA[id]` = headnote, servings, servingsNote, storage, difficulty, equipment[], allergens[], badges[], seoTitle, seoDescription, seoKeywords[], **sodium_mg, satFat_g, sugar_g** (estimates). Generated by `build/build-extra.js`.
-- `recipe-images.js` — `window.RECIPE_IMAGES` = ids that have a photo (currently all 100). Auto-generated.
-- `science-data.js` (cited science), `plans-data.js` (3 weekly plans), `swaps.js` (`SWAPS.forRecipe`), `illustrations.js` (`ART` — SVG art; now only used as a hidden fallback behind photos + the small line-icons for category/aisle), `storage.js` (localStorage), `app.js` (all web-app logic; recipe cards merge `RECIPE_EXTRA`, show badges/headnote/storage, deep-link to `recipes/<id>.html`).
-- `cookbook.js` — PDF builder. `BOOK` config at top (title, subtitle [taste-first], author, contact, price "$19", dedication, website [empty placeholder]). Pages: cover (single hero) → title/copyright → dedication → contents → **welcome letter** → **what's inside** → how-to → science → category dividers (photos) → 100 recipe pages (photo + badges + macros + full nutrition + storage + swaps) → meal plans → conversions → index → **About-the-Author (chef crest)** → **buyer license** → **closing CTA**.
+**Pages (site root):** `index.html` (app shell) · `reset.html` (£29 sales page) · `free-plan.html`
+(email capture) · `cookbook.html` (print shell — **noindex, unlinked, keep off sitemap**) ·
+`google065c8bec089f087c.html` (GSC — keep) · `sitemap.xml`+`robots.txt` (generated) ·
+`sw.js` (service worker, CACHE **v6** — bump on any precached-asset change).
 
-**Build scripts (`build/`)**
-- `fetch-images.js` — Pexels downloader (`npm run fetch:images`, needs `PEXELS_API_KEY`). Has `PHOTO_QUERIES` overrides + de-dup + a `SKIP` list.
-- `fetch-multi.js` — **multi-source** fetcher/selector (Pexels + Openverse + TheMealDB). Modes: `--gather [ids]`, `--promote picks.json`, `--regen`. Writes `img/recipes/_credits.json` + regenerates manifest + `CREDITS.md`.
-- `build-extra.js` — generates `js/recipes-extra.js` (incl. nutrition estimates from an ingredient table).
-- `build-pages.js` — generates `recipes/<id>.html` (+ hub), `sitemap.xml`, `robots.txt`. **Set `STORE_URL` here once Gumroad is live**, then re-run.
-- `build-cookbook.js` — Puppeteer → `dist/the-70g-protein-cookbook.pdf` (A4; flip `PAGE_SIZE="Letter"` for KDP print).
-- `compress-pdf.py` — shrinks the Puppeteer PDF (downsamples + re-encodes images via PyMuPDF; Puppeteer outputs ~75 MB → ~9 MB). Usage: `python3 build/compress-pdf.py in.pdf out.pdf 1000 72`.
-- `build-pins.py` — 12 vertical 1000×1500 Pinterest pins → `pins/`.
-- `build-lead-magnet.js` — free 7-day-plan teaser PDF → `book/free-7-day-plan.pdf`.
-- `enhance-photos.py` — subtle warm/saturation/contrast edit (`python3 build/enhance-photos.py <files>`; `--test in out` for a copy).
+**Generated dirs (committed):** `recipes/` (100 pages + hub — from build-pages.js) ·
+`collections/` (8 SEO hubs — from build-collections.js) · `pins/` (34 pin images).
 
-**Assets**
-- `img/recipes/<id>.jpg` — 100 photos (enhanced). `img/book/{cover,breakfast,lunch,dinner,snack}.jpg` — cover hero + 4 divider photos. `pins/` — 12 pins. `favicon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `manifest.json`, `sw.js`.
-- `recipes/*.html` (100 + index) — static SEO pages. `sitemap.xml`, `robots.txt`.
-- `book/free-7-day-plan.pdf` (committed, free lead magnet). `book/the-70g-protein-cookbook.pdf` (**local only, git-ignored** — the paid product; 118 pp, ~9.9 MB).
-- `CREDITS.md` (photo credits), `MARKETING.md` (sales playbook), `README.md`.
+**Data (`js/`):** `recipes-data.js` — the validated 100-recipe core, **NEVER edit** ·
+`recipes-extra.js` (per-recipe depth; regenerate via build-extra.js) · `recipe-images.js`,
+`science-data.js`, `plans-data.js`, `swaps.js`, `storage.js`, `app.js`, `cookbook.js` (PDF renderer,
+`BOOK` config at top).
 
----
+**Build (`build/`):** `build-pages.js` (recipe pages + hub + **sitemap — single writer**, GC snippet,
+collection interlinks) · `collections-def.js` (**single source of truth** for the 8 collections) ·
+`build-collections.js` · `build-pins.py` + `build-pin-queue.js` (pins + Pin-from-URL queue) ·
+`build-extra.js` · `build-cookbook.js` + `compress-pdf.py` (paid cookbook PDF) · `build-reset.js`
+(Reset guide + printables) · `build-reset-gumroad.js` (listing images) · `build-lead-magnet.js`
+(free PDF) · `fetch-images.js`/`fetch-multi.js` (photos; need `PEXELS_API_KEY`, env-only) ·
+`enhance-photos.py`.
 
-## 5. What was done THIS session (chronological, by commit)
-1. **Started** from a prior session's state (`316f809`): 100 recipes, a 112-page PDF, SVG-illustration art, **no real photos**, the original `PROGRESS.md` said "next job = fetch Pexels photos."
-2. **`fa6cc1f` — the big build:**
-   - Fetched a real photo per recipe (Pexels), de-duplicated (found & fixed 10 duplicate groups + many mismatches via visual review), recorded credits.
-   - **Recipe depth:** generated `js/recipes-extra.js` (headnotes, servings, storage, difficulty, equipment, allergen badges, SEO copy, estimated sodium/sat-fat/sugar).
-   - **SEO:** 100 static recipe pages + JSON-LD + hub + `sitemap.xml` + `robots.txt`; fixed home `<head>` (OG/Twitter/canonical/favicon; "30+"→"100").
-   - **PWA:** `manifest.json` + `sw.js` (real offline + installable).
-   - **App integration:** cards show badges/headnote/storage + deep-link to static pages.
-   - **Funnel assets:** `free-plan.html`, `MARKETING.md`, 12 Pinterest pins, footer CTAs.
-   - **PDF:** added Welcome letter, About-the-Author (custom SVG chef crest), Dedication, Buyer License, Closing CTA; surfaced depth fields on recipe pages.
-3. **`a19be28`** — replaced the flat SVG **cover + 4 section dividers** with real stock food photos.
-4. **`3e1e2ed`** — (interim) variety-collage cover + web header photo banner + email.
-5. **`e1571b5` — research-backed sellability pass (latest):** ran a 4-pillar literature study (see §8) and applied it: **single-hero cover** + new **"What's Inside"** variety page; **taste-first** cover/hero/listing copy; **subtle photo enhancement** across all 105 photos + refreshed pins; **research-based pricing**; **email** set to bengisu_sengul@hotmail.com.
+**`book/`:** `free-7-day-plan.pdf` (free magnet — **committed**) · `the-70g-protein-cookbook.pdf`,
+`the-4-week-reset.pdf`, `reset-printables.pdf` (**paid — git-ignored**, live locally + on Gumroad;
+rebuild commands in §6).
 
-**Current numbers:** 100 recipes · 100 photos (enhanced, 0 duplicates, license-clean) · 101 SEO recipe pages · 118-page PDF (~9.9 MB) · 12 pins · validator passes (`VALID`).
+**`marketing/` (all docs):** `90-DAY-SALES-PLAN.md` ⭐ the operating plan · `SCOREBOARD.md` ⭐ weekly
+tracker · `broadcast-templates.md` (July emails) · `30-day-content-calendar.md` (30 video scripts) ·
+`reddit-posts.md` (6 posts) · `warm-network-messages.md` (first-sales templates + review-ask) ·
+`pinterest-queue.md` (22 ready-to-click pins) · `pinterest-pins.md` (batch-1, historical) ·
+`email-sequence.md` (the 5-email Kit sequence source) · `reset-gumroad-listing.md` (listing copy) ·
+`FINISH-LAUNCH.md` (legacy tidy-ups, mostly folded into the 90-day plan's Week 0).
+
+**Other docs:** `LAUNCH-STATUS.md` (status ledger) · `CLAUDE.md` (session entry pointer) ·
+`README.md`, `CREDITS.md`, `MARKETING.md`, `IDEAS.md`, `PROGRESS.md` (historical).
 
 ---
 
-## 6. What's committed vs NOT
-- **Committed:** all code, 100 recipe photos, 5 book photos, 12 pins, recipe pages, sitemap/robots, icons/manifest/sw, `free-plan.html`, `MARKETING.md`, `CREDITS.md`, all `build/*` scripts, `book/free-7-day-plan.pdf`.
-- **Git-ignored (NOT in repo):** `book/the-70g-protein-cookbook.pdf` (paid product — lives locally for Gumroad upload), `dist/`, `node_modules/`, `package-lock.json`, `img/_candidates/`, `sample.html`, `.DS_Store`.
+## 6. Build & verify (copy-paste)
 
----
-
-## 7. How to build / run everything
 ```bash
-cd ~/Desktop/70-gr-protein-meal-recipes
-npm install                                  # one-time (Puppeteer/Chromium)
+cd ~/Desktop/cookbook/70-gr-protein-meal-recipes
+npm install        # once (Puppeteer). Python needs: pip install --user pymupdf pillow
 
-# validate the 100 recipes (must print "VALID")
-node -e 'global.window={};require("./js/recipes-data.js");require("./js/illustrations.js");const R=window.RECIPES,A=window.ART,P=[];const ok=new Set(["Meat & Poultry","Seafood","Eggs & Dairy","Produce","Pantry","Condiments & Spices","Supplements","Frozen"]);R.forEach(r=>{if(r.macros.protein<68||r.macros.protein>72)P.push(r.id);if(r.macros.netCarbs>20)P.push(r.id);r.ingredients.forEach(i=>{if(!ok.has(i.aisle))P.push(r.id)})});console.log(R.length,P.length?P:"VALID")'
+# 1) Recipe validator — must print "100 VALID" before any commit
+node -e 'global.window={};require("./js/recipes-data.js");const R=window.RECIPES,P=[];const ok=new Set(["Meat & Poultry","Seafood","Eggs & Dairy","Produce","Pantry","Condiments & Spices","Supplements","Frozen"]);R.forEach(r=>{if(r.macros.protein<68||r.macros.protein>72)P.push(r.id);if(r.macros.netCarbs>20)P.push(r.id);r.ingredients.forEach(i=>{if(!ok.has(i.aisle))P.push(r.id)})});console.log(R.length,P.length?P:"VALID")'
 
-# regenerate derived data + SEO + assets
-node build/build-extra.js                    # -> js/recipes-extra.js
-node build/build-pages.js                    # -> recipes/*.html, sitemap.xml, robots.txt
-python3 build/build-pins.py                  # -> pins/
+# 2) Site pages (ALWAYS pass today's date — default lastmod is stale)
+node build/build-pages.js YYYY-MM-DD     # 100 recipe pages + hub + sitemap (expect 112 URLs) + robots
+node build/build-collections.js          # 8 collection pages (defs: build/collections-def.js)
+# ^ shared defs; either order; rerun-safe. After editing defs run BOTH.
 
-# (re)fetch or improve photos (NEEDS the Pexels key from Bengisu)
-PEXELS_API_KEY=xxxx node build/fetch-images.js          # simple Pexels
-PEXELS_API_KEY=xxxx node build/fetch-multi.js --gather  # multi-source candidates
+# 3) Analytics go-live (once the owner has a GoatCounter code):
+grep -rl "GOATCOUNTER_SITE" --include="*.html" --include="*.js" . | grep -v node_modules
+#   replace GOATCOUNTER_SITE -> <code> in: index.html, reset.html, free-plan.html,
+#   build/build-pages.js, build/build-collections.js — then rerun step 2 and push.
 
-# build the sellable PDF (then compress into book/)
-npm run build:pdf                            # -> dist/the-70g-protein-cookbook.pdf (~75MB)
-python3 build/compress-pdf.py dist/the-70g-protein-cookbook.pdf book/the-70g-protein-cookbook.pdf 1000 72   # -> ~9MB
-node build/build-lead-magnet.js              # -> book/free-7-day-plan.pdf
+# 4) PDFs (only after recipe/photo changes; re-upload to Gumroad after)
+npm run build:pdf && python3 build/compress-pdf.py dist/the-70g-protein-cookbook.pdf book/the-70g-protein-cookbook.pdf 1000 72
+node build/build-reset.js && python3 build/compress-pdf.py dist/the-4-week-reset.pdf book/the-4-week-reset.pdf 1400 80
+node build/build-lead-magnet.js          # free magnet (committed)
 
-# preview locally
-python3 -m http.server 8000                  # open http://localhost:8000/ and /cookbook.html
+# 5) Preview + ship
+npm run serve                            # localhost:8000 (GoatCounter ignores localhost — expected)
+git add -A && git status                 # ⚠️ CHECK for unexpected deletions before committing (§10)
+git commit && git push origin claude/high-protein-cookbook-3Av3B   # push = deploy
 ```
 
 ---
 
-## 8. Research findings applied (the evidence base, condensed)
-**Eating psychology:** photos drive craving nearly as much as real food (Spence 2016; Boswell & Kober 2016) → every recipe needs a great photo. "Healthy = less tasty" bias (Raghunathan 2006) → **lead with taste**; indulgent/taste-first labels beat "healthy" by 25–41% (Turnwald 2017/2019; Wansink 2001). Abundance/whole-plate reads satisfying. Faked "motion" in stills doesn't help (Mulier 2021).
-**Color & photography:** warm tones (red/orange/gold) stimulate appetite, green = fresh; **believable high saturation reads as tastier AND healthier** (Kunz 2020). Soft side/back natural light, 45° for hero/layered & flat-lay for bowls, one hero focal point, real matte surfaces, consistency. **Cover = ONE warm hero + big title + negative space** (Reedsy; DocHipo).
-**Cookbook UX:** reliability is the #1 thing reviewers judge; complete recipe schema (yield, times, ordered ingredients, numbered steps, headnote, macros-with-protein); 2–3 fonts, body ~12pt/17px, 45–75 char lines, 1.4–1.5 line-height; photo per recipe; mobile-first <3s; never strip PDF photos.
-**Conversion/sales:** cover is the #1 lever (pro covers +12–53% CTR); charm pricing (~+24%) + anchor + real time-boxed launch (fake urgency loses ~45% trust); reviews convert ~3.5× (use testimonials with faces); free sample → email → 4-email nurture → launch; Pinterest is a recipe search engine (52% search food, 97% unbranded); author story builds trust. (Full sources were delivered in chat; can be saved to `RESEARCH.md` on request.)
+## 7. The operating plan (summary — full version is the doc)
+
+`marketing/90-DAY-SALES-PLAN.md`, calibrated 2026-07-04 (owner: 10–20 h/wk, face+voice video,
+£0 ads, socials from zero):
+
+- **Week 0:** create socials → 30 warm messages → film videos 1–3 (calendar exists) → pin queue +
+  dedupe → GoatCounter signup → Kit-on-free check → resubmit sitemap.
+- **DO (ranked):** short-form video 5–7/wk · Pinterest · Wednesday email · Reddit value posts ·
+  SEO collections (done) · review-ask every sale · the two sales moments · collabs in months 2–3.
+- **DON'T:** paid ads · bought followers/fake reviews · new products before the Reset sells weekly ·
+  new assets before executing existing ones · more platforms · fake urgency · head-term SEO ·
+  redesigns · paid PR · flying blind.
+- **Targets:** Jul 10–20 sales / 75–150 subs · Aug +15–35 / 200–400 subs · Sep +20–40 / 400–700
+  subs. **Quarter: £400–£1,500 realistic, £2–4k stretch.** Gates + kill-switches in the doc (§4).
+- **Rhythm:** Sun scoreboard · Mon batch-film · Tue–Sat post daily · Wed email · Thu Reddit.
+  Minimum viable week: 2 videos, 3 pins, 1 email.
 
 ---
 
-## 9. NEXT TASKS / roadmap (what's left)
-### A. Go-live (mostly Bengisu's actions — Claude prepares assets + exact steps; all detailed in `MARKETING.md`)
-1. **Enable GitHub Pages:** repo → Settings → Pages → Deploy from branch → `claude/high-protein-cookbook-3Av3B` → `/(root)` → Save. Site then live at the URL in §1.
-2. **Gumroad:** create account → New product → Digital → upload `book/the-70g-protein-cookbook.pdf` → paste title/description from `MARKETING.md` → set **$12 founding (7 days) → $19**. Then give Claude the product URL → Claude wires `STORE_URL` in `build/build-pages.js`, the "Buy" CTAs in `index.html`/`free-plan.html`, and `BOOK.website` in `js/cookbook.js`, and rebuilds.
-3. **Email provider** (ConvertKit/MailerLite/Buttondown): create a form → paste its action URL into `free-plan.html` (replace `REPLACE_WITH_YOUR_EMAIL_PROVIDER_FORM_URL`) → set the welcome email to deliver `book/free-7-day-plan.pdf`.
-4. **Google Search Console:** verify site → submit `…/sitemap.xml` → test one recipe in the Rich Results Test.
-5. **Pinterest (business):** upload the 12 `pins/`; link each pin to its recipe page (`…/recipes/<id>.html`).
+## 8. Owner's to-do (as of 2026-07-04)
 
-### B. Polish / trust (P1–P2, Claude can do; some need owner input)
-6. **Social proof:** Bengisu recruits 10–20 beta testers → Claude adds a testimonials section (with photos) to the sales/free-plan pages.
-7. **Recipe reliability QA** (the #1 review risk): a units/times/steps pass across all 100; ideally cook-test a sample; keep "estimated" labels on nutrition.
-8. Optional: punch up recipe **headnotes** with more sensory/indulgent words (keep SEO names); minor **typography** pass (body size/line-height, ≤2 fonts); back-cover blurb; review-request automation.
-9. **ISBN + print** (later): KDP gives a free ISBN; set `PAGE_SIZE="Letter"` and rebuild for a paperback.
+**Now (Week 0 — see plan §1):** socials · warm messages · film 1–3 · pins + dedupe board ·
+GoatCounter account (→ give Claude the code) · confirm Kit on free · resubmit sitemap in GSC.
+**Soon:** paste cross-sell line into £12 listing · Namecheap: auto-renew ON + Kit sending-domain
+DNS (when upgrading Kit) · delete Kit test subscriber.
+**Gated:** Kit → Creator annual (~250 subs or £100 month) · membership tier (only after Reset
+sells ≥5/wk for 3 straight weeks).
 
-### C. Known caveats / guardrails for the next session
-- **Never claim "carnivore."** It's a high-protein book (27 vegetarian recipes; 0 carnivore).
-- Don't edit `js/recipes-data.js` (keeps the validator green); add per-recipe content in `recipes-extra.js`.
-- Keep the Pexels key env-only; never commit/echo it. Keep CC images commercial-use; no CC-BY-SA.
-- The big PDF stays git-ignored. Rebuild + compress it after any content/photo change, for the owner's Gumroad upload.
-- Puppeteer needs Chromium (downloads on `npm install`); PDF compression needs `pip install --user pymupdf pillow`.
-- Always run the validator + `node -e "new Function(...)"` syntax checks before committing; push only to `claude/high-protein-cookbook-3Av3B`.
+## 9. Claude's next-session queue
+
+1. Swap in the GoatCounter code → rebuild pages → push (2 min once the code exists).
+2. Read `SCOREBOARD.md` rows / owner screenshots → analyze → adjust hooks/formats.
+3. **Early Aug:** month-2 video-script pack (from real July retention data) + price-rise emails.
+4. **Mid-Aug:** September Reset-Challenge kit (launch emails, challenge emails, daily scripts, pins).
+5. On 3+ reviews: testimonial quote-strip into reset.html (placeholder comment is in the code).
+6. Anytime: new pin batches, broadcast drafts, collab DMs, metrics reads.
 
 ---
 
-## 10. Open questions for Bengisu (carry into the next session)
-- Do you have Gumroad / an email provider set up yet? (If yes, paste the URLs so the CTAs get wired.)
-- Confirm the Pexels API key for any photo re-fetch.
-- Any recipes whose photo you still dislike? (Easy targeted re-fetch via `fetch-multi.js`.)
-- Want the full cited research saved as `RESEARCH.md`, and the headnote/typography polish done?
+## 10. Conventions & gotchas (hard-won — read before acting)
 
----
-## 11. Owner's note-to-self (future idea — full version in `IDEAS.md`)
-After launch, Bengisu wants to **build an AI agent / agents to run this book's selling &
-promotion** (Pinterest, email funnel, listings/SEO, social content, reviews/social proof,
-analytics) — likely via the Claude Agent SDK, drawing on this repo's assets (`pins/`,
-`recipes/` SEO pages, `MARKETING.md`, the email lead magnet). Not part of the current
-launch scope — revisit once the book is live.
-
----
-
-## 12. Session 2 — Launch, redesign, custom domain & funnel pivot (2026-06-05 → 06)
-
-**Actual working path:** `~/Desktop/cookbook/70-gr-protein-meal-recipes` (the §1 path predates the move under `cookbook/`). Branch unchanged: `claude/high-protein-cookbook-3Av3B` (push only here; GitHub Pages auto-deploys on push).
-
-**Everything that shipped this session (the original §9 go-live + much more):**
-
-1. **GitHub Pages enabled** → site went live.
-2. **Site → Gumroad wired.** Product published at **https://bengisus.gumroad.com/l/igjxu** (id `igjxu`). Set `STORE_URL` in `build/build-pages.js`; pointed every "Get the cookbook" CTA (homepage, `free-plan.html`, all 100 recipe pages + hub) at it. **`cookbook.html` locked down** (noindex, removed from sitemap, all public links removed) so the full in-browser book isn't given away.
-3. **Gumroad listing polished** (via the owner's logged-in browser): added a 30-day-money-back-guarantee line; set Discover category **Self-Improvement › Cooking › Recipes** + tags. Founding price ~£/$12.
-4. **Email capture wired — Kit (ConvertKit), not the placeholder.** Created + published an inline form (**form id 9523057 / uid `57976b6071`**) and embedded it in `free-plan.html` (replaced the old form + stub script). Double opt-in; the **incentive email** (warm on-brand copy) redirects new confirmers to the free PDF. Tested end-to-end (test sub `bengisushopify+70gtest@gmail.com` left *Unconfirmed* — delete it). Kit account **activated** (sign-up email confirmed + account approved). **Brand colors saved** (green `#2F7D52`, gold `#E0B13A`, deep green `#143527`). Kit currently sends from `hello@softwareyeah.com`.
-5. **Premium redesign** — new `css/redesign.css` layer (loads after `styles.css`): editorial **Fraunces** display type, a selling hero (value prop + stats strip + 3 CTAs), an always-visible **"Get the cookbook"** button in the sticky nav, a **chef/trust band** above the footer, refined cards + mobile tuning. Bumped `sw.js` cache (now **v3**).
-6. **New hero photo** — swapped the steak (read as carnivore) for a moody high-protein **bowl**: `img/book/hero.jpg` (Pexels, Sergey Meshkov; credited in `CREDITS.md`). Hero bg + overlay set in `redesign.css`.
-7. **Custom domain — `the70gprotein.com`** (Namecheap; order 204487821; expires 2027-06-05; **auto-renew OFF**; registrant email verified). DNS: 4× **A** `@` → `185.199.108/109/110/111.153`, **CNAME** `www` → `bengisusengul.github.io.`. Added repo **`CNAME`** file, set the GitHub Pages custom domain, **Enforce HTTPS ON**. Rewrote every absolute URL (canonical/OG, `build/build-pages.js` `BASE`, `js/cookbook.js` `BOOK.website`) from the old github.io subpath to `https://the70gprotein.com`; regenerated the 100 recipe pages + sitemap + robots. Old github.io URLs 301-redirect.
-
-**KEY STRATEGY DECISION:** we considered **gating** recipes (e.g., only ~10 free) to force PDF sales, but decided **against it**. The interactive app (planner/tracker/plans) is built around all 100, gating guts SEO/Pinterest traffic, and the recipe data ships in-page anyway. **Verdict: keep the app + all 100 recipes FREE** as the traffic/email engine, and monetize via a **funnel** — free → email list → sell *outcomes* + recurring. Revenue ladder: free app → £9–15 PDF (impulse) → **£25–35 "4-Week 70 g Protein Reset" program** (core) → **£5–8/mo membership** (recurring) → later a chef-led challenge. The money is in the **email list + recurring**, not the £12 PDF.
-
-**Current live state of each service:**
-- **Website:** https://the70gprotein.com — live, HTTPS enforced, redesigned. GitHub Pages from `claude/high-protein-cookbook-3Av3B`.
-- **Gumroad:** `igjxu` — published, ~£12 founding, guarantee + category/tags.
-- **Kit:** active; form `57976b6071` live on `free-plan.html`; incentive email + brand colors set; sends from `hello@softwareyeah.com` (→ switch to `@the70gprotein.com` after Kit domain verification).
-- **Domain/DNS:** Namecheap, configured + GitHub-verified; **auto-renew OFF** (enable it).
-
-**Next steps live in `LAUNCH-STATUS.md`** (prioritized): 1) verify the domain in Kit, 2) Google Search Console (Domain property + sitemap), 3) Pinterest pins, 4) build the £29 "Reset" offer, 5) Kit welcome→sell email sequence, 6) later membership. Plus small bits: enable domain auto-renew, delete the test subscriber, optional PDF rebuild so `BOOK.website` shows the new domain.
+- **Push ONLY to `claude/high-protein-cookbook-3Av3B`** — it's the default branch AND the deploy.
+- **`git add -A` gotcha:** files sometimes vanish from disk between sessions (a lead-magnet PDF
+  deletion was silently staged on Jul 4 and caught pre-push). **Always read `git status` for
+  unexpected `D` lines before committing.**
+- **Bump `sw.js` CACHE** (now v6) whenever precached assets change (index/reset/css/js).
+- **HIGH-PROTEIN, NOT carnivore.** Never add a carnivore claim. 27 recipes are vegetarian.
+- **Never edit `js/recipes-data.js`** — per-recipe additions go in `js/recipes-extra.js`.
+- **Collections:** selection/copy lives ONLY in `build/collections-def.js`; `build-pages.js` is the
+  ONLY sitemap writer; after def changes run both builds; sitemap must read 112 (104 + 8).
+- **`GOATCOUNTER_SITE`** is a deliberate placeholder (fails silently). Swap → rebuild → push.
+- **Paid PDFs are git-ignored by design** (`book/the-70g-protein-cookbook.pdf`, `the-4-week-reset.pdf`,
+  `reset-printables.pdf`, `build/reset-gumroad/`). If missing locally: rebuild (§6) — masters also
+  live on Gumroad and in `~/Desktop/cookbook/RESET-UPLOADS/`.
+- **Pinterest:** create pins via the Pin-from-URL flow
+  (`pinterest.com/pin/create/button/?url=…&media=…&description=…` — images are live under
+  `/pins/`). Builder loads slowly (12–28 s): screenshot to confirm the board picker rendered,
+  click the board **exactly once** (blind re-clicks double-saved batch 1). Claude cannot delete
+  pins (destructive) — dedupe is owner-only via board → Organise. Max ~2 pins/day; never bulk.
+- **Browser file-upload limitation (Claude):** `file_upload` only accepts files the user attaches
+  in-chat; working-dir files and `@`-referenced files are rejected. Gumroad file/cover uploads are
+  therefore owner-only. URL-based flows (Pinterest) are the workaround.
+- **Kit editor automation:** body fields need a standalone `cmd+a` ×10 + Backspace to clear; verify
+  the cursor is in the editor before typing (unfocused keystrokes trigger Kit nav shortcuts).
+- **Gumroad comboboxes** (category/tags): type → ArrowDown → Enter; plain click/Return fails.
+- **Pexels API key:** ask the owner; env-only (`PEXELS_API_KEY=…`); never commit or echo.
+- **Fake urgency is banned** — the Aug 17 price rise and Sep 8 cohort are real and one-time each.
+- **Owner-only actions:** logins/passwords, purchases/billing, account creation, file uploads to
+  Gumroad, deleting pins/posts/data. Claude prepares everything else.
 
 ---
 
-## 13. Session 3 — the £29 Reset + funnel build & LAUNCH (2026-06-06)
+## 11. Session changelog (condensed; full detail in git history + LAUNCH-STATUS)
 
-Built the next revenue tier and the discovery funnel — **and it went LIVE this session.** The £29 Reset
-is published and selling on Gumroad, the Kit email funnel is running, all 12 Pinterest pins are up, and
-SEO is submitted. Only small owner tidy-ups remain (`marketing/FINISH-LAUNCH.md`).
-
-**Shipped (live or in-repo):**
-1. **The £29 "4-Week 70 g Protein Reset" product** — `build/build-reset.js` generates a 26-page
-   Program Guide (`book/the-4-week-reset.pdf`) + an 11-page Printables Pack (`book/reset-printables.pdf`):
-   4 structured weeks (Foundation → Momentum → Lean & Light → Lock-In), day-by-day plans, **computed
-   aisle-grouped shopping lists** (mirrors the app's `buildShoppingList`), a 28-day habit tracker,
-   distilled science, coaching, troubleshooting & FAQ. Sold as a bundle with the 100-recipe cookbook
-   PDF. Both Reset PDFs are git-ignored (paid). Week 4 is a curated "Chef's Favourites" week.
-2. **`reset.html`** — a dedicated conversion landing page (live), wired as the **flagship CTA** across
-   the homepage (hero/chef-band/footer) + free-plan upsell. Cookbook demoted to the always-on sticky
-   nav button. `sw.js` → v4; `reset.html` + `free-plan.html` added to `sitemap.xml`.
-3. **Gumroad Reset product PUBLISHED & LIVE** (`/l/reset`, £29) — full description + slug + cover/gallery/
-   thumbnail. Owner uploaded the 3 PDF files + images and hit Publish (verified purchasable). Branded
-   imagery via `build/build-reset-gumroad.js` → `build/reset-gumroad/` (cover 1600×900, thumbnail 800×800,
-   3 gallery cards; git-ignored). **Sales are on.**
-4. **Google Search Console** — `the70gprotein.com` verified (URL-prefix; `google065c8bec089f087c.html`
-   at root — keep it) and `sitemap.xml` submitted.
-5. **Kit email funnel BUILT & ACTIVE** — a 5-email welcome→sell sequence (all published, in Kit) +
-   an active Visual Automation ("Visual Automation 1": Clare form `57976b6071` → that sequence). New
-   free-plan signups now auto-enter the nurture. Source copy in `marketing/email-sequence.md`. Needs
-   Kit's paid Creator plan to keep running past the ~12-day trial (owner billing decision).
-6. **Marketing copy** in `marketing/`: `reset-gumroad-listing.md`, `email-sequence.md` (5 emails),
-   `pinterest-pins.md` (12 pins), `FINISH-LAUNCH.md` (owner checklist).
-7. **Rebuilt** `book/the-70g-protein-cookbook.pdf` + `book/free-7-day-plan.pdf` so they show the new domain.
-8. **Pinterest: all 12 pins LIVE** on the board "High-Protein Low-Sugar Recipes" — branded vertical images
-   + keyword descriptions + recipe-page links, via Pinterest's **Pin-from-URL** flow
-   (`pinterest.com/pin/create/button/?url=…&media=…&description=…`; pins are live at `the70gprotein.com/pins/`),
-   which sidesteps the file-upload block entirely. ⚠️ The loop double-saved (~23 pins, ≈2× each) — owner to
-   dedupe via the board's "Organise" tool (deleting pins is owner-only).
-
-**What needs the owner now (small tidy-ups — see `marketing/FINISH-LAUNCH.md`):**
-1. **Dedupe the Pinterest board** (~23 pins → keep 12) via the board's "Organise" tool — deleting pins is owner-only.
-2. **Kit billing:** the built & active funnel runs on a **Creator** trial ($39/mo or $390/yr; ≤1,000 subs) that auto-cancels ~2026-06-18. With 0 subscribers, recommended to let it lapse to free and upgrade to Creator (annual) once the list grows — **NOT** Creator Pro. The sequence + automation are saved and re-activate on upgrade.
-3. **Namecheap:** add Kit's sending-domain DNS (DKIM/SPF/Return-Path) so email sends from `@the70gprotein.com`, and enable domain auto-renew — both need the Namecheap login.
-
-**Key learnings (for the next session):** the assistant's browser `file_upload` only accepts files the
-user attaches to chat — NOT working-dir files, and not `@`-referenced files (that's read-access only); and
-`request_directory` is blocked in unsupervised mode. So Gumroad's product files needed the owner. BUT
-image-based sites can often be driven with **no upload** if the images are on a public URL — Pinterest's
-`/pin/create/button/?media=<url>` pulls the image server-side (used here for all 12 pins). See the
-`chrome-file-upload-limitation` memory.
+- **S1 · May 31–Jun 4** — Built everything: 100-recipe dataset + web app (PWA), 100 photos
+  (Pexels, credited), 100 SEO pages, 118-pp cookbook PDF, free-plan funnel, 12 pins, research-based
+  cover/copy/pricing (taste-first, single hero, charm pricing).
+- **S2 · Jun 5–6** — LAUNCH: GitHub Pages live → Gumroad £12 published + CTAs wired → Kit form +
+  incentive email live → premium redesign (Fraunces hero, sticky CTA) → custom domain
+  `the70gprotein.com` + HTTPS. Decision: keep all recipes free; sell outcomes via funnel.
+- **S3 · Jun 6** — Built + published the **£29 Reset** (guide + printables + bundle; `/l/reset`),
+  reset.html landing (flagship CTA), Kit 5-email sequence + automation (activated), 12 pins posted
+  via Pin-from-URL, GSC verified + sitemap, Gumroad imagery, all listing/email/pin copy.
+- **S4 · Jun 10** — Month-1 growth engine: 30-day video calendar, 6 Reddit posts, warm-network
+  templates, +22 pins & queue, reset.html conversion pass (JSON-LD, value anchor), Reset Discover
+  category/tags. *(Subsequently not executed — see S5.)*
+- **S5 · Jul 4** — Honest audit (nothing executed; no analytics) → **90-day sales plan** +
+  scoreboard + July broadcasts; **GoatCounter wired site-wide** (placeholder + buy-click events);
+  **8 SEO collection pages** (sitemap 104→112, interlinked); sw v6; this handoff rewritten;
+  Desktop folder tidied (`_archive/`).
 
 ---
-*End of handoff. New session order: `CLAUDE.md` → **`LAUNCH-STATUS.md`** (current to-do) →
-**`marketing/FINISH-LAUNCH.md`** (owner's remaining clicks) → **§13 / §12** here → §0–§7 for build context.*
+*End of handoff. If you're a fresh session: `LAUNCH-STATUS.md` next, then live out of
+`marketing/90-DAY-SALES-PLAN.md` + `marketing/SCOREBOARD.md`.*
