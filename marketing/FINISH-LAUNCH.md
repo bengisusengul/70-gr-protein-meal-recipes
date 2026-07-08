@@ -1,8 +1,13 @@
 # ✅ Finish the launch — short owner checklist
 
-**🎉 You're LIVE and selling.** The £29 Reset is published on Gumroad, the £12 cookbook is live, the
-free app + 100 recipes are the traffic engine, the Kit email funnel is running, all 12 Pinterest pins
-are up, and Google Search Console is indexing the site. The whole machine works end-to-end.
+> **⚠️ SUPERSEDED 2026-07-04** — the live operating doc is `marketing/90-DAY-SALES-PLAN.md`
+> (its Week 0 absorbs these items). Kept for history. Note two claims below are now stale:
+> the Kit sequence is **paused on the free tier** (trial lapsed ~Jun 18), and there are
+> **no recorded sales yet**.
+
+**🎉 You're LIVE.** The £29 Reset is published on Gumroad, the £12 cookbook is live, the
+free app + 100 recipes are the traffic engine, the Kit form captures emails, all 12 Pinterest pins
+are up, and Google Search Console is indexing the site. The machine is built end-to-end.
 
 Only a few small tidy-ups are left — none of them block sales. Listed by priority.
 

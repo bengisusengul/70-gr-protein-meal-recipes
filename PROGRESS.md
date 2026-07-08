@@ -1,7 +1,8 @@
-# PROGRESS — The 70 g Protein Cookbook (read me first in a new session)
+# PROGRESS — The 70 g Protein Cookbook
 
-> **Status (2026-06-03): LAUNCH-READY.** This is the short status — **`HANDOFF.md` has the full,
-> self-contained context.** Read `HANDOFF.md` first, then this.
+> **⚠️ HISTORICAL — frozen at 2026-06-03 (pre-launch).** Everything below is long done.
+> Current status lives in `LAUNCH-STATUS.md`; full context in `HANDOFF.md`; the operating
+> plan is `marketing/90-DAY-SALES-PLAN.md`.
 
 ## Where we are
 A free interactive **web app** + a **sellable PDF**, both from one dataset of **100 recipes**

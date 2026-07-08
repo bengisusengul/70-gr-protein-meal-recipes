@@ -32,7 +32,7 @@ compound trust → repeat.
 | 2 | **Send the warm-network messages** — templates in `warm-network-messages.md`, ~30 personal messages over 3–4 days (Day 1 closest friends → Day 4 broader circle) | 2 h | This is where the **first 5–15 sales and first reviews** come from. Personal 1-to-1 messages, never a broadcast. Ask every buyer for a Gumroad review within 24 h (template G). |
 | 3 | **Film the first batch** — Days 1–3 of `30-day-content-calendar.md` (scripts are fully written; Day 1 is "meet the chef") | 2 h | Phone + window light + a clean worktop is enough. Post video #1 the same day you film it. |
 | 4 | **Pinterest**: dedupe the board (Organise → delete the ~11 duplicates, keep 12) and start the queue in `pinterest-queue.md` — 2 pins/day, ready-to-click links | 30 min + 5 min/day | Also: convert to a free **Business account** (pinterest.com/business/convert) for analytics + Rich Pins. |
-| 5 | **Create the free GoatCounter account** → goatcounter.com/signup, pick a site code (e.g. `the70gprotein`) → tell Claude the code | 10 min | The site is already wired with a placeholder — one find-replace and analytics go live (visits AND buy-button clicks). Until then we're flying blind. |
+| 5 | ~~Create the free GoatCounter account~~ **✅ DONE Jul 4** — code `the70gprotein`, live + verified | — | Bookmark the dashboard: **the70gprotein.goatcounter.com** (login bengisushopify@gmail.com). It tracks visits AND buy-button clicks — read it every Sunday for the scoreboard. |
 | 6 | **Check Kit** — the Creator trial has lapsed by now; confirm the account is on the free plan | 5 min | Free is correct at 0 subs: the form still captures emails and delivers the free PDF. Only the automated sequence is paused (it's saved; it resumes the moment you upgrade — gate in §4). |
 | 7 | (While in Namecheap someday) turn ON domain auto-renew; add Kit's sending-domain DNS records when you upgrade Kit | 15 min | Not urgent; don't let it block anything above. |
 
@@ -185,7 +185,7 @@ That's it, guilt-free. Never zero — the streak is the asset.
 
 ## 6. MEASUREMENT — the Sunday ritual (30 min)
 
-**Setup (once):** GoatCounter account → give Claude the site code → placeholder replaced → live.
+**Setup: ✅ done (Jul 4)** — GoatCounter live at **the70gprotein.goatcounter.com**.
 Dashboards to bookmark: GoatCounter (visits + `buy-*` click events) · Gumroad sales · Pinterest
 analytics (business) · TikTok/IG insights · Kit subscribers · Search Console (monthly is enough).
 
@@ -212,7 +212,7 @@ Paste the row to Claude any week for an analysis + next-week adjustments.
 - **Mid-August:** September Reset Challenge kit (launch emails, challenge week emails, daily
   video scripts, pin batch)
 - **Any time:** new pin batches from the 100 photos · broadcast drafts · collab pitch DMs ·
-  testimonial quote-strip for reset.html the moment 3 reviews exist · GoatCounter code swap
+  testimonial quote-strip for reset.html the moment 3 reviews exist · GoatCounter dashboard reads
 - **Month 4 (if gates pass):** membership tier design, the £49 bundle test, small paid-ads pilot
 
 ---

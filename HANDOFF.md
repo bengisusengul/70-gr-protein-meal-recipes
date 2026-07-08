@@ -178,8 +178,11 @@ git commit && git push origin claude/high-protein-cookbook-3Av3B   # push = depl
 
 **Now (Week 0 — see plan §1):** socials · warm messages · film 1–3 · pins + dedupe board ·
 ~~GoatCounter account~~ ✅ done Jul 4 · confirm Kit on free · resubmit sitemap in GSC.
-**Soon:** paste cross-sell line into £12 listing · Namecheap: auto-renew ON + Kit sending-domain
-DNS (when upgrading Kit) · delete Kit test subscriber.
+**Soon:** ⚠️ **fix £12 cookbook currency on Gumroad** — it's priced **$12 USD**, so UK buyers pay
+only ~£8.98 while the site says "£12"; switch the product currency to GBP £12 (the Reset is already
+GBP — found in the Jul-8 audit; matters more before the Aug 17 rise to £19) · paste cross-sell line
+into £12 listing · Namecheap: auto-renew ON + Kit sending-domain DNS (when upgrading Kit) · delete
+Kit test subscriber.
 **Gated:** Kit → Creator annual (~250 subs or £100 month) · membership tier (only after Reset
 sells ≥5/wk for 3 straight weeks).
 
