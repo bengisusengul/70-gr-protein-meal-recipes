@@ -109,92 +109,101 @@ The first reviews decide whether strangers ever trust the page. The moment you s
 
 ---
 
-## 🎬 Film today — 3 videos (90 minutes total)
+## 🎬 Film today — 3 FACELESS videos (90 minutes, your face never appears)
 
-Film all three this afternoon in one batch, post one per day: **Video 1 tonight (Fri), Video 2 Saturday, Video 3 Sunday**. One vertical file each, posted identically to TikTok + Instagram Reels + YouTube Shorts. Every video: big protein-number text in the first second, auto-captions on, 20–40 seconds, no intros.
+Hands-and-pans is the biggest food genre on TikTok/IG — no face needed, ever. Your credibility
+comes from what only a chef's hands can do on camera. Film all three this afternoon in one batch,
+post one per day: **Video 1 tonight (Fri), Video 2 Saturday, Video 3 Sunday.** One vertical file,
+posted identically to TikTok + IG Reels + YT Shorts.
+
+**Pick your audio style (each script below works with both):**
+- **Option A — your voice, no face (recommended):** voiceover recorded after filming. A real human
+  voice builds trust almost as fast as a face, and you stay completely off camera.
+- **Option B — completely silent:** on-screen text does ALL the talking (overlays written below),
+  with low original kitchen audio (sizzle, chopping) underneath. Zero voice, zero face.
 
 ---
 
-### Video 1 — "I'm a professional chef" (post FRIDAY evening)
+### Video 1 — "A chef built 100 recipes" montage (post FRIDAY evening)
 
-**Hook (0–2s, on-screen text):** `I'm a professional chef. All 100 of my recipes hit 70g of protein.`
+**Hook (0–2s, on-screen text):** `A professional chef built 100 recipes. Every one = 70g protein.`
 
-**Script (~32s):**
-
-| Time | Shot | Spoken line |
+| Time | Shot (no face — hands, plates, screen only) | Voiceover (A) / Text overlay (B) |
 |---|---|---|
-| 0–2s | You, to camera at the counter | "I'm a professional chef — and every one of my 100 recipes hits 70 grams of protein." |
-| 2–10s | Fast cuts of 3 finished plates (steak, parfait, mug cake), macro overlay on each | "I got bored of high-protein eating meaning dry chicken breast and sadness. So I did what chefs do — I built the recipes myself." |
-| 10–20s | Slow push-in on the steak plate | "A hundred of them. Each around 70 grams of protein, under 20 grams of net carbs. Steak, tikka masala, cheesecake — and 27 are vegetarian." |
-| 20–28s | Phone screen, thumb scrolling the app | "And they're all free. The whole app — no sign-up, no paywall." |
-| 28–32s | Back to camera, point down | "Start with my free 7-day plan — it's the link in my bio." |
+| 0–2s | Hands set a finished steak plate down on the counter, camera at 45° | A: "I'm a professional chef." · B: hook text |
+| 2–10s | Fast cuts: hands plating 3 dishes (steak, parfait glass, mug cake), macro text on each | A: "I got bored of high-protein meaning dry chicken and sadness — so I built the recipes myself." · B: `Tired of dry chicken = "high protein"? Same.` |
+| 10–20s | Slow push-in on the best-looking plate; hand spoons sauce over | A: "A hundred of them. Each about 70 grams of protein, under 20 net carbs. 27 are vegetarian." · B: `100 recipes · ~70g protein each · <20g net carbs · 27 veggie` |
+| 20–28s | Thumb scrolling the app on the phone (screen recording or over-shoulder of the phone) | A: "And they're all free. The whole app — no sign-up, no paywall." · B: `All 100 = FREE. No sign-up.` |
+| 28–32s | Hands close the laptop / set phone down next to the plate | A: "Free 7-day plan — link in my bio." · B: `Free 7-day plan → link in bio` |
 
 **Caption:** I'm a professional chef and I got tired of "high-protein" recipes that were either dry chicken or a 40g compromise. So I built 100 real recipes — every one hits ~70g protein and stays under 20g net carbs, and 27 are vegetarian. The interactive app is completely free, no sign-up. Start with the free 7-day plan → link in bio.
 
 **Hashtags:** #highprotein #highproteinrecipes #proteinrecipes #lowsugar #mealprep #ukfood #chef
 
-**Link:** bio link → `https://the70gprotein.com/free-plan.html`
-
 ---
 
-### Video 2 — Garlic Butter Steak with Sautéed Mushrooms (post SATURDAY)
+### Video 2 — Garlic Butter Steak with Sautéed Mushrooms (post SATURDAY) — already faceless
 
-Real recipe from the app: **70g protein · 5g net carbs · 17 minutes · one pan.**
+Real recipe from the app: **70g protein · 5g net carbs · 17 minutes · one pan.** This script was
+always hands-and-pan — nothing changes except you never step behind the camera.
 
-**Hook (0–2s, on-screen text):** `Steakhouse dinner. 70g of protein. 17 minutes.` — over the steak hitting a screaming pan, sizzle sound ON, no talking.
+**Hook (0–2s):** `Steakhouse dinner. 70g of protein. 17 minutes.` — over the steak hitting a
+screaming pan, sizzle sound ON.
 
-**Script (~32s, voiceover recorded after):**
-
-| Time | Shot | Voiceover |
+| Time | Shot | Voiceover (A) / Text overlay (B) |
 |---|---|---|
 | 0–2s | Steak hits the hot pan — sizzle IS the audio | (nothing — let it sizzle) |
-| 2–8s | Searing, crust close-up | "Garlic butter steak with mushrooms — 70 grams of protein, 5 net carbs, one pan." |
-| 8–16s | Butter + garlic + thyme in; spoon basting, butter foaming | "Chef move: stop flipping. Butter, garlic, thyme — tilt the pan and baste." |
-| 16–24s | Steak out to rest; mushrooms into the same pan | "Mushrooms go into the same pan. All that flavour stays in the dish." |
-| 24–32s | Slice fan, mushrooms spooned over. Text overlay: `70g PROTEIN · 5g NET CARBS` | "Seventeen minutes, start to finish. The recipe's free on my site with 99 more — free 7-day plan in my bio." |
+| 2–8s | Searing, crust close-up | A: "Garlic butter steak with mushrooms — 70 grams of protein, 5 net carbs, one pan." · B: `70g protein · 5g net carbs · one pan` |
+| 8–16s | Butter + garlic + thyme in; hand tilts pan, spoon bastes, butter foaming | A: "Chef move: stop flipping. Butter, garlic, thyme — tilt the pan and baste." · B: `Chef move: stop flipping. Tilt + baste.` |
+| 16–24s | Steak out to rest; mushrooms into the same pan | A: "Mushrooms into the same pan — all that flavour stays in the dish." · B: `Same pan. Keep the flavour.` |
+| 24–32s | Knife fans the slices, mushrooms spooned over. Text: `70g PROTEIN · 5g NET CARBS` | A: "Seventeen minutes, start to finish. Recipe's free on my site with 99 more — free 7-day plan in my bio." · B: `17 minutes. Free recipe + 99 more → bio` |
 
 **Caption:** Garlic butter steak with sautéed mushrooms — 70g protein, 5g net carbs, one pan, 17 minutes. This is what high-protein is supposed to taste like. Full recipe free (no paywall) + a free 7-day high-protein plan → link in bio. PS — the PDF cookbook is £12 until Sunday night, then £19. The site stays free either way.
 
 **Hashtags:** #highprotein #highproteinrecipes #lowcarb #steak #onepan #quickdinner #ukfood
 
-**Link:** bio link → `https://the70gprotein.com/free-plan.html`
-
 ---
 
-### Video 3 — "The £12 price ends tonight" straight talk (post SUNDAY, around midday)
+### Video 3 — "£12 ends tonight" honest note, text-led (post SUNDAY around midday)
 
-**Hook (0–2s, on-screen text):** `The £12 price on my cookbook ends tonight.`
+The face-to-camera straight-talk becomes a **text-led b-roll piece** — the honesty now lives in
+the written lines, which people read in full because they're short and unusual.
 
-**Script (~38s, to camera, warm — no countdown music, no pointing at floating text):**
+**Hook (0–2s, on-screen text):** `Honest one: the £12 price on my cookbook ends tonight.`
 
-| Time | Shot | Spoken line |
+| Time | Shot (no face) | Voiceover (A) / Text overlay (B) |
 |---|---|---|
-| 0–2s | You, to camera | "Quick, honest one." |
-| 2–12s | Stay on camera | "When I launched my cookbook, I set a founding price of £12 for the people who found it first. That ends tonight — from tomorrow it's £19. No countdown clock. That's just the fact." |
-| 12–22s | Cutaway: scrolling the PDF on a laptop or tablet — pages, photos, macros | "What it is: 100 recipes, each around 70 grams of protein and under 20 grams of net carbs, in a 118-page PDF. I'm a professional chef — this is steak, tikka masala, cheesecake cups. Real food." |
-| 22–32s | Back to camera | "And full honesty: every one of those recipes is also free on my website, in the app, and it's staying free. The PDF is for people who want it all as one book — offline, printable, on the kitchen counter." |
-| 32–38s | To camera, easy smile | "So: £12 today, £19 tomorrow — or free in the app either way. Link's in my bio. Cook something good this week." |
+| 0–4s | Hands slide the laptop open to the cookbook PDF cover | A: "Quick, honest one." · B: hook text |
+| 4–12s | Scrolling the PDF — photos, macros, recipe pages | A: "When I launched my cookbook I set a founding price of £12 for the people who found it first. That ends tonight — from tomorrow it's £19. No countdown clock, that's just the fact." · B: `Founding price: £12 → becomes £19 tomorrow. No countdown clock. Just the fact.` |
+| 12–22s | Cut between 2–3 of your best finished plates (use Friday's b-roll) | A: "Inside: 100 recipes, each around 70 grams of protein, under 20 net carbs. Steak, tikka masala, cheesecake cups. I'm a professional chef — this is real food." · B: `100 chef recipes · ~70g protein each · 27 veggie · 118-page PDF` |
+| 22–32s | Thumb scrolling the FREE app on the phone | A: "Full honesty: every recipe is also free on my website, and it's staying free. The PDF is for people who want it as one book — offline, printable, on the kitchen counter." · B: `The honest bit: every recipe is FREE in my app. Staying free. The PDF = all of it as one book.` |
+| 32–38s | Hands close the laptop next to a finished plate | A: "£12 today, £19 tomorrow — or free in the app either way. Link in bio. Cook something good this week." · B: `£12 today → £19 tomorrow. Link in bio.` |
 
 **Caption:** Straight talk: when I launched my cookbook I set a founding price of £12. That ends tonight — from tomorrow it's £19. Inside: 100 chef-built recipes, each ~70g protein and under 20g net carbs, as a 118-page PDF (27 vegetarian). And the honest bit: every recipe is also free in my web app, and it's staying free. The PDF is for anyone who wants it as one book. £12 until tonight → link in bio.
 
 **Hashtags:** #highprotein #highproteinrecipes #proteinrecipes #lowcarb #mealprep #ukfood #cookbook
 
-**Link:** Sunday only, point the bio link (or top slot of your link-in-bio) at `https://bengisus.gumroad.com/l/igjxu` so one tap lands on the £12 checkout. Switch it back to `https://the70gprotein.com/free-plan.html` on Monday morning.
+**Link:** Sunday only, point the bio link at `https://bengisus.gumroad.com/l/igjxu` so one tap lands on the £12 checkout. Switch it back to `https://the70gprotein.com/free-plan.html` on Monday morning.
 
 ---
 
-### The 90-minute batch — filming cheat-sheet
+### The 90-minute faceless batch — filming cheat-sheet
 
-1. Face the window (daylight, no overhead spots), wipe the counter, phone vertical 9:16 propped at chest height — a stack of books is a tripod.
-2. Tap-and-hold to lock focus and exposure so the image doesn't pulse mid-sizzle.
-3. Cook the steak FIRST (Video 2) — the finished plate then doubles as b-roll for Video 1.
-4. While the steak rests, assemble two more plates for Video 1's montage: a yogurt parfait glass and a mug cake — about ten minutes, no cooking skill on show.
-5. Talking heads next, back to back in the same spot: Video 1 intro, then Video 3 straight-talk. Three takes maximum each — done is better than perfect.
-6. Screen b-roll: 15 seconds scrolling the app on your phone (Video 1) and 15 seconds scrolling the PDF on a laptop (Video 3).
-7. Voiceover last: play Video 2 back muted and speak the lines into the phone mic — a quiet room beats a fancy microphone.
-8. Edit in CapCut (free): big protein-number text in the first second of every video, auto-captions ON — most people watch muted.
-9. Keep every cut 20–40 seconds; if a shot is boring, delete it. First frame is food or the hook — never "hey guys".
-10. Post at 5–7pm UK (Video 3 at Sunday midday), then reply to every comment in the first hour — recipe questions get "Full recipe free on my site — link in bio 🔗".
+1. Camera looks DOWN at the counter/hob: prop the phone at chest height angled ~45°, or rig a true overhead with a shelf/broom-handle. A stack of books is a tripod.
+2. You're framed from the shoulders down at most — wear a plain apron; wipe the counter; only hands, pans and plates are on camera.
+3. Tap-and-hold to lock focus/exposure so the image doesn't pulse mid-sizzle.
+4. Cook the steak FIRST (Video 2) — the finished plate doubles as b-roll for Videos 1 and 3.
+5. While the steak rests, assemble the parfait glass + mug cake for Video 1's montage (10 min, no cooking on show).
+6. Screen b-roll: 15s thumb-scrolling the app on your phone, 15s scrolling the PDF on the laptop — covers Videos 1 and 3.
+7. **Option A voice:** play each cut back muted and speak the lines into the phone mic in a quiet room. Three takes max. **Option B:** skip this entirely — the text overlays above ARE the script.
+8. Edit in CapCut (free): big protein number in the first second, auto-captions ON if using voice, text overlays exactly as written if silent.
+9. Keep every cut 20–40 seconds; first frame is food or the hook — never an empty kitchen.
+10. Post at 5–7pm UK (Video 3 Sunday midday), then reply to every comment in the first hour — recipe questions get "Full recipe free on my site — link in bio 🔗".
+
+**Why this still works without a face:** the trust job moves to three places — your hands (the
+basting, the knife fan — viewers clock real technique instantly), your bio line ("Professional
+chef — ex Sous/Head Chef"), and the radical honesty in Video 3. Plenty of six-figure food accounts
+are 100% faceless; consistency matters far more than a face.
 
 ---
 
