@@ -4,7 +4,8 @@ _Written 2026-07-04. This is the operating plan for the next 13 weeks. Read it o
 then live out of the **Weekly rhythm** section + `SCOREBOARD.md`._
 
 **Calibration this plan is built on (owner's answers, 2026-07-04):** 10–20 h/week available ·
-comfortable on camera (face + voice) · £0 ad budget · social accounts starting from zero.
+**faceless video only (decided 2026-08-14):** hands-and-pans + text overlays, voiceover optional,
+never face on camera · £0 ad budget · social accounts starting from zero.
 
 ---
 

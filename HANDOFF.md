@@ -157,7 +157,8 @@ git commit && git push origin claude/high-protein-cookbook-3Av3B   # push = depl
 
 ## 7. The operating plan (summary — full version is the doc)
 
-`marketing/90-DAY-SALES-PLAN.md`, calibrated 2026-07-04 (owner: 10–20 h/wk, face+voice video,
+`marketing/90-DAY-SALES-PLAN.md`, calibrated 2026-07-04 (owner: 10–20 h/wk, **FACELESS video only
+— decided 2026-08-14: hands-and-pans + text overlays, voiceover optional, never face on camera**,
 £0 ads, socials from zero):
 
 - **Week 0:** create socials → 30 warm messages → film videos 1–3 (calendar exists) → pin queue +
