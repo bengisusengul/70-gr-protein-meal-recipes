@@ -58,3 +58,26 @@ three formats (video, carousel, pins).
    cheesecake cups, shakshuka, bulgogi bowl…) — check GoatCounter for which recipe pages
    get real traffic and follow demand.
 4. Batch-produce 4 episodes at a time; owner just posts + replies to comments.
+
+---
+
+## 2026-08-15 — Influencer affiliate programme (owner's idea; Claude's honest shaping)
+
+**The idea (owner's words):** reach influencers whose audience matches ours and have them
+sell the book for **50% of the income** — money without the hustle.
+
+**Honest assessment (agreed with owner):** the model is sound (digital product, zero marginal
+cost, Gumroad has built-in affiliate links with automatic payout splits) but it is NOT
+passive — outreach is a 50-100-message numbers game — and it needs **proof first**: with 0
+reviews/0 sales history, no serious creator will promote. Prerequisite = first sales + 3-5
+reviews (the warm-network weekend).
+
+**The shape that works at our stage — "gift first":**
+1. Build a list of 20-30 UK micro-creators (5-50k, high-protein / fitness food / "what I eat
+   in a day"; IG + YouTube + newsletters over TikTok — small accounts can't link on TikTok).
+2. Send the book FREE with a short personal note, no ask.
+3. Whoever genuinely likes it → invite to a 50% Gumroad affiliate link (£9.50/sale at £19).
+4. Partners must disclose #ad (UK ASA rules). Never scripts — their own words convert better.
+
+**When:** month 2-3 slot of the 90-day plan, unlocked by first reviews. Claude does the list,
+the notes, and the affiliate setup mechanics; owner sends and owns the relationships.
