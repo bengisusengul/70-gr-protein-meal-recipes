@@ -88,6 +88,53 @@ const COLLECTIONS = [
     intro: "Cooked protein in the fridge is the single biggest reason people stick to eating this way. These 23 recipes are the batch-cook heroes of the book — chilis, sheet-pans, egg muffins and make-ahead bowls that taste just as good on day three.",
     heroId: "low-carb-beef-chili",
     filter: (r) => hasMealPrepTag(r)
+  },
+  {
+    slug: "high-protein-chicken-recipes",
+    title: "High-Protein Chicken Recipes — 70 g Protein Each",
+    h1: "High-Protein Chicken Recipes",
+    metaDescription: "16 high-protein chicken recipes with ~70 g of protein and under 20 g net carbs each — tikka masala, souvlaki, piccata, sheet-pan thighs and more, with photos and full macros.",
+    intro: "Chicken is the workhorse of high-protein cooking — and the first thing to go boring in the wrong hands. These 16 chicken recipes are the chef's counter-argument: tikka masala, souvlaki bowls, piccata, crispy sheet-pan thighs — each landing about 70 g of protein with barely any sugar.",
+    heroId: "chicken-tikka-masala-cauli-rice",
+    filter: (r) => r.ingredients.some((i) => i.item.toLowerCase().includes("chicken"))
+  },
+  {
+    slug: "high-protein-fish-seafood-recipes",
+    title: "High-Protein Fish & Seafood Recipes — 70 g Each",
+    h1: "High-Protein Fish & Seafood Recipes",
+    metaDescription: "21 high-protein fish and seafood recipes hitting ~70 g of protein — salmon, cod, prawns, tuna and trout, grilled, baked and seared, with photos and full macros.",
+    intro: "Fish is the most underrated route to 70 g of protein — light on the stomach, quick in the pan, and impossible to make boring if you know what you're doing. Salmon, cod, prawns, tuna, trout: 21 recipes, each with the macros done for you.",
+    heroId: "pan-seared-salmon-creamed-spinach",
+    filter: (r) => r.ingredients.some((i) => i.aisle === "Seafood")
+  },
+  {
+    slug: "15-minute-high-protein-meals",
+    title: "15-Minute High-Protein Meals — 70 g Protein, Fast",
+    h1: "15-Minute High-Protein Meals",
+    metaDescription: "44 high-protein meals ready in 15 minutes or less — each with ~70 g of protein and under 20 g net carbs. No-cook plates, wraps, scrambles and flash-pan dinners with macros.",
+    intro: "Fifteen minutes is the honest limit of a weeknight. Every meal here is done inside it — many with no cooking at all — and still lands around 70 g of protein. Speed is a technique, and these are the recipes where it shows.",
+    heroId: "smoked-salmon-egg-rollups",
+    filter: (r) => totalMins(r) <= 15,
+    sort: (a, b) => totalMins(a) - totalMins(b)
+  },
+  {
+    slug: "high-protein-desserts",
+    title: "High-Protein Desserts — 70 g Protein, Low Sugar",
+    h1: "High-Protein Desserts",
+    metaDescription: "High-protein desserts with ~70 g of protein each and hardly any sugar — cheesecake cups, chocolate mousse, mug cake, frozen yogurt bark and more, with full macros.",
+    intro: "Dessert is usually where good intentions go to die. Not here: cheesecake cups, chocolate mousse, a one-minute mug cake, frozen yogurt bark — each one delivers about 70 g of protein with almost no sugar, and every single one is vegetarian.",
+    heroId: "protein-cheesecake-quark-cup",
+    filter: (r) => (r.tags || []).some((t) => ["sweet", "dessert"].indexOf(String(t).toLowerCase()) !== -1)
+      || /mousse|cheesecake|mug cake|pudding|bark|hot chocolate|parfait|french toast|pancake/i.test(r.name)
+  },
+  {
+    slug: "high-protein-one-pan-meals",
+    title: "High-Protein One-Pan Meals — 70 g Protein, One Wash-Up",
+    h1: "High-Protein One-Pan Meals",
+    metaDescription: "High-protein one-pan and sheet-pan meals with ~70 g of protein each — skillets, stir-fries and traybakes where dinner and the washing-up both take one pan.",
+    intro: "One pan in, one pan out. Skillets, stir-fries and sheet-pan traybakes where the whole 70 g of protein happens in a single vessel — maximum dinner, minimum washing-up. The weeknight format every chef secretly lives on at home.",
+    heroId: "sheet-pan-chicken-thighs-brussels",
+    filter: (r) => (r.tags || []).some((t) => ["one-pan", "sheet-pan", "stir-fry"].indexOf(String(t).toLowerCase()) !== -1)
   }
 ];
 
