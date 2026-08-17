@@ -46,7 +46,7 @@ to the free tier (~Jun 18; the 5-email sequence is saved but **paused** until a 
 The 90-day plan is built around fixing exactly this: **Week-0 restart + weekly rhythm + scoreboard.**
 
 **Two scheduled sales moments (real, one-time):** cookbook **£12 → £19 on Sun 17 Aug** (announce
-from Aug 3) · **Reset Challenge cohort starts Mon 8 Sep** (push Aug 25–Sep 7).
+from Aug 3) · **Reset Challenge cohort starts Tue 8 Sep** (push Aug 25–Sep 7).
 
 ---
 

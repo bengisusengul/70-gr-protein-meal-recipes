@@ -91,7 +91,7 @@ single biggest conversion lever a £12–29 product has.
 - **Mid-August — founding price ends:** the £12 cookbook was always a founding price; it moves to
   £19 on **Sunday 17 August**. Announce it 2 weeks out (email + videos + pins), remind at 3 days
   and 24 h. Real deadline, kept forever — this is the ethical urgency that works.
-- **September Reset Challenge:** cohort starts **Monday 8 September** ("back to routine" energy).
+- **September Reset Challenge:** cohort starts **Tuesday 8 September** ("back to routine" energy).
   Everyone who buys the £29 Reset by Sep 7 does the 4 weeks *together* — you post along daily,
   buyers get the challenge emails. 2-week push (Aug 25 → Sep 7), then the challenge itself
   generates 4 more weeks of content + testimonials. (Claude builds the challenge emails + video
