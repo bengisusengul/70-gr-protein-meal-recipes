@@ -14,7 +14,7 @@
 | 3 | Jul 20 – 26 | | | | | | | | | | |
 | 4 | Jul 27 – Aug 2 | | | | | | | | | | |
 | 5 | Aug 3 – 9 *(announce price rise)* | | | | | | | | | | |
-| 6 | Aug 10 – 16 *(last week at £12)* | | | | | | | | | | |
+| 6 | Aug 10 – 16 *(last week at £12)* | 3 | 0 | 0 | 0 | 6 (1 TT + 5 IG) | 74 | ? (check Kit) | 0 | £0 | TikTok 2,221 views in 48h from zero: steak recipe 865 > price 726 > intro 630 → recipe content wins. IG reels only ~140 each. 15% of site visits from Google (SEO working). 0 buy-clicks. 🎉 Discovered FIRST-EVER SALE: Jul 6, $12, cold buyer — funnel converts. Warm messages not sent → this week's #1. |
 | 7 | Aug 17 – 23 *(cookbook now £19)* | | | | | | | | | | |
 | 8 | Aug 24 – 30 *(challenge push starts Aug 25)* | | | | | | | | | | |
 | 9 | Aug 31 – Sep 6 *(challenge push)* | | | | | | | | | | |
