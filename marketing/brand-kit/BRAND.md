@@ -10,7 +10,8 @@ this folder were generated from the brand system below — ask Claude for any ne
 | | |
 |---|---|
 | **Brand name** | The 70 g Protein Cookbook |
-| **Handle (all platforms)** | `@the70gprotein` — fallbacks if taken: `@70gprotein`, `@the70gproteinchef` |
+| **Live handles (created 15 Aug 2026)** | TikTok: **@the70gprotein** · Instagram: **@the70g_protein** (exact name was taken) |
+| **TikTok display name** | Locked until **22 Aug 2026** — then change to "The 70g Protein Cookbook" |
 | **Display name** | The 70g Protein Cookbook |
 | **Tagline** | 100 chef-built recipes · every plate ≈ 70 g protein |
 | **Who's behind it** | Bengisu Sengul, professional chef (ex Sous/Head Chef), UK — **faceless brand: never show the face; hands, plates, and screens only** |
@@ -93,5 +94,5 @@ Professional chef. 100 high-protein, low-sugar recipes — every plate ≈70g pr
 |---|---|---|
 | Web app + all 100 recipes | FREE | https://the70gprotein.com |
 | Free 7-day plan (email magnet) | FREE | https://the70gprotein.com/free-plan.html |
-| The 70 g Protein Cookbook (118-pp PDF) | £12 → **£19 from 17 Aug 2026** | https://bengisus.gumroad.com/l/igjxu |
+| The 70 g Protein Cookbook (118-pp PDF) | **£19** (founding £12 ended 17 Aug 2026) | https://bengisus.gumroad.com/l/igjxu |
 | The 4-Week 70 g Protein Reset (bundle) | £29 | https://bengisus.gumroad.com/l/reset |

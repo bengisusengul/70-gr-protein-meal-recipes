@@ -21,7 +21,7 @@ four surfaces:
 |---|---|---|---|
 | **Web app + 100 SEO recipe pages + 8 collection pages** | Traffic & trust engine (planner, tracker, shopping lists; PWA) | Free | https://the70gprotein.com |
 | **Free 7-day plan (PDF)** | Email magnet → Kit list | Free | /free-plan.html |
-| **The 70 g Protein Cookbook (PDF)** | Impulse product ("support the chef") | **£12** → £19 on Aug 17 | https://bengisus.gumroad.com/l/igjxu |
+| **The 70 g Protein Cookbook (PDF)** | Impulse product ("support the chef") | **£19** (founding £12 ended 17 Aug) | https://bengisus.gumroad.com/l/igjxu |
 | **The 4-Week 70 g Protein Reset** | Core money-maker: 26-pp program guide + printables pack + cookbook bundled | **£29** | https://bengisus.gumroad.com/l/reset |
 
 **Owner/author:** Bengisu Sengul, professional chef (ex Sous/Head Chef), UK.
